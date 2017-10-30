@@ -1,7 +1,7 @@
-package com.platform.web.dao;
+package com.platform.shiro.dao;
 
 import com.platform.api.auth.service.RedisService;
-import com.platform.common.utils.BaseJedisTemplate;
+import com.platform.common.base.BaseJedisTemplate;
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;

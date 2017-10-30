@@ -1,4 +1,4 @@
-package com.platform.web.dao.auth;
+package com.platform.shiro.dao.auth;
 
 
 import com.platform.common.annotation.MyBatisRepository;

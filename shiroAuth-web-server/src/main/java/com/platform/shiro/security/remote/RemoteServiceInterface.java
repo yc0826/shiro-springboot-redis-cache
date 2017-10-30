@@ -1,4 +1,4 @@
-package com.platform.web.security.remote;
+package com.platform.shiro.security.remote;
 
 import org.apache.shiro.session.Session;
 

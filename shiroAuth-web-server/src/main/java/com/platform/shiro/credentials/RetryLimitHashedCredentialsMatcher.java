@@ -1,4 +1,4 @@
-package com.platform.common.credentials;
+package com.platform.shiro.credentials;
 
 import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;

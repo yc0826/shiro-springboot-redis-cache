@@ -3,7 +3,7 @@ package com.platform.service.impl.auth;
 import com.platform.api.auth.entity.User;
 import com.platform.api.auth.service.UserService;
 import com.platform.api.utils.PasswordHelper;
-import com.platform.web.dao.auth.IUserDao;
+import com.platform.shiro.dao.auth.IUserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

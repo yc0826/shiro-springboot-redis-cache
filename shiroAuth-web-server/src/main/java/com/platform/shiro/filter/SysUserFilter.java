@@ -1,4 +1,4 @@
-package com.platform.web.shiro.filter;
+package com.platform.shiro.filter;
 
 import com.platform.api.auth.service.UserService;
 import com.platform.common.Constants;

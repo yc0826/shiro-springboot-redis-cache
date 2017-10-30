@@ -1,4 +1,4 @@
-package com.platform.web.dao.auth;
+package com.platform.shiro.dao.auth;
 
 
 import com.platform.api.auth.entity.User;

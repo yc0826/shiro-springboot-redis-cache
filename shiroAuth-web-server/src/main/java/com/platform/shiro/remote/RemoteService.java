@@ -1,8 +1,8 @@
-package com.platform.web.remote;
+package com.platform.shiro.remote;
 
 import com.platform.api.auth.service.AuthorizationService;
-import com.platform.web.security.remote.PermissionContext;
-import com.platform.web.security.remote.RemoteServiceInterface;
+import com.platform.shiro.security.remote.PermissionContext;
+import com.platform.shiro.security.remote.RemoteServiceInterface;
 import org.apache.shiro.session.Session;
 import org.apache.shiro.session.mgt.eis.SessionDAO;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,4 +1,4 @@
-package com.platform.web.dao;
+package com.platform.shiro.dao;
 
 import com.platform.api.auth.service.RedisService;
 import org.apache.shiro.session.Session;

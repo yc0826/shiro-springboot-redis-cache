@@ -1,4 +1,4 @@
-package com.platform.common.utils;
+package com.platform.common.base;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;

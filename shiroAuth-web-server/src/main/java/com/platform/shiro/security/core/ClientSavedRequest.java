@@ -1,4 +1,4 @@
-package com.platform.web.security.core;
+package com.platform.shiro.security.core;
 
 import org.apache.shiro.web.util.SavedRequest;
 

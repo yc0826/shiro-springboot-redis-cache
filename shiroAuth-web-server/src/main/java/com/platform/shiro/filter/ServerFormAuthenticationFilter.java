@@ -1,4 +1,4 @@
-package com.platform.web.shiro.filter;
+package com.platform.shiro.filter;
 
 import org.apache.shiro.web.filter.authc.FormAuthenticationFilter;
 import org.apache.shiro.web.util.WebUtils;

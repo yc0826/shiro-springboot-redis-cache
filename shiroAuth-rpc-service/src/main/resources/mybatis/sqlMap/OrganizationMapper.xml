@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.platform.web.dao.auth.IOrganizationDao" >
+<mapper namespace="com.platform.shiro.dao.auth.IOrganizationDao" >
   <resultMap id="BaseResultMap" type="com.platform.api.auth.entity.Organization" >
 	<id column="id" property="id" jdbcType="BIGINT" />
     <result column="org_name" property="orgName" jdbcType="VARCHAR" />

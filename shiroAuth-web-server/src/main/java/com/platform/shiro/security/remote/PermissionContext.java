@@ -1,4 +1,4 @@
-package com.platform.web.security.remote;
+package com.platform.shiro.security.remote;
 
 import java.io.Serializable;
 import java.util.Set;

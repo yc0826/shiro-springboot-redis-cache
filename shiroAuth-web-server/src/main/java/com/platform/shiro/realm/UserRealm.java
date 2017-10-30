@@ -1,4 +1,4 @@
-package com.platform.web.realm;
+package com.platform.shiro.realm;
 
 import com.platform.api.auth.service.AuthorizationService;
 import com.platform.api.auth.service.UserService;
