@@ -1,4 +1,4 @@
-# authManager
+# shiroAuth
 
 启动
 
