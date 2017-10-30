@@ -22,7 +22,7 @@ public class RedisShiroSessionDao extends CachingSessionDAO {
     @Override
     public void update(Session session) throws UnknownSessionException {
         if (session instanceof ValidatingSession && !((ValidatingSession) session).isValid()) {
-            return; //如果会话过期/停止 没必要再更新�?
+            return; //如果会话过期/停止 没必要再更新
         }
         try {
             redisDao.updateCached(session.getId().toString(), session);
@@ -41,14 +41,13 @@ public class RedisShiroSessionDao extends CachingSessionDAO {
 
     }
 
-    @SuppressWarnings("unchecked")
     @Override
     public Collection<Session> getActiveSessions() {
         String keys = sessionprefix + "*";
         Set<Session> list = null;
         try {
             list = (Set<Session>) redisDao.getShiroSessionByKeys(keys);
-        } catch (Exception e) {
+        } catch (Exception ignored) {
         }
         return list;
     }
@@ -88,7 +87,7 @@ public class RedisShiroSessionDao extends CachingSessionDAO {
     @Override
     protected void doUpdate(Session session) {
         if (session instanceof ValidatingSession && !((ValidatingSession) session).isValid()) {
-            return; //如果会话过期/停止 没必要再更新�?
+            return; //如果会话过期/停止 没必要再更新
         }
         update(session);
     }
