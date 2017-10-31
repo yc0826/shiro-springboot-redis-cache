@@ -3,7 +3,7 @@ package com.platform.service.impl.auth;
 import com.platform.api.auth.entity.Role;
 import com.platform.api.auth.service.ResourceService;
 import com.platform.api.auth.service.RoleService;
-import com.platform.shiro.dao.auth.IRoleDao;
+import com.platform.dao.auth.IRoleDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

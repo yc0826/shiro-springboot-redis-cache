@@ -1,7 +1,7 @@
 package com.platform.service.impl.auth;
 
 import com.platform.api.auth.service.OrganizationService;
-import com.platform.shiro.dao.auth.IOrganizationDao;
+import com.platform.dao.auth.IOrganizationDao;
 import com.platform.api.auth.entity.Organization;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

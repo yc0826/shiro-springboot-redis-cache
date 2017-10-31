@@ -1,7 +1,7 @@
 package com.platform.service.impl.auth;
 
 import com.platform.api.auth.service.ResourceService;
-import com.platform.shiro.dao.auth.IResourceDao;
+import com.platform.dao.auth.IResourceDao;
 import com.platform.api.auth.entity.Resource;
 import org.apache.shiro.authz.permission.WildcardPermission;
 import org.springframework.beans.factory.annotation.Autowired;

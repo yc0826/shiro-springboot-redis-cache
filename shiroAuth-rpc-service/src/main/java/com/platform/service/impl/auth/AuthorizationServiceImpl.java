@@ -6,7 +6,7 @@ import com.platform.api.auth.service.AppService;
 import com.platform.api.auth.service.AuthorizationService;
 import com.platform.api.auth.service.RoleService;
 import com.platform.api.auth.service.UserService;
-import com.platform.shiro.dao.auth.IAuthorizationDao;
+import com.platform.dao.auth.IAuthorizationDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
