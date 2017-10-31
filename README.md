@@ -6,7 +6,7 @@
 
 2.启动redis,zookeeper 
 
-3.选择根目录 mvn install
+3.选择根目录 mvn clean install -Dmaven.test.skip=true
 
 4.启动dubbo 选择目录./shiroAuth-rpc-service mvn exec:java -Dexec.mainClass=com.alibaba.dubbo.container.Main
 
