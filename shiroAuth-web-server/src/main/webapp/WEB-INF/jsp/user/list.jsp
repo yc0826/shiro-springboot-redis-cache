@@ -55,5 +55,12 @@
 		    <a href="${ctx}/user/create" class="btn btn_primary" style="float: right;">用户新增</a>
 		 </shiro:hasPermission>
       </div>
+
+<script>
+	$.post("test?str=aaa",function (data) {
+		alert(data);
+    })
+
+</script>
 </body>
 </html>

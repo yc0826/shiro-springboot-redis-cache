@@ -6,7 +6,7 @@
     <description>functions</description>
     <tlib-version>3.0</tlib-version>
     <short-name>fn</short-name>
-    <uri>http://www.saohuobang.com/platform/tags/shb-functions</uri>
+    <uri>http://www.babysky.com/platform/tags/shb-functions</uri>
 
     <function>
         <description>obj in collection</description>
