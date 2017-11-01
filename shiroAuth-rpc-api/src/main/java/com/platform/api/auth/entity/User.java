@@ -3,17 +3,13 @@ package com.platform.api.auth.entity;
 import java.io.Serializable;
 
 /**
- * 
-* @ClassName: User 
-* @Description: 用户
-* @author yangyw(imalex@163.com)
-* @date 2015年3月20日 下午2:00:05 
-*
+ * @ClassName: User
+ * @Description: 用户
  */
 public class User implements Serializable {
     private Long id; //编号
-    private Long organizationId; //�?属公�?
-    private String username; //用户�?
+    private Long organizationId; //所属公司
+    private String username; //用户名
     private String password; //密码
     private String salt; //加密密码的盐
     private Boolean locked = Boolean.FALSE;
@@ -71,7 +67,6 @@ public class User implements Serializable {
     }
 
 
-    
     public Boolean getLocked() {
         return locked;
     }
