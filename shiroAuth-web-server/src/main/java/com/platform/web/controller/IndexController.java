@@ -1,13 +1,15 @@
 package com.platform.web.controller;
 
+import com.platform.api.auth.entity.Organization;
+import com.platform.api.auth.entity.Resource;
+import com.platform.api.auth.entity.User;
 import com.platform.api.auth.service.AuthorizationService;
 import com.platform.api.auth.service.OrganizationService;
 import com.platform.api.auth.service.ResourceService;
 import com.platform.common.Constants;
-import com.platform.api.auth.entity.Organization;
-import com.platform.api.auth.entity.Resource;
-import com.platform.api.auth.entity.User;
 import com.platform.web.bind.annotation.CurrentUser;
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -34,6 +36,9 @@ public class IndexController {
 
     @RequestMapping("/")
     public String index(@CurrentUser User loginUser, Model model) {
+        if(loginUser == null) {
+            return "redirect:/login";
+        }
         Set<String> permissions = authorizationService.findPermissions(Constants.SERVER_APP_KEY, loginUser.getUsername());
         List<Resource> menus = resourceService.findMenus(permissions);
         model.addAttribute("menus", menus);
@@ -43,14 +48,11 @@ public class IndexController {
         if (org.getStoreId() != null && !org.getStoreId().equals("")) {
             return "index";
         }
-        //商户号为空，ID=1为集团账号初始化
-        if (org.getId() == 1) {
-            model.addAttribute("url", "http://localhost/storeManager/store/configOne");
-            return "common/forward";
+        Subject subject = SecurityUtils.getSubject();
+        if (subject != null) {
+            subject.logout();
         }
-        //商户号为空，门店初始界面
-        model.addAttribute("url", "http://localhost/storeManager/store/configStoreOne");
-        return "common/forward";
+        return "redirect:/login";
     }
 
     @RequestMapping("/menus")
