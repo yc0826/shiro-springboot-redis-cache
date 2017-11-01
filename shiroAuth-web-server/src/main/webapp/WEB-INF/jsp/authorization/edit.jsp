@@ -42,7 +42,7 @@
                     <li class="add_store_li">
                         <span class="add_store_span">角色：</span>
                         <div>
-                            <select id="roleIds" name="roleIds" multiple="multiple" style="height: auto;">
+                            <select id="roleIds" name="roleIds" multiple="multiple" style="height: auto;width: 150px;">
                                 <c:forEach items="${roleList}" var="role">
                                     <option value="${role.id}">${role.description}</option>
                                 </c:forEach>
