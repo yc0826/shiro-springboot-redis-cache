@@ -56,11 +56,5 @@
 		 </shiro:hasPermission>
       </div>
 
-<script>
-	$.post("test?str=aaa",function (data) {
-		alert(data);
-    })
-
-</script>
 </body>
 </html>
