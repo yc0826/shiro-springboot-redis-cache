@@ -1,6 +1,9 @@
 # shiroAuth
+该项目框架借鉴了原项目authManager的shiro redis缓存实现 在此基础上优化了数据结构和页面逻辑
+原项目地址https://github.com/imalexyang/authManager
 
-启动
+
+项目启动
 
 1.运行项目中自带sql
 

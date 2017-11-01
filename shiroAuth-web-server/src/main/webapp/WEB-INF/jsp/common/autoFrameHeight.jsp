@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,7 +9,7 @@
     	function getQueryString(name) {
 	        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
 	        var r = window.location.search.substr(1).match(reg);
-	        if (r != null) return unescape(r[2]); return null;
+	        if (r !== null) return unescape(r[2]); return null;
         }
 	    function  pseth() {
 	        var iObj = parent.parent.document.getElementById('iframe');//A和main同域，所以可以访问节点	       
