@@ -10,12 +10,14 @@ import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -38,11 +40,20 @@ public class AuthorizationController {
 
     @RequiresPermissions("authorization:view")
     @RequestMapping()
-    public String list(Model model, HttpServletRequest request, Map<String, Object> map) {
-//        Page p = PageUtil.buidPagebean(request, map);
-        List<Authorization> authorizationList = authorizationService.findPage(map);
+    public String list(Model model, HttpServletRequest request) {
+        Map<String, Object> paramMap = new HashMap<>();
+        int pageNo = 1;
+        if(StringUtils.hasText(request.getParameter("pageNo"))) {
+            pageNo = Integer.parseInt(request.getParameter("pageNo"));
+        }
+        paramMap.put("start" ,PageUtil.initPageParmMap(pageNo));
+        paramMap.put("size" ,PageUtil.pageSize);
+        List<Authorization> authorizationList = authorizationService.findPage(paramMap);
+        Integer count = authorizationService.count(paramMap);
         model.addAttribute("authorizationList", authorizationList);
-//        PageUtil.buildGrid(p);
+        model.addAttribute("pageCount", PageUtil.initPageCount(count));
+        model.addAttribute("pageIndex", pageNo);
+        model.addAttribute("uri", request.getRequestURI());
         return "authorization/list";
     }
 

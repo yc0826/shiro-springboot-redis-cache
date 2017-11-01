@@ -43,7 +43,7 @@
 			    </div>
 			    <br/><br/>
            	 <span class="page_center">
-            	${pagetag}
+            	<jsp:include page="../pageTag.jsp" />
             </span>
              <!-- 表格结束-->
         </div>  

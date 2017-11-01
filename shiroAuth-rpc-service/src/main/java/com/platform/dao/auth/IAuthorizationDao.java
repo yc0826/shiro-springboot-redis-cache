@@ -29,4 +29,5 @@ public interface IAuthorizationDao {
 
     Authorization selectByAppUser(Map<String, Object> map);
 
+    Integer count(Map<String, Object> paramMap);
 }

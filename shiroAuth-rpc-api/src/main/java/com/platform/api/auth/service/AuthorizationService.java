@@ -37,4 +37,5 @@ public interface AuthorizationService {
     Set<String> findPermissions(String appKey, String username);
 
 
+    Integer count(Map<String, Object> paramMap);
 }

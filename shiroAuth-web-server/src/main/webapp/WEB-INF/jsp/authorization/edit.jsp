@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
-<%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -42,9 +43,10 @@
                     <li class="add_store_li">
                         <span class="add_store_span">角色：</span>
                         <div>
-                            <select id="roleIds" name="roleIds" multiple="multiple" style="height: auto;width: 150px;">
+                            <select id="roleIds" name="roleIds" multiple="multiple" size="10" style="height: auto;width: 150px;">
                                 <c:forEach items="${roleList}" var="role">
-                                    <option value="${role.id}">${role.description}</option>
+                                    <option value="${role.id}"
+                                            <c:if test="${fn:contains(authorization.roleIds, role.id)}">selected="selected"</c:if>>${role.description}</option>
                                 </c:forEach>
                             </select>
                             (按住shift键多选)

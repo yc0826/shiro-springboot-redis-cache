@@ -167,5 +167,8 @@ public class AuthorizationServiceImpl implements AuthorizationService {
         return authorizationDao.selectPage(p);
     }
 
-
+    @Override
+    public Integer count(Map<String, Object> paramMap) {
+        return authorizationDao.count(paramMap);
+    }
 }
