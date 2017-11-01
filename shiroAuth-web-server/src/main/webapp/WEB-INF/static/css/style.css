@@ -701,7 +701,6 @@ input.inp_error:focus, textarea.inp_error:focus {
     color: #ff7979;
     border-color: #ffc5c5;
     background: #fff8f8;
-    outline: 0;669
     outline: thin dotted \9;
     -webkit-box-shadow: inset 0 1px 1px #fff8f8, 0 0 8px #fff8f8;
     -moz-box-shadow: inset 0 1px 1px #fff8f8, 0 0 8px #fff8f8;
@@ -1793,15 +1792,15 @@ input.inp_error:focus, textarea.inp_error:focus {
 }
 .edit
 {
-    background-position: 0px 0px;
+    background-position: 0 0;
 }
 .del
 {
-    background-position: -23px 0px;
+    background-position: -23px 0;
 }
 .mass
 {
-    background-position: -50px 0px;
+    background-position: -50px 0;
 }
 .pop_edit_name
 {
@@ -2046,8 +2045,8 @@ input.inp_error:focus, textarea.inp_error:focus {
 .file
 {
     position: absolute;
-    top: 0px;
-    left: 0px;
+    top: 0;
+    left: 0;
     opacity: 0;
     z-index: 10;
 }
@@ -2064,7 +2063,7 @@ input.inp_error:focus, textarea.inp_error:focus {
     filter: alpha(opacity=80);
     z-index: 2; 
     position: absolute;
-    left: 0px;
+    left: 0;
     top:0px;
     width: 302px;
     height: 141px;
@@ -2082,7 +2081,7 @@ input.inp_error:focus, textarea.inp_error:focus {
     filter: alpha(opacity=80);
     z-index: 2; 
     position: absolute;
-    left: 0px;
+    left: 0;
     top:0px;
     width: 302px;
     height: 41px;
@@ -2397,20 +2396,20 @@ input.inp_error:focus, textarea.inp_error:focus {
     height: 100px;
     background: url(../img/index_icon.png) no-repeat;
     position: absolute;
-    right: 0px;
-    top: 0px;
+    right: 0;
+    top: 0;
 }
 .ico_sum_follow
 {
-    background-position: 0px 0px;
+    background-position: 0 0;
 }
 .ico_sum_amount 
 {
-    background-position: -141px 0px !important;
+    background-position: -141px 0 !important;
 }
 .ico_sum_deal 
 {
-    background-position: -288px 0px !important;
+    background-position: -288px 0 !important;
 }
 .sum_wrap em
 {
@@ -2468,9 +2467,9 @@ input.inp_error:focus, textarea.inp_error:focus {
 /*登录*/
 .sign_bg
 {
-    background:url(../img/sign_bg.jpg) no-repeat;
-    width: 1336px;
-    height: 588px;
+    background:url(../img/sign_bg.png) no-repeat;
+    /*width: 1336px;*/
+    /*height: 588px;*/
     margin: 0 auto;
     padding: 180px 0 0;
 }
@@ -2478,10 +2477,10 @@ input.inp_error:focus, textarea.inp_error:focus {
 {
     width: 485px;
     height: 215px;
-    border:1px solid #dbdbd7;
-    margin: 0px auto;
+    /*border:1px solid #dbdbd7;*/
+    margin: 0 auto;
     text-align: center;
-    background:#f6f5f3 url(../img/sign_logo.png) no-repeat center 53px;
+    /*background:#f6f5f3 url(../img/sign_logo.jpg) no-repeat center 53px;*/
     padding: 130px 0 0;
 }
 .sign_input_wrap input

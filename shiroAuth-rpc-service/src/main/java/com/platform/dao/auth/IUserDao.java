@@ -30,4 +30,6 @@ public interface IUserDao {
     List<User> selectPage(Map<String, Object> p);
 
     User selectByUsername(Map<String, Object> map);
+
+    Integer count(Map<String, Object> p);
 }

@@ -38,11 +38,10 @@ public interface UserService {
 
     List<User> findPage(Map<String, Object> p);
 
+    Integer count(Map<String, Object> p);
     /**
-     * 根据用户名查找用�?
-     *
+     * 根据用户名查找用
      * @param username
-     * @return
      */
     User findByUsername(String username);
 

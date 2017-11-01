@@ -85,5 +85,8 @@ public class UserServiceImpl implements UserService {
         return userDao.selectPage(p);
     }
 
-
+    @Override
+    public Integer count(Map<String, Object> p) {
+        return userDao.count(p);
+    }
 }

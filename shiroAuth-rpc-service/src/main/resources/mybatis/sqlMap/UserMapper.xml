@@ -27,6 +27,12 @@
         select
         <include refid="Base_Column_List"/>
         from ss_user
+        limit #{start}, #{size}
+    </select>
+    <select id="count" resultType="java.lang.Integer" >
+        select
+            count(*)
+        from ss_user
     </select>
     <select id="selectByUsername" resultMap="BaseResultMap" parameterType="map">
         select

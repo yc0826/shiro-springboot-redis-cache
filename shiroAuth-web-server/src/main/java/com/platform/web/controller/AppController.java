@@ -33,10 +33,10 @@ public class AppController {
     @RequiresPermissions("app:view")
     @RequestMapping()
     public String list(Model model,HttpServletRequest request,Map<String, Object> map) {
-        Page p = PageUtil.buidPagebean(request, map);
+//        Page p = PageUtil.buidPagebean(request, map);
 		List<App> appList= appService.findPage(map);
         model.addAttribute("appList", appList);
-        PageUtil.buildGrid(p);
+//        PageUtil.buildGrid(p);
         return "app/list";
     }
 

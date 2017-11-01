@@ -14,7 +14,6 @@
 	</shiro:hasPermission>
 </head>
 <body>
-
 	<div class="col_main lightshadow" id="forAutoHeight">
         <h2 class="page_headline"><span class="c_blue store_title">用户列表</span></h2>
         <div class="pb50">
@@ -45,7 +44,7 @@
 			    </div>
 			    <br/><br/>
             <span class="page_center">
-            	${pagetag}
+				<jsp:include page="../pageTag.jsp" />
             </span>
              <!-- 表格结束-->
         </div> 

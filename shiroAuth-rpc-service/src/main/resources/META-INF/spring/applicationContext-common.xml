@@ -39,7 +39,7 @@
     <!-- 扫描basePackage下所有以@MyBatisRepository标识的 接口 -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
-        <property name="basePackage" value="com.platform.shiro.dao"/>
+        <property name="basePackage" value="com.platform.dao"/>
         <property name="annotationClass" value="com.platform.common.annotation.MyBatisRepository"/>
     </bean>
 

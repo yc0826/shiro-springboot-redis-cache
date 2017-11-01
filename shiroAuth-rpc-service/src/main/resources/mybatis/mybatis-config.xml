@@ -9,7 +9,7 @@
         <property name="dialect" value="mysql"/>
         <!--property name="dialect" value="oracle"/-->
     </properties>
-    <settings>
-        <setting name="logImpl" value="LOG4J"/>
-    </settings>
+    <!--<settings>-->
+        <!--<setting name="logImpl" value="LOG4J"/>-->
+    <!--</settings>-->
 </configuration>

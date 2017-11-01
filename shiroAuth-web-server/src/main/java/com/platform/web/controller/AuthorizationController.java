@@ -5,7 +5,6 @@ import com.platform.api.auth.service.AppService;
 import com.platform.api.auth.service.AuthorizationService;
 import com.platform.api.auth.service.RoleService;
 import com.platform.api.auth.service.UserService;
-import com.platform.web.utils.Page;
 import com.platform.web.utils.PageUtil;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,10 +39,10 @@ public class AuthorizationController {
     @RequiresPermissions("authorization:view")
     @RequestMapping()
     public String list(Model model, HttpServletRequest request, Map<String, Object> map) {
-        Page p = PageUtil.buidPagebean(request, map);
+//        Page p = PageUtil.buidPagebean(request, map);
         List<Authorization> authorizationList = authorizationService.findPage(map);
         model.addAttribute("authorizationList", authorizationList);
-        PageUtil.buildGrid(p);
+//        PageUtil.buildGrid(p);
         return "authorization/list";
     }
 

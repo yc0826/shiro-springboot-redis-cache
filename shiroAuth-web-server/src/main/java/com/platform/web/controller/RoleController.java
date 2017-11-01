@@ -3,8 +3,6 @@ package com.platform.web.controller;
 import com.platform.api.auth.entity.Role;
 import com.platform.api.auth.service.ResourceService;
 import com.platform.api.auth.service.RoleService;
-import com.platform.web.utils.Page;
-import com.platform.web.utils.PageUtil;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -35,10 +33,10 @@ public class RoleController {
     @RequiresPermissions("role:view")
     @RequestMapping()
     public String list(Model model, HttpServletRequest request, Map<String, Object> map) {
-        Page p = PageUtil.buidPagebean(request, map);
+//        Page p = PageUtil.buidPagebean(request, map);
         List<Role> roleList = roleService.findPage(map);
         model.addAttribute("roleList", roleList);
-        PageUtil.buildGrid(p);
+//        PageUtil.buildGrid(p);
         return "role/list";
     }
 
