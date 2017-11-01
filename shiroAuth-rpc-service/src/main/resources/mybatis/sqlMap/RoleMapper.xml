@@ -32,10 +32,8 @@
         where id = #{id,jdbcType=BIGINT}
     </delete>
     <insert id="insert" parameterType="com.platform.api.auth.entity.Role">
-        insert into ss_role (id, role, description,
-        resource_ids, available)
-        values (#{id,jdbcType=BIGINT}, #{role,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR},
-        #{resourceIds,jdbcType=VARCHAR}, #{available,jdbcType=BIT})
+        insert into ss_role (id, role, description,available)
+        values (#{id,jdbcType=BIGINT}, #{role,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR},#{available,jdbcType=BIT})
     </insert>
     <insert id="insertSelective" parameterType="com.platform.api.auth.entity.Role">
         insert into ss_role
@@ -96,7 +94,6 @@
         update ss_role
         set role = #{role,jdbcType=VARCHAR},
         description = #{description,jdbcType=VARCHAR},
-        resource_ids = #{resourceIds,jdbcType=VARCHAR},
         available = #{available,jdbcType=BIT}
         where id = #{id,jdbcType=BIGINT}
     </update>
