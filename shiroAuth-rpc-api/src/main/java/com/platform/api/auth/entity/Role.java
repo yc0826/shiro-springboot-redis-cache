@@ -125,7 +125,7 @@ public class Role implements Serializable {
     }
 
 	public List<Long> getResourceIdsList() {
-		List<Long> list=new ArrayList<Long>();
+		List<Long> list= new ArrayList<>();
 		if(resourceIds!=null){
 			String[] dbroleIds=resourceIds.split(",");   
 	        for(String dbroleId:dbroleIds){
@@ -147,4 +147,5 @@ public class Role implements Serializable {
         }
 		this.resourceIdsList = list;
 	}
+
 }

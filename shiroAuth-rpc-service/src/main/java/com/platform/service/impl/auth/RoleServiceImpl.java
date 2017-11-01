@@ -6,11 +6,9 @@ import com.platform.api.auth.service.RoleService;
 import com.platform.dao.auth.IRoleDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 /**
  * @ClassName: RoleServiceImpl
@@ -30,6 +28,16 @@ public class RoleServiceImpl implements RoleService {
     }
 
     public Role updateRole(Role role) {
+        roleDao.deleteRoleResource(role.getId());
+        if (!CollectionUtils.isEmpty(role.getResourceIdsList())) {
+            role.getResourceIdsList().forEach(resourceId -> {
+                Map<String, Object> paramMap = new HashMap<>();
+                paramMap.put("roleId", role.getId());
+                paramMap.put("resourceId", resourceId);
+                roleDao.insertRoleResource(paramMap);
+            });
+        }
+
         roleDao.updateByPrimaryKeySelective(role);
         return role;
     }
@@ -62,25 +70,11 @@ public class RoleServiceImpl implements RoleService {
 
     @Override
     public Set<String> findPermissions(Long[] roleIds) {
-        Set<Long> resourceIds = new HashSet<>();
-        for (Long roleId : roleIds) {
-            Role role = findOne(roleId);
-            if (role != null) {
-
-                //
-                String[] resourceIdStrs = role.getResourceIds().split(",");
-                for (String resourceIdStr : resourceIdStrs) {
-                    if (resourceIdStr == null) {
-                        continue;
-                    }
-                    resourceIds.add(Long.valueOf(resourceIdStr));
-                }
-                //
-
-                //resourceIds.addAll(role.getResourceIds());
-            }
+        Set<Long> resourceIds = roleDao.findResourceIdsByRoleIds(roleIds);
+        if (!CollectionUtils.isEmpty(resourceIds)) {
+            return resourceService.findPermissions(resourceIds);
         }
-        return resourceService.findPermissions(resourceIds);
+        return null;
     }
 
 

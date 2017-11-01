@@ -6,6 +6,7 @@ import com.platform.common.annotation.MyBatisRepository;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * @ClassName: RoleMapper
@@ -29,4 +30,9 @@ public interface IRoleDao {
 
     List<Role> selectPage(Map<String, Object> p);
 
+    void deleteRoleResource(Long id);
+
+    void insertRoleResource(Map<String, Object> paramMap);
+
+    Set<Long> findResourceIdsByRoleIds(Long[] roleIds);
 }

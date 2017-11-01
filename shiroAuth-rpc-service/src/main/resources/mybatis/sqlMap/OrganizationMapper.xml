@@ -49,7 +49,7 @@
   <sql id="Blob_Column_List" >
     org_desc
   </sql>
-   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
     select 
     <include refid="Base_Column_List" />
      ,

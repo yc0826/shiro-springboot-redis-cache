@@ -100,4 +100,21 @@
         available = #{available,jdbcType=BIT}
         where id = #{id,jdbcType=BIGINT}
     </update>
+
+    <delete id="deleteRoleResource">
+        delete from ss_role_resource
+        where role_id = #{roleId}
+    </delete>
+
+    <insert id="insertRoleResource" useGeneratedKeys="true">
+        INSERT INTO `ss_role_resource` (`role_id`, `resource_id`) VALUES (#{roleId}, #{resourceId})
+    </insert>
+
+    <select id="findResourceIdsByRoleIds" resultType="java.lang.Long">
+        select resource_id from ss_role_resource
+        where role_id in
+        <foreach collection="array" index="index" item="item" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+    </select>
 </mapper>

@@ -30,7 +30,8 @@
         select
         <include refid="Base_Column_List"/>
         from ss_user_app_roles
-        where app_id=#{appId,jdbcType=BIGINT} and user_id=#{userId,jdbcType=BIGINT}
+        where app_id=#{appId,jdbcType=BIGINT}
+        and user_id=#{userId,jdbcType=BIGINT}
     </select>
     <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
         delete from ss_user_app_roles

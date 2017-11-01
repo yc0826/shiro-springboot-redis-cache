@@ -28,7 +28,7 @@ public interface AuthorizationService {
     Set<String> findRoles(String appKey, String username);
 
     /**
-     * 根据AppKey和用户名查找权限字符�?
+     * 根据AppKey和用户名查找权限字符
      * @param username
      */
     Set<String> findPermissions(String appKey, String username);
