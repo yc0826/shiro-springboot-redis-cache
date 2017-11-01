@@ -47,9 +47,6 @@
             <if test="description != null">
                 description,
             </if>
-            <if test="resourceIds != null">
-                resource_ids,
-            </if>
             <if test="available != null">
                 available,
             </if>
@@ -63,9 +60,6 @@
             </if>
             <if test="description != null">
                 #{description,jdbcType=VARCHAR},
-            </if>
-            <if test="resourceIds != null">
-                #{resourceIds,jdbcType=VARCHAR},
             </if>
             <if test="available != null">
                 #{available,jdbcType=BIT},
