@@ -57,9 +57,7 @@ public class App implements Serializable {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-
         App app = (App) o;
-
         return id != null ? id.equals(app.id) : app.id == null;
     }
 

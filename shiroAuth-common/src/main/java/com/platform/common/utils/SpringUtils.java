@@ -6,13 +6,11 @@ import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 
 /**
- * 
-* @ClassName: SpringUtils 
-*
+ * @ClassName: SpringUtils
  */
 public final class SpringUtils implements BeanFactoryPostProcessor {
 
-    private static ConfigurableListableBeanFactory beanFactory; // Spring应用上下文环�?
+    private static ConfigurableListableBeanFactory beanFactory; // Spring应用上下文
 
     @Override
     public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
@@ -25,7 +23,6 @@ public final class SpringUtils implements BeanFactoryPostProcessor {
      * @param name
      * @return Object �?个以�?给名字注册的bean的实�?
      * @throws org.springframework.beans.BeansException
-     *
      */
     public static <T> T getBean(String name) throws BeansException {
         return (T) beanFactory.getBean(name);
@@ -36,7 +33,6 @@ public final class SpringUtils implements BeanFactoryPostProcessor {
      *
      * @param clz
      * @throws org.springframework.beans.BeansException
-     *
      */
     public static <T> T getBean(Class<T> clz) throws BeansException {
         return beanFactory.getBean(clz);
@@ -54,11 +50,8 @@ public final class SpringUtils implements BeanFactoryPostProcessor {
 
     /**
      * 判断以给定名字注册的bean定义是一个singleton还是�?个prototype�? 如果与给定名字相应的bean定义没有被找到，将会抛出�?个异常（NoSuchBeanDefinitionException�?
-     *
      * @param name
      * @return boolean
-     * @throws org.springframework.beans.factory.NoSuchBeanDefinitionException
-     *
      */
     public static boolean isSingleton(String name) throws NoSuchBeanDefinitionException {
         return beanFactory.isSingleton(name);
@@ -67,8 +60,6 @@ public final class SpringUtils implements BeanFactoryPostProcessor {
     /**
      * @param name
      * @return Class 注册对象的类
-     * @throws org.springframework.beans.factory.NoSuchBeanDefinitionException
-     *
      */
     public static Class<?> getType(String name) throws NoSuchBeanDefinitionException {
         return beanFactory.getType(name);
@@ -76,10 +67,7 @@ public final class SpringUtils implements BeanFactoryPostProcessor {
 
     /**
      * 如果给定的bean名字在bean定义中有别名，则返回这些别名
-     *
      * @param name
-     * @throws org.springframework.beans.factory.NoSuchBeanDefinitionException
-     *
      */
     public static String[] getAliases(String name) throws NoSuchBeanDefinitionException {
         return beanFactory.getAliases(name);

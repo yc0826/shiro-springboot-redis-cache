@@ -7,19 +7,22 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * 
-* @ClassName: AuthorizationService 
-* @Description: 权限
+ * @ClassName: AuthorizationService
+ * @Description: 权限
  */
 public interface AuthorizationService {
 
 
     Authorization createAuthorization(Authorization authorization);
+
     Authorization updateAuthorization(Authorization authorization);
 
     void deleteAuthorization(Long authorizationId);
+
     Authorization findOne(Long authorizationId);
+
     List<Authorization> findAll();
+
     List<Authorization> findPage(Map<String, Object> p);
 
     /**

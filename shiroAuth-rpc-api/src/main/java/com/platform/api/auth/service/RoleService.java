@@ -23,16 +23,12 @@ public interface RoleService {
     List<Role> findAll();
 
     /**
-     * 根据角色编号得到角色标识符列�?
-     *
-     * @param roleIds
+     * 根据角色编号得到角色标识符列表
      */
     Set<String> findRoles(Long... roleIds);
 
     /**
-     * 根据角色编号得到权限字符串列�?
-     *
-     * @param roleIds
+     * 根据角色编号得到权限字符串
      */
     Set<String> findPermissions(Long[] roleIds);
 

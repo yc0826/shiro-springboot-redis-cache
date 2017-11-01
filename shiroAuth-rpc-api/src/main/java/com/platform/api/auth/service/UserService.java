@@ -14,7 +14,6 @@ public interface UserService {
 
     /**
      * 创建用户
-     *
      * @param user
      */
     User createUser(User user);
@@ -25,7 +24,6 @@ public interface UserService {
 
     /**
      * 修改密码
-     *
      * @param userId
      * @param newPassword
      */

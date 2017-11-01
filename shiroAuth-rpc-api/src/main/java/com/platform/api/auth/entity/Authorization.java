@@ -103,23 +103,23 @@ public class Authorization implements Serializable {
 
     public List<Long> getRoleIdsList() {
         String[] dbroleIds = roleIds.split(",");
-        List<Long> list = new ArrayList<Long>();
+        roleIdsList = new ArrayList<>();
         for (String dbroleId : dbroleIds) {
             if (!dbroleId.equals("")) {
-                list.add(Long.valueOf(dbroleId));
+                roleIdsList.add(Long.valueOf(dbroleId));
             }
         }
-        return list;
+        return roleIdsList;
     }
 
     public void setRoleIdsList(List<Long> roleIdsList) {
         String[] dbroleIds = roleIds.split(",");
-        List<Long> list = new ArrayList<>();
+        roleIdsList = new ArrayList<>();
         for (String dbroleId : dbroleIds) {
             if (!dbroleId.equals("")) {
-                list.add(Long.valueOf(dbroleId));
+                roleIdsList.add(Long.valueOf(dbroleId));
             }
         }
-        this.roleIdsList = list;
+        this.roleIdsList = roleIdsList;
     }
 }
