@@ -2,8 +2,6 @@ package com.platform.web.controller;
 
 import com.platform.api.auth.entity.App;
 import com.platform.api.auth.service.AppService;
-import com.platform.web.utils.Page;
-import com.platform.web.utils.PageUtil;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
