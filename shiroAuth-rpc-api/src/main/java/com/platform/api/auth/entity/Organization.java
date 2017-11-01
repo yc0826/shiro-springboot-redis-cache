@@ -5,10 +5,8 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 /**
- * 
-* @ClassName: Organization 
-* @Description: 组织
-*
+ * @ClassName: Organization
+ * @Description: 组织
  */
 public class Organization implements Serializable {
     private Long id;
@@ -78,7 +76,7 @@ public class Organization implements Serializable {
     private String parentIds;
 
     private String mallId;
-    
+
     private String storeId;
 
     private String orgDesc;
@@ -332,14 +330,14 @@ public class Organization implements Serializable {
     }
 
     public Long getId() {
-		return id;
-	}
+        return id;
+    }
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public String getParentIds() {
+    public String getParentIds() {
         return parentIds;
     }
 
@@ -362,20 +360,13 @@ public class Organization implements Serializable {
     public void setOrgDesc(String orgDesc) {
         this.orgDesc = orgDesc == null ? null : orgDesc.trim();
     }
-	
-	
-	
-	
-	
-	
-	
-	
+
+
     //private Long id; //编号
     //private String name; //组织机构名称
     //private Long parentId; //父编�?
     //private String parentIds; //父编号列表，�?1/2/
     //private Boolean available = Boolean.FALSE;
-
 
 
     public boolean isRootNode() {
@@ -398,11 +389,11 @@ public class Organization implements Serializable {
                 '}';
     }
 
-	public String getStoreId() {
-		return storeId;
-	}
+    public String getStoreId() {
+        return storeId;
+    }
 
-	public void setStoreId(String storeId) {
-		this.storeId = storeId;
-	}
+    public void setStoreId(String storeId) {
+        this.storeId = storeId;
+    }
 }

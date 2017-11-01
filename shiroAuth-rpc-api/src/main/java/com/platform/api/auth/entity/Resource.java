@@ -3,36 +3,29 @@ package com.platform.api.auth.entity;
 import java.io.Serializable;
 
 /**
- * 
-* @ClassName: Resource 
-* @Description: 资源
-* @author yangyw(imalex@163.com)
-* @date 2015年3月20日 下午1:59:17 
-*
+ * @ClassName: Resource
+ * @Description: 资源
  */
 public class Resource implements Serializable {
     private Long id; //编号
     private String name; //资源名称
     private ResourceType type = ResourceType.menu; //资源类型
     private String url; //资源路径
-    private String permission; //权限字符�?
-    private Long parentId; //父编�?
-    private String parentIds; //父编号列�?
+    private String permission; //权限字符串
+    private Long parentId; //父编
+    private String parentIds; //父编号列
     private Boolean available = Boolean.FALSE;
 
     public enum ResourceType {
         menu("菜单"), button("按钮");
-
         private final String info;
         ResourceType(String info) {
             this.info = info;
         }
-
         public String getInfo() {
             return info;
         }
     }
-
 
 
     public Long getId() {
@@ -106,6 +99,7 @@ public class Resource implements Serializable {
     public String makeSelfAsParentIds() {
         return getParentIds() + getId() + "/";
     }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

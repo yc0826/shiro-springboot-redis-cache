@@ -5,21 +5,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 
-* @ClassName: Role 
-* @Description: 角色
-* @author yangyw(imalex@163.com)
-* @date 2015年3月20日 下午1:59:30 
-*
+ * @ClassName: Role
+ * @Description: 角色
  */
 public class Role implements Serializable {
     private Long id; //编号
-    private String role; //角色标识 程序中判断使�?,�?"admin"
+    private String role; //角色标识 程序中判断使"admin"
     private String description; //角色描述,UI界面显示使用
-//    private List<Long> resourceIds; //拥有的资�?
+    //    private List<Long> resourceIds; //拥有的资源
     private List<Long> resourceIdsList;
-    private String resourceIds; //拥有的资�?
-    private Boolean available = Boolean.FALSE; //是否可用,如果不可用将不会添加给用�?
+    private String resourceIds; //拥有的资源
+    private Boolean available = Boolean.FALSE; //是否可用,如果不可用将不会添加给用户
 
     public Role() {
     }
@@ -124,28 +120,28 @@ public class Role implements Serializable {
                 '}';
     }
 
-	public List<Long> getResourceIdsList() {
-		List<Long> list= new ArrayList<>();
-		if(resourceIds!=null){
-			String[] dbroleIds=resourceIds.split(",");   
-	        for(String dbroleId:dbroleIds){
-	        	if(!dbroleId.equals("")){
-	        		list.add(Long.valueOf(dbroleId));
-	        	}
-	        }
+    public List<Long> getResourceIdsList() {
+        List<Long> list = new ArrayList<>();
+        if (resourceIds != null) {
+            String[] dbroleIds = resourceIds.split(",");
+            for (String dbroleId : dbroleIds) {
+                if (!dbroleId.equals("")) {
+                    list.add(Long.valueOf(dbroleId));
+                }
+            }
         }
-		return list;
-	}
+        return list;
+    }
 
-	public void setResourceIdsList(List<Long> resourceIdsList) {
-		String[] dbroleIds=resourceIds.split(",");  
-		List<Long> list=new ArrayList<Long>();
-        for(String dbroleId:dbroleIds){
-        	if(!dbroleId.equals("")){
-        		list.add(Long.valueOf(dbroleId));
-        	}
+    public void setResourceIdsList(List<Long> resourceIdsList) {
+        String[] dbroleIds = resourceIds.split(",");
+        List<Long> list = new ArrayList<Long>();
+        for (String dbroleId : dbroleIds) {
+            if (!dbroleId.equals("")) {
+                list.add(Long.valueOf(dbroleId));
+            }
         }
-		this.resourceIdsList = list;
-	}
+        this.resourceIdsList = list;
+    }
 
 }
