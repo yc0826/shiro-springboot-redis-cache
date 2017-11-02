@@ -16,7 +16,7 @@
             var setting = {
                 check: {
                     enable: true ,
-                    chkboxType: { "Y": "", "N": "" }
+                    chkboxType: { "Y" : "ps", "N" : "ps" }
                 },
                 view: {
                     dblClickExpand: false
