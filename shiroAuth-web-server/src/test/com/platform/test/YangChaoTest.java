@@ -18,7 +18,7 @@ public class YangChaoTest {
 
 
     @Test
-    public void test() {
+    public void 测试() {
         Role role = roleService.findOne(1L);
         roleService.updateRole(role);
     }
