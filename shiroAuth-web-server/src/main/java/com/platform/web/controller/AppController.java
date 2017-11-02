@@ -46,7 +46,7 @@ public class AppController {
         app.setAppSecret(UUID.randomUUID().toString());
         model.addAttribute("app", app);
         model.addAttribute("op", "新增");
-        return "app/edit";
+        return "auth/app/edit";
     }
 
     @RequiresPermissions("app:create")
@@ -62,7 +62,7 @@ public class AppController {
     public String showUpdateForm(@PathVariable("id") Long id, Model model) {
         model.addAttribute("app", appService.findOne(id));
         model.addAttribute("op", "修改");
-        return "app/edit";
+        return "auth/app/edit";
     }
 
     @RequiresPermissions("app:update")
@@ -78,7 +78,7 @@ public class AppController {
     public String showDeleteForm(@PathVariable("id") Long id, Model model) {
         model.addAttribute("app", appService.findOne(id));
         model.addAttribute("op", "删除");
-        return "app/edit";
+        return "auth/app/edit";
     }
 
     @RequiresPermissions("app:delete")
