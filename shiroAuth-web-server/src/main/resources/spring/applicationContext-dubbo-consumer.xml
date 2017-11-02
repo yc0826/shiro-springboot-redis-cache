@@ -20,4 +20,7 @@
     <dubbo:reference interface="com.platform.api.auth.service.AppService" id="appService" />
     <dubbo:reference interface="com.platform.api.auth.service.ResourceService" id="resourceService" />
     <dubbo:reference interface="com.platform.api.auth.service.UserService" id="userService" timeout="10000"/>
+
+
+    <dubbo:reference interface="com.platform.api.business.subsy.service.SubsyBaseService" id="subsyBaseService" timeout="10000"/>
 </beans>
