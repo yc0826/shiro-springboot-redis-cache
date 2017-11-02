@@ -25,7 +25,7 @@
 
 
     <!-- 业务 -->
-    <dubbo:service interface="com.platform.api.business.subsy.service.SubsyBaseService" ref="subsyBaseService" timeout="10000"/>
+    <!--<dubbo:service interface="com.platform.api.business.subsy.service.SubsyBaseService" ref="subsyBaseService" timeout="10000"/>-->
 
 
 </beans>
