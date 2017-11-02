@@ -2,9 +2,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<%@ include file="../../jsp/common/resource.jsp"%>
-<%@ include file="../../jsp/common/tags.jsp"%>
-<jsp:include page="../../jsp/common/autoHeight.jsp" />
+<%@ include file="../../common/resource.jsp"%>
+<%@ include file="../../common/tags.jsp"%>
+<jsp:include page="../../common/autoHeight.jsp" />
 <title>角色管理</title>
 	<shiro:hasPermission name="role:update">
 	 <c:set value="1" var="allow_update" />

@@ -35,7 +35,7 @@ public class AppController {
 		List<App> appList= appService.findPage(map);
         model.addAttribute("appList", appList);
 //        PageUtil.buildGrid(p);
-        return "app/list";
+        return "auth/app/list";
     }
 
     @RequiresPermissions("app:create")

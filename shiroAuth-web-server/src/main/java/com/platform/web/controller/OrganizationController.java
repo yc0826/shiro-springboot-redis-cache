@@ -26,14 +26,14 @@ public class OrganizationController {
     @RequiresPermissions("organization:view")
     @RequestMapping()
     public String index() {
-        return "organization/index";
+        return "auth/organization/index";
     }
 
     @RequiresPermissions("organization:view")
     @RequestMapping(value = "/tree", method = RequestMethod.GET)
     public String showTree(Model model) {
         model.addAttribute("organizationList", organizationService.findAll());
-        return "organization/tree";
+        return "auth/organization/tree";
     }
 
     @RequiresPermissions("organization:create")
@@ -46,7 +46,7 @@ public class OrganizationController {
         child.setParentIds(parent.makeSelfAsParentIds());
         model.addAttribute("child", child);
         model.addAttribute("op", "新增");
-        return "organization/appendChild";
+        return "auth/organization/appendChild";
     }
 
     @RequiresPermissions("organization:create")
@@ -60,7 +60,7 @@ public class OrganizationController {
     @RequestMapping(value = "/{id}/maintain", method = RequestMethod.GET)
     public String showMaintainForm(@PathVariable("id") Long id, Model model) {
         model.addAttribute("organization", organizationService.findOne(id));
-        return "organization/maintain";
+        return "auth/organization/maintain";
     }
 
     @RequiresPermissions("organization:update")
@@ -86,14 +86,12 @@ public class OrganizationController {
         Organization source = organizationService.findOne(sourceId);
         model.addAttribute("source", source);
         model.addAttribute("targetList", organizationService.findAllWithExclude(source));
-        return "organization/move";
+        return "auth/organization/move";
     }
 
     @RequiresPermissions("organization:update")
     @RequestMapping(value = "/{sourceId}/move", method = RequestMethod.POST)
-    public String move(
-            @PathVariable("sourceId") Long sourceId,
-            @RequestParam("targetId") Long targetId) {
+    public String move(@PathVariable("sourceId") Long sourceId,  @RequestParam("targetId") Long targetId) {
         Organization source = organizationService.findOne(sourceId);
         Organization target = organizationService.findOne(targetId);
         organizationService.move(source, target);
@@ -103,7 +101,7 @@ public class OrganizationController {
     @RequiresPermissions("organization:view")
     @RequestMapping(value = "/success", method = RequestMethod.GET)
     public String success() {
-        return "organization/success";
+        return "auth/organization/success";
     }
 
 

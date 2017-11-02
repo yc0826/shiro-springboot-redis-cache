@@ -49,7 +49,7 @@ public class UserController {
         model.addAttribute("pageCount", PageUtil.initPageCount(count));
         model.addAttribute("pageIndex", pageNo);
         model.addAttribute("uri", request.getRequestURI());
-        return "user/list";
+        return "auth/user/list";
     }
 
     @RequiresPermissions("user:create")
@@ -58,7 +58,7 @@ public class UserController {
         setCommonData(model);
         model.addAttribute("user", new User());
         model.addAttribute("op", "新增");
-        return "user/edit";
+        return "auth/user/edit";
     }
 
     @RequiresPermissions("user:create")
@@ -75,7 +75,7 @@ public class UserController {
         setCommonData(model);
         model.addAttribute("user", userService.findOne(id));
         model.addAttribute("op", "修改");
-        return "user/edit";
+        return "auth/user/edit";
     }
 
     @RequiresPermissions("user:update")
@@ -92,7 +92,7 @@ public class UserController {
         setCommonData(model);
         model.addAttribute("user", userService.findOne(id));
         model.addAttribute("op", "删除");
-        return "user/edit";
+        return "auth/user/edit";
     }
 
     @RequiresPermissions("user:delete")
@@ -109,7 +109,7 @@ public class UserController {
     public String showChangePasswordForm(@PathVariable("id") Long id, Model model) {
         model.addAttribute("user", userService.findOne(id));
         model.addAttribute("op", "修改密码");
-        return "user/changePassword";
+        return "auth/user/changePassword";
     }
 
     @RequiresPermissions("user:update")

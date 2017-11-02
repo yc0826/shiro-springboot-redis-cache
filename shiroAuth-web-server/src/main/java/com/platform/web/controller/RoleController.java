@@ -37,7 +37,7 @@ public class RoleController {
         List<Role> roleList = roleService.findPage(map);
         model.addAttribute("roleList", roleList);
 //        PageUtil.buildGrid(p);
-        return "role/list";
+        return "auth/role/list";
     }
 
     @RequiresPermissions("role:create")
@@ -46,7 +46,7 @@ public class RoleController {
         setCommonData(model);
         model.addAttribute("role", new Role());
         model.addAttribute("op", "新增");
-        return "role/edit";
+        return "auth/role/edit";
     }
 
     @RequiresPermissions("role:create")
@@ -63,7 +63,7 @@ public class RoleController {
         setCommonData(model);
         model.addAttribute("role", roleService.findOne(id));
         model.addAttribute("op", "修改");
-        return "role/edit";
+        return "auth/role/edit";
     }
 
     @RequiresPermissions("role:update")
@@ -80,7 +80,7 @@ public class RoleController {
         setCommonData(model);
         model.addAttribute("role", roleService.findOne(id));
         model.addAttribute("op", "删除");
-        return "role/edit";
+        return "auth/role/edit";
     }
 
     @RequiresPermissions("role:delete")

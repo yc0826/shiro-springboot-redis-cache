@@ -2,8 +2,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<%@ include file="../../jsp/common/resource.jsp"%>
-<%@ include file="../../jsp/common/tags.jsp"%>
+<%@ include file="../../common/resource.jsp"%>
+<%@ include file="../../common/tags.jsp"%>
 <title>组织机构管理</title>
 	<link rel="stylesheet" href="${ctx}/static/css/layout-default-latest.css" />
 	<script src="${ctx}/static/js/common/jquery.layout-latest.min.js"></script>

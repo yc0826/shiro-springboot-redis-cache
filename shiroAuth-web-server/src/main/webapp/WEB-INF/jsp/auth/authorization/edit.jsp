@@ -4,8 +4,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <%@ include file="../../jsp/common/resource.jsp" %>
-    <%@ include file="../../jsp/common/tags.jsp" %>
+    <%@ include file="../../common/resource.jsp" %>
+    <%@ include file="../../common/tags.jsp" %>
     <title>编辑授权</title>
 </head>
 <body>

@@ -3,8 +3,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<%@ include file="../../jsp/common/resource.jsp"%>
-<%@ include file="../../jsp/common/tags.jsp"%>
+<%@ include file="../../common/resource.jsp"%>
+<%@ include file="../../common/tags.jsp"%>
 <title>修改密码</title>
 	<link rel="stylesheet" href="${ctx}/static/JQuery zTree v3.5.15/css/zTreeStyle/zTreeStyle.css" />
 	<script src="${ctx}/static/JQuery zTree v3.5.15/js/jquery.ztree.all-3.5.min.js"></script>

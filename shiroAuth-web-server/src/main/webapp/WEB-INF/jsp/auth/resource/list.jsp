@@ -4,9 +4,9 @@
 <html>
 <head>
     <title>菜单管理</title>
-    <%@ include file="../../jsp/common/resource.jsp" %>
-    <%@ include file="../../jsp/common/tags.jsp" %>
-    <jsp:include page="../../jsp/common/autoHeight.jsp"/>
+    <%@ include file="../../common/resource.jsp" %>
+    <%@ include file="../../common/tags.jsp" %>
+    <jsp:include page="../../common/autoHeight.jsp"/>
     <link rel="stylesheet" href="${ctx}/static/jquery-treetable/stylesheets/jquery.treetable.css">
     <link rel="stylesheet" href="${ctx}/static/jquery-treetable/stylesheets/jquery.treetable.theme.default.css">
     <script src="${ctx}/static/jquery-treetable/javascripts/src/jquery.treetable.js"></script>

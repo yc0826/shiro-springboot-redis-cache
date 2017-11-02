@@ -17,32 +17,12 @@ import javax.servlet.http.HttpServletRequest;
 @Controller
 public class LoginController {
 
-    @RequestMapping(value = "/mall/login")
-    public String showMallLoginForm(HttpServletRequest req, Model model) {
-        return doLogin(req, model, "mall/login");
-    }
-
-    @RequestMapping(value = "/medical/login")
-    public String showMedicalLoginForm(HttpServletRequest req, Model model) {
-        return doLogin(req, model, "medical/login");
-    }
 
     @RequestMapping(value = "/login")
     public String showLoginForm(HttpServletRequest req, Model model) {
         return doLogin(req, model, "login");
     }
 
-    @RequestMapping(value = "/mall/logout")
-    public String mallLogout(HttpServletRequest req, Model model) {
-        doLogout();
-        return "mall/login";
-    }
-
-    @RequestMapping(value = "/medical/logout")
-    public String medicalLogout(HttpServletRequest req, Model model) {
-        doLogout();
-        return "medical/login";
-    }
 
     private String doLogin(HttpServletRequest req, Model model, String pageName) {
         String exceptionClassName = (String) req.getAttribute("shiroLoginFailure");

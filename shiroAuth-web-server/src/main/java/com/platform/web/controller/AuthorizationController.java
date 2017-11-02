@@ -54,7 +54,7 @@ public class AuthorizationController {
         model.addAttribute("pageCount", PageUtil.initPageCount(count));
         model.addAttribute("pageIndex", pageNo);
         model.addAttribute("uri", request.getRequestURI());
-        return "authorization/list";
+        return "auth/authorization/list";
     }
 
     @RequiresPermissions("authorization:create")

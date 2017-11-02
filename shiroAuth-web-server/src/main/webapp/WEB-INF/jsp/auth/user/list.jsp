@@ -2,9 +2,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<%@ include file="../../jsp/common/resource.jsp"%>
-<%@ include file="../../jsp/common/tags.jsp"%>
-<jsp:include page="../../jsp/common/autoHeight.jsp" />
+<%@ include file="../../common/resource.jsp"%>
+<%@ include file="../../common/tags.jsp"%>
+<jsp:include page="../../common/autoHeight.jsp" />
 <title>用户管理</title>
 	<shiro:hasPermission name="user:update">
 	 <c:set value="1" var="allow_update" />
@@ -44,7 +44,7 @@
 			    </div>
 			    <br/><br/>
             <span class="page_center">
-				<jsp:include page="../pageTag.jsp" />
+				<jsp:include page="../../pageTag.jsp" />
             </span>
              <!-- 表格结束-->
         </div> 

@@ -32,7 +32,7 @@ public class ResourceController {
     @RequestMapping()
     public String list(Model model) {
         model.addAttribute("resourceList", resourceService.findAll());
-        return "resource/list";
+        return "auth/resource/list";
     }
 
     @RequiresPermissions("resource:create")
@@ -45,7 +45,7 @@ public class ResourceController {
         child.setParentIds(parent.makeSelfAsParentIds());
         model.addAttribute("resource", child);
         model.addAttribute("op", "新增子节点");
-        return "resource/edit";
+        return "auth/resource/edit";
     }
 
     @RequiresPermissions("resource:create")
@@ -61,7 +61,7 @@ public class ResourceController {
     public String showUpdateForm(@PathVariable("id") Long id, Model model) {
         model.addAttribute("resource", resourceService.findOne(id));
         model.addAttribute("op", "修改");
-        return "resource/edit";
+        return "auth/resource/edit";
     }
 
     @RequiresPermissions("resource:update")
@@ -77,7 +77,7 @@ public class ResourceController {
     public String delete(@PathVariable("id") Long id, RedirectAttributes redirectAttributes) {
         resourceService.deleteResource(id);
         redirectAttributes.addFlashAttribute("msg", "删除成功");
-        return "redirect:/resource";
+        return "redirect:/auth/resource";
     }
 
 
