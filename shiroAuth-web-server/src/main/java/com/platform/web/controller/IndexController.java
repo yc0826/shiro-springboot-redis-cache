@@ -44,8 +44,8 @@ public class IndexController {
         model.addAttribute("menus", menus);
 
         Organization org = organizationService.findOne(loginUser.getOrganizationId());
-        //判断商户号非空，直接返回主界面?
-        if (org.getStoreId() != null && !org.getStoreId().equals("")) {
+        //判断商户号非空，直接返回主界面
+        if (org != null) {
             return "index";
         }
         Subject subject = SecurityUtils.getSubject();
