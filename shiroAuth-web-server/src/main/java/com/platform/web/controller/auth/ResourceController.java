@@ -1,4 +1,4 @@
-package com.platform.web.controller;
+package com.platform.web.controller.auth;
 
 import com.platform.api.auth.service.ResourceService;
 import com.platform.api.auth.entity.Resource;

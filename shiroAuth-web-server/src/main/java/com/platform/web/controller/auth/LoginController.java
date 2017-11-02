@@ -1,4 +1,4 @@
-package com.platform.web.controller;
+package com.platform.web.controller.auth;
 
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.IncorrectCredentialsException;

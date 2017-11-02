@@ -9,7 +9,7 @@
 
     <dubbo:application name="auth-provider"/>
 
-    <dubbo:registry address="zookeeper://zkserver:2181" check="false"/>
+    <dubbo:registry address="zookeeper://127.0.0.1:2181"/>
 
     <dubbo:protocol name="dubbo" port="20881"/>
 
@@ -22,6 +22,10 @@
     <dubbo:service interface="com.platform.api.auth.service.AppService" ref="appService" timeout="10000"/>
     <dubbo:service interface="com.platform.api.auth.service.ResourceService" ref="resourceService" timeout="10000"/>
     <dubbo:service interface="com.platform.api.auth.service.UserService" ref="userService" timeout="10000"/>
+
+
+    <!-- 业务 -->
+    <dubbo:service interface="com.platform.api.business.subsy.service.SubsyBaseService" ref="userService" timeout="10000"/>
 
 
 </beans>
