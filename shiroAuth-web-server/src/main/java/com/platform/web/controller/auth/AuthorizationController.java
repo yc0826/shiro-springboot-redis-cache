@@ -64,7 +64,7 @@ public class AuthorizationController {
         Authorization authorization = new Authorization();
         model.addAttribute("authorization", authorization);
         model.addAttribute("op", "新增");
-        return "authorization/edit";
+        return "auth/authorization/edit";
     }
 
     @RequiresPermissions("authorization:create")
@@ -81,7 +81,7 @@ public class AuthorizationController {
         setCommonData(model);
         model.addAttribute("authorization", authorizationService.findOne(id));
         model.addAttribute("op", "修改");
-        return "authorization/edit";
+        return "auth/authorization/edit";
     }
 
     @RequiresPermissions("authorization:update")
@@ -98,7 +98,7 @@ public class AuthorizationController {
         setCommonData(model);
         model.addAttribute("authorization", authorizationService.findOne(id));
         model.addAttribute("op", "删除");
-        return "authorization/edit";
+        return "auth/authorization/edit";
     }
 
     @RequiresPermissions("authorization:delete")
