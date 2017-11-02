@@ -43,10 +43,12 @@
                     <li class="add_store_li">
                         <span class="add_store_span">角色：</span>
                         <div>
+                            <c:set var="roleIds" value="'${authorization.roleIds}'"/>
                             <select id="roleIds" name="roleIds" multiple="multiple" size="10" style="height: auto;width: 150px;">
                                 <c:forEach items="${roleList}" var="role">
+                                    <c:set var="roleId" value="'${role.id}'"/>
                                     <option value="${role.id}"
-                                            <c:if test="${fn:contains(authorization.roleIds, role.id)}">selected="selected"</c:if>>${role.description}</option>
+                                            <c:if test="${fn:contains(roleIds, roleId)}">selected="selected"</c:if>>${role.description}</option>
                                 </c:forEach>
                             </select>
                             (按住shift键多选)
