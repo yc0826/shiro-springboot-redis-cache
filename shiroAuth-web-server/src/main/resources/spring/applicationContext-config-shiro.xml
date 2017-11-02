@@ -5,27 +5,12 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
 
-
-    <!-- shiro redisManager -->
-    <bean id="redisManager" class="org.crazycake.shiro.RedisManager">
-        <property name="host" value="127.0.0.1"/>
-        <property name="port" value="6379"/>
-        <property name="expire" value="1800"/>
-        <!-- optional properties:
-        <property name="timeout" value="10000"/>
-        <property name="password" value="123456"/>
-        -->
+    <!-- 缓存管理器 -->
+    <bean id="cacheManager" class="org.apache.shiro.cache.ehcache.EhCacheManager">
+        <property name="cacheManagerConfigFile" value="classpath:ehcache/ehcache-shiro.xml"/>
     </bean>
 
-    <!-- redisSessionDAO -->
-    <bean id="redisSessionDAO" class="org.crazycake.shiro.RedisSessionDAO">
-        <property name="redisManager" ref="redisManager"/>
-    </bean>
 
-    <!-- cacheManager -->
-    <bean id="cacheManager" class="org.crazycake.shiro.RedisCacheManager">
-        <property name="redisManager" ref="redisManager"/>
-    </bean>
 
     <!-- 凭证匹配器 -->
     <bean id="credentialsMatcher" class="com.platform.shiro.credentials.RetryLimitHashedCredentialsMatcher">
@@ -85,7 +70,7 @@
         <property name="deleteInvalidSessions" value="true"/>
         <property name="sessionValidationSchedulerEnabled" value="true"/>
         <property name="sessionValidationScheduler" ref="sessionValidationScheduler"/>
-        <property name="sessionDAO" ref="redisSessionDAO"/>
+        <property name="sessionDAO" ref="customShiroSessionDao"/>
         <property name="sessionIdCookieEnabled" value="true"/>
         <property name="sessionIdCookie" ref="sessionIdCookie"/>
     </bean>
