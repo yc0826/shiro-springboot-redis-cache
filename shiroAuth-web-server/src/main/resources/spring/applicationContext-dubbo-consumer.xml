@@ -9,7 +9,7 @@
 
     <dubbo:application name="auth-server"/>
 
-    <dubbo:registry  address="zookeeper://10.101.100.165:2181"/>
+    <dubbo:registry  address="zookeeper://127.0.0.1:2181"/>
 
     <!-- 订阅服务 -->
     <dubbo:consumer check="false"/>

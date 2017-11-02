@@ -5,9 +5,26 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
 
-    <!-- 缓存管理器 -->
-    <bean id="cacheManager" class="org.apache.shiro.cache.ehcache.EhCacheManager">
-        <property name="cacheManagerConfigFile" value="classpath:ehcache/ehcache-shiro.xml"/>
+
+    <!-- shiro redisManager -->
+    <bean id="redisManager" class="org.crazycake.shiro.RedisManager">
+        <property name="host" value="127.0.0.1"/>
+        <property name="port" value="6379"/>
+        <property name="expire" value="1800"/>
+        <!-- optional properties:
+        <property name="timeout" value="10000"/>
+        <property name="password" value="123456"/>
+        -->
+    </bean>
+
+    <!-- redisSessionDAO -->
+    <bean id="redisSessionDAO" class="org.crazycake.shiro.RedisSessionDAO">
+        <property name="redisManager" ref="redisManager"/>
+    </bean>
+
+    <!-- cacheManager -->
+    <bean id="cacheManager" class="org.crazycake.shiro.RedisCacheManager">
+        <property name="redisManager" ref="redisManager"/>
     </bean>
 
     <!-- 凭证匹配器 -->
@@ -51,19 +68,16 @@
                   value="#{T(org.apache.shiro.codec.Base64).decode('4AvVhmFLUs0KTA3Kprsdag==')}"/>
         <property name="cookie" ref="rememberMeCookie"/>
     </bean>
-    
-    <bean id="redisShiroSessionDao"  class="com.platform.shiro.dao.RedisShiroSessionDao">
-		<property name="cached" ref="redisDao" />
-	</bean>
-	    <!--
-	定时清理僵尸session，Shiro会启用一个后台守护线程定时执行清理操作
-	用户直接关闭浏览器造成的孤立会话 1800000 milliseconds = 30 mins
-	-->
-	<bean id="sessionValidationScheduler"
-	      class="org.apache.shiro.session.mgt.ExecutorServiceSessionValidationScheduler">
-	    <property name="interval" value="1800000"/>
-	    <property name="sessionManager" ref="sessionManager"/>
-	</bean>
+
+    <!--
+        定时清理僵尸session，Shiro会启用一个后台守护线程定时执行清理操作
+        用户直接关闭浏览器造成的孤立会话 1800000 milliseconds = 30 mins
+    -->
+    <bean id="sessionValidationScheduler"
+          class="org.apache.shiro.session.mgt.ExecutorServiceSessionValidationScheduler">
+        <property name="interval" value="1800000"/>
+        <property name="sessionManager" ref="sessionManager"/>
+    </bean>
 
     <!-- 会话管理器 -->
     <bean id="sessionManager" class="org.apache.shiro.web.session.mgt.DefaultWebSessionManager">
@@ -71,7 +85,7 @@
         <property name="deleteInvalidSessions" value="true"/>
         <property name="sessionValidationSchedulerEnabled" value="true"/>
         <property name="sessionValidationScheduler" ref="sessionValidationScheduler"/>
-        <property name="sessionDAO" ref="redisShiroSessionDao"/>
+        <property name="sessionDAO" ref="redisSessionDAO"/>
         <property name="sessionIdCookieEnabled" value="true"/>
         <property name="sessionIdCookie" ref="sessionIdCookie"/>
     </bean>
@@ -109,7 +123,7 @@
             </util:map>
         </property>
         <property name="filterChainDefinitions">
-            <value>                
+            <value>
                 /favicon.ico = anon
                 /remoteService = anon
                 /mall/login = anon
@@ -118,7 +132,7 @@
                 /login = authc
                 /logout = logout
                 /authenticated = authc
-                /** = user,sysUser                
+                /** = user,sysUser
             </value>
         </property>
     </bean>
