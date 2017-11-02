@@ -1,6 +1,5 @@
-<%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<%@taglib prefix="shbfn" uri="http://www.saohuobang.com/platform/tags/shb-functions" %>
 <!DOCTYPE html>
 <html>
 <head>
