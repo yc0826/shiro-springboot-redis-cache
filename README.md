@@ -5,10 +5,12 @@
 
 
 项目启动
+zookeeper官网下载地址 http://www-us.apache.org/dist/zookeeper/
+redis官网下载地址此版本为微软官方给redis做的windows版本实现 https://github.com/MicrosoftArchive/redis/releases
 
-1.运行项目中自带sql
+1.在mysql创建auth数据库并在库里执行项目中自带auth.sql
 
-2.启动redis,zookeeper 
+2.启动redis,zookeeper 修改项目配置文件jdbc.properties redis.properties
 
 3.选择根目录 mvn clean install -Dmaven.test.skip=true
 
@@ -16,5 +18,5 @@
 
 5.然后选择tomcat启动 shiroAuth-web-server项目
 
-目前功能基本可用,列表页分页功能还有点问题，在持续完善中。
+目前功能基本可用,在持续完善中。
 有问题加qq群 465400638咨询
