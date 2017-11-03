@@ -30,12 +30,12 @@ public class RoleServiceImpl implements RoleService {
     public Role updateRole(Role role) {
         roleDao.deleteRoleResource(role.getId());
         if (!CollectionUtils.isEmpty(role.getResourceIdsList())) {
-            role.getResourceIdsList().forEach(resourceId -> {
+            for (Long resourceId : role.getResourceIdsList()) {
                 Map<String, Object> paramMap = new HashMap<>();
                 paramMap.put("roleId", role.getId());
                 paramMap.put("resourceId", resourceId);
                 roleDao.insertRoleResource(paramMap);
-            });
+            }
         }
 
         roleDao.updateByPrimaryKeySelective(role);
