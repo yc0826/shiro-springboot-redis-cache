@@ -18,7 +18,6 @@
     <dubbo:service interface="com.platform.api.auth.service.RoleService" ref="roleService" timeout="10000"/>
     <dubbo:service interface="com.platform.api.auth.service.AuthorizationService" ref="authorizationService"/>
     <dubbo:service interface="com.platform.api.auth.service.OrganizationService" ref="organizationService" timeout="10000"/>
-    <dubbo:service interface="com.platform.api.auth.service.RedisService" ref="redisService" timeout="10000"/>
     <dubbo:service interface="com.platform.api.auth.service.AppService" ref="appService" timeout="10000"/>
     <dubbo:service interface="com.platform.api.auth.service.ResourceService" ref="resourceService" timeout="10000"/>
     <dubbo:service interface="com.platform.api.auth.service.UserService" ref="userService" timeout="10000"/>

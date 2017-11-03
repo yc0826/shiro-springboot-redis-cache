@@ -1,7 +1,7 @@
 package com.platform.test;
 
 import com.platform.api.auth.entity.User;
-import com.platform.api.auth.service.RedisService;
+import com.platform.api.auth.service.ShiroSessionService;
 import com.platform.api.auth.service.UserService;
 import com.platform.dao.auth.IRoleDao;
 import org.junit.Test;
@@ -9,9 +9,6 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @RunWith(SpringJUnit4ClassRunner.class)  //使用junit4进行测试
 @ContextConfiguration({"classpath:META-INF/spring/*.xml"})
@@ -21,7 +18,7 @@ public class YangChaoTest {
     private UserService userService;
 
     @Autowired
-    private RedisService redisCached;
+    private ShiroSessionService redisCached;
 
     @Autowired
     private IRoleDao roleDao;
