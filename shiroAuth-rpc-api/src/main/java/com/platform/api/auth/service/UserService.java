@@ -31,7 +31,6 @@ public interface UserService {
      */
     void changePassword(Long userId, String newPassword);
 
-
     User findOne(Long userId);
 
     List<User> findAll();
