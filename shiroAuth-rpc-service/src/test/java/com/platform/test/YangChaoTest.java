@@ -1,10 +1,7 @@
 package com.platform.test;
 
 import com.platform.api.auth.entity.User;
-import com.platform.api.auth.service.ShiroSessionService;
 import com.platform.api.auth.service.UserService;
-import com.platform.dao.auth.IRoleDao;
-import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
@@ -17,11 +14,6 @@ public class YangChaoTest {
     @Autowired
     private UserService userService;
 
-    @Autowired
-    private ShiroSessionService redisCached;
-
-    @Autowired
-    private IRoleDao roleDao;
 
 //    @Test
     public void test() {
@@ -32,8 +24,4 @@ public class YangChaoTest {
         userService.createUser(user);
     }
 
-    @Test
-    public void redisTest() throws Exception {
-        roleDao.findResourceIdsByRoleIds(new Long[]{1L});
-    }
 }
