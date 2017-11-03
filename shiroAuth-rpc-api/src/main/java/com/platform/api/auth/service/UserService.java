@@ -14,8 +14,6 @@ public interface UserService {
 
     /**
      * 创建用户
-     *
-     * @param user
      */
     User createUser(User user);
 
@@ -25,9 +23,6 @@ public interface UserService {
 
     /**
      * 修改密码
-     *
-     * @param userId
-     * @param newPassword
      */
     void changePassword(Long userId, String newPassword);
 
@@ -41,8 +36,6 @@ public interface UserService {
 
     /**
      * 根据用户名查找用
-     *
-     * @param username
      */
     User findByUsername(String username);
 
