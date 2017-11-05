@@ -13,7 +13,6 @@ public class Authorization implements Serializable {
     private Long userId;
     private Long appId;
     private String roleIds;
-    private List<Long> roleIdsList;
 
     public Long getId() {
         return id;
@@ -101,25 +100,4 @@ public class Authorization implements Serializable {
                 '}';
     }
 
-    public List<Long> getRoleIdsList() {
-        String[] dbroleIds = roleIds.split(",");
-        roleIdsList = new ArrayList<>();
-        for (String dbroleId : dbroleIds) {
-            if (!dbroleId.equals("")) {
-                roleIdsList.add(Long.valueOf(dbroleId));
-            }
-        }
-        return roleIdsList;
-    }
-
-    public void setRoleIdsList(List<Long> roleIdsList) {
-        String[] dbroleIds = roleIds.split(",");
-        roleIdsList = new ArrayList<>();
-        for (String dbroleId : dbroleIds) {
-            if (!dbroleId.equals("")) {
-                roleIdsList.add(Long.valueOf(dbroleId));
-            }
-        }
-        this.roleIdsList = roleIdsList;
-    }
 }
