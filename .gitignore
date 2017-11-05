@@ -36,3 +36,16 @@ shiroAuth-web-server/target/shiroAuth/WEB-INF/static/
 shiroAuth-web-server/target/shiroAuth/WEB-INF/tld/
 shiroAuth-web-server/target/shiroAuth/WEB-INF/web.xml
 shiroAuth.iml
+.project
+.settings/
+shiroAuth-common/target/classes/
+shiroAuth-common/target/shiroAuth.jar
+shiroAuth-rpc-api/target/classes/
+shiroAuth-rpc-api/target/shiroAuth.jar
+shiroAuth-rpc-service/target/auth-rpc-service.jar
+shiroAuth-rpc-service/target/classes/com/
+shiroAuth-rpc-service/target/lib/
+shiroAuth-web-server/target/classes/com/
+shiroAuth-web-server/target/shiroAuth.war
+shiroAuth-web-server/target/shiroAuth/WEB-INF/classes/com/
+shiroAuth-web-server/target/shiroAuth/WEB-INF/lib/
