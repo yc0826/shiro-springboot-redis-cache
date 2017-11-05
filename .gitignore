@@ -49,3 +49,5 @@ shiroAuth-web-server/target/classes/com/
 shiroAuth-web-server/target/shiroAuth.war
 shiroAuth-web-server/target/shiroAuth/WEB-INF/classes/com/
 shiroAuth-web-server/target/shiroAuth/WEB-INF/lib/
+/bin/
+.classpath
