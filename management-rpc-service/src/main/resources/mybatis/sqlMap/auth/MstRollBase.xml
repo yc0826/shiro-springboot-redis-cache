@@ -376,8 +376,7 @@
 		FROM
 			mst_roll_base
 		where del_flg = 0
-		ORDER BY
-			mst_roll_base_id
+		ORDER BY field(roll_code, 'admin') DESC
 		limit #{start}, #{size}
 	</select>
 
