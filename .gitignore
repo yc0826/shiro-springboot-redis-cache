@@ -1,53 +1,35 @@
+# Created by .ignore support plugin (hsz.mobi)
+# Compiled class file
+*.class
 
-.idea/
-shiroAuth-common/shiroAuth-common.iml
-shiroAuth-common/target/generated-sources/
-shiroAuth-common/target/maven-archiver/
-shiroAuth-common/target/maven-status/
-shiroAuth-rpc-api/shiroAuth-rpc-api.iml
-shiroAuth-rpc-api/target/generated-sources/
-shiroAuth-rpc-api/target/maven-archiver/
-shiroAuth-rpc-api/target/maven-status/
-shiroAuth-rpc-service/shiroAuth-rpc-service.iml
-shiroAuth-rpc-service/src/main/java/com/platform/web/
-shiroAuth-rpc-service/target/classes/META-INF/
-shiroAuth-rpc-service/target/classes/dubbo.properties
-shiroAuth-rpc-service/target/classes/jdbc.properties
-shiroAuth-rpc-service/target/classes/log4j.properties
-shiroAuth-rpc-service/target/classes/mybatis/
-shiroAuth-rpc-service/target/classes/redis.properties
-shiroAuth-rpc-service/target/generated-sources/
-shiroAuth-rpc-service/target/generated-test-sources/
-shiroAuth-rpc-service/target/maven-archiver/
-shiroAuth-rpc-service/target/maven-status/
-shiroAuth-web-server/shiroAuth-web-server.iml
-shiroAuth-web-server/target/classes/ehcache/
-shiroAuth-web-server/target/classes/redis.properties
-shiroAuth-web-server/target/classes/spring/
-shiroAuth-web-server/target/generated-sources/
-shiroAuth-web-server/target/maven-archiver/
-shiroAuth-web-server/target/maven-status/
-shiroAuth-web-server/target/shiroAuth/META-INF/
-shiroAuth-web-server/target/shiroAuth/WEB-INF/classes/ehcache/
-shiroAuth-web-server/target/shiroAuth/WEB-INF/classes/redis.properties
-shiroAuth-web-server/target/shiroAuth/WEB-INF/classes/spring/
-shiroAuth-web-server/target/shiroAuth/WEB-INF/jsp/
-shiroAuth-web-server/target/shiroAuth/WEB-INF/static/
-shiroAuth-web-server/target/shiroAuth/WEB-INF/tld/
-shiroAuth-web-server/target/shiroAuth/WEB-INF/web.xml
-shiroAuth.iml
-.project
-.settings/
-shiroAuth-common/target/classes/
-shiroAuth-common/target/shiroAuth.jar
-shiroAuth-rpc-api/target/classes/
-shiroAuth-rpc-api/target/shiroAuth.jar
-shiroAuth-rpc-service/target/auth-rpc-service.jar
-shiroAuth-rpc-service/target/classes/com/
-shiroAuth-rpc-service/target/lib/
-shiroAuth-web-server/target/classes/com/
-shiroAuth-web-server/target/shiroAuth.war
-shiroAuth-web-server/target/shiroAuth/WEB-INF/classes/com/
-shiroAuth-web-server/target/shiroAuth/WEB-INF/lib/
-/bin/
-.classpath
+# Log file
+*.log
+
+# BlueJ files
+*.ctxt
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+# IntelliJ project files
+.idea
+*.iml
+out
+gen
+/management-rpc-service/dubbo-registry/
+**/logs/
+/management-common/target/
+/management-web-server/target/
+/management-rpc-service/target/
+/management-rpc-api/target/

@@ -1,0 +1,65 @@
+.dataTables_info{
+    float:right;
+    margin-top:10px;
+    margin-left:10px;
+    font-size: 12px;
+    height:27px;
+    line-height: 27px;
+}
+.paging_full_numbers{
+    float:right;
+    margin-top:10px;
+    /*clear:left*/
+}
+
+.paging_full_numbers  a{
+    cursor:pointer;
+    display:block;
+    float:left;
+    padding:1px 2px 1px 2px;
+    margin:1px 4px 1px 4px;
+    font-size: 12px;
+    color: #666666;
+    height:27px;
+    min-width:27px;
+    line-height: 27px;
+    text-align: center
+}
+.paging_full_numbers  li{
+    cursor:pointer;
+    display:block;
+    float:left;
+    padding:1px 2px 1px 2px;
+    margin:1px 4px 1px 4px;
+    font-size: 12px;
+    color: #666666;
+    height:27px;
+    min-width:27px;
+    line-height: 27px;
+    text-align: center
+}
+.paging_full_numbers  .paginate_active{
+    color: #ffffff !important;
+    background: #79b6f0;
+    border-radius: 5px;
+}
+/*.dataTable th{*/
+    /*background: #f0f6fd !important;*/
+    /*color: #2f6bbc !important;*/
+/*}*/
+
+.dataTables_scrollHead table{
+    margin-bottom:0;
+    border-bottom: none;
+}
+
+.dataTables_scrollHead table thead tr th{
+    border-bottom: none;
+}
+.dataTables_info{
+    font-size: 12px;
+    padding-top:2px;
+}
+.dataTables_scroll{
+    /*min-height: 520px;*/
+}

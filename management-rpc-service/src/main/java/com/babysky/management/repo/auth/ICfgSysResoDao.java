@@ -1,0 +1,66 @@
+package com.babysky.management.repo.auth;
+
+import com.babysky.management.api.auth.entity.CfgSysResoEntity;
+import com.babysky.management.common.annotation.MyBatisRepository;
+
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+@MyBatisRepository
+public interface ICfgSysResoDao {
+
+
+    int updateById(CfgSysResoEntity cfgSysResoEntity);
+
+    void insert(CfgSysResoEntity cfgSysResoEntity);
+
+    CfgSysResoEntity queryById(String id);
+
+    CfgSysResoEntity queryByCondition(Map map);
+
+    List<CfgSysResoEntity> queryList(CfgSysResoEntity cfgSysResoEntity);
+
+    List<CfgSysResoEntity> queryList(Map map);
+
+    List<CfgSysResoEntity> queryAll();
+
+    int queryCount(CfgSysResoEntity cfgSysResoEntity);
+
+    int deleteById(String id);
+
+    int deleteLogicById(String id);
+
+    int updateByCondition(CfgSysResoEntity cfgSysResoEntity);
+
+    CfgSysResoEntity findByCode(String resoCode);
+
+
+
+
+    //-- user-defined start --
+
+    List<CfgSysResoEntity> findAll();
+
+    Set<CfgSysResoEntity> findResoSetByRollCode(String rollCode);
+
+    void deleteLogicByResCode(String parentResoCodeArray);
+
+    void deleteOperLogicByResCode(String parentResoCodeArray);
+
+    List<CfgSysResoEntity> findByParentCode(String resoCode);
+
+    Set<String> findfindPermissionsByResoCodes(List<String> resoCodes);
+
+    String getWebResoMaxCode();
+
+
+    List<CfgSysResoEntity> findByPermissions(List<String> permissions);
+
+    List<CfgSysResoEntity> findMenusByParentCode(Map<String, Object> paramMap);
+
+    String findParentCodeByChildUrl(String url);
+
+
+    //-- user-defined end --
+}

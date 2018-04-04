@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <title>HTTP 500 错误</title>
+    <link rel="stylesheet" type="text/css" href="ErrorPageStyles.css">
+    <script src="ms-appx-web:///Assets/ErrorPages/ErrorPageScripts.js" language="javascript" type="text/javascript"></script>
+</head>
+
+<body onload="goToLocalizedErrorPage()">
+    <div id="Wrapper">
+        <div id="HTTP500">
+            <table>
+                <tr>
+                    <td>
+                        <span id="icon">&#xE946;</span>
+                    </td>
+                    <td>
+                        <h1 id="http500_header1">HTTP 500 错误</h1>
+                        <h1 id="http500_header2">这很奇怪... 该网站无法显示此页</h1>
+                        <p id="http500_body1">该站点可能在进行维护，或者可能有编程错误。</p>
+                        <p id="http500_body2">尝试此操作</p>
+                        <ul>
+                            <li><a href="#" onclick="window.history.back(); return false;"><id id="http500_goback">返回到前一页</id></a></li>
+                            <li><id id="http500_body3">尝试联系网站所有者</id></li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html> 
