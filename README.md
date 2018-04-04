@@ -12,3 +12,6 @@
 
 
 4.启动web服务 修改management-web-server下的配置文件 zk地址 web上下文 redis地址和密码等 management-web-server\src\main\java\com\babysky\management\Bootstrap.java 里的main方法
+
+
+5.登陆帐号admin 密码123456
