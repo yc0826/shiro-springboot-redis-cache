@@ -6,8 +6,12 @@ import org.springframework.context.annotation.Configuration;
 import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
 
+/**
+ * @author YangChao
+ */
 @Configuration
 public class JedisConfig  {
+
     @Value("${spring.redis.host}")
     private String host;
 
