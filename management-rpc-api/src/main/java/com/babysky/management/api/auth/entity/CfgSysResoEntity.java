@@ -6,7 +6,8 @@ import java.util.List;
 
 
 /**
- * db_table: cfg_sys_reso 
+ * db_table: cfg_sys_reso
+ * @author YangChao
  */
 public class CfgSysResoEntity extends BaseEntity {
 	

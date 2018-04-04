@@ -4,10 +4,12 @@ package com.babysky.management.api.auth.entity;
 import com.babysky.management.common.entity.BaseEntity;
 
 /**
- * db_table: mst_inter_user_subsy 
+ * db_table: mst_inter_user_subsy
+ * @author YangChao
  */
 public class MstInterUserSubsyEntity extends BaseEntity {
-	
+	private static final long serialVersionUID = -6619435780529786253L;
+
 	//columns START
 	/** 
 	 * 业务基础内部用户会所id		db_column: mst_inter_user_subsy_id */

@@ -9,8 +9,10 @@ import java.util.Set;
 
 /**
  * db_table: mst_roll_base
+ * @author YangChao
  */
 public class MstRollBaseEntity extends BaseEntity {
+    private static final long serialVersionUID = -3470424544106972195L;
 
     //columns START
     /**

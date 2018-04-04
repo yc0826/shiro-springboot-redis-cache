@@ -4,7 +4,8 @@ package com.babysky.management.api.auth.entity;
 import com.babysky.management.common.entity.BaseEntity;
 
 /**
- * db_table: mst_inter_user_dtl 
+ * db_table: mst_inter_user_dtl
+ * @author YangChao
  */
 public class MstInterUserDtlEntity extends BaseEntity {
 	private static final long serialVersionUID = 5237260549339057627L;

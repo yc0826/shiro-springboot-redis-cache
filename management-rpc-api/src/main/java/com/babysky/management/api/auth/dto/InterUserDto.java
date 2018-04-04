@@ -3,6 +3,9 @@ package com.babysky.management.api.auth.dto;
 import java.io.Serializable;
 import java.util.Date;
 
+/**
+ * @author YangChao
+ */
 public class InterUserDto implements Serializable{
     private static final long serialVersionUID = 4639745074958054960L;
 

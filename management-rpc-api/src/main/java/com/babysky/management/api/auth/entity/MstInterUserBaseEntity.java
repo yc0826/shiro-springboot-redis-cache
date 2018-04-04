@@ -4,7 +4,8 @@ import com.babysky.management.common.entity.BaseEntity;
 
 
 /**
- * db_table: mst_inter_user_base 
+ * db_table: mst_inter_user_base
+ * @author YangChao
  */
 public class MstInterUserBaseEntity extends BaseEntity {
 	private static final long serialVersionUID = -1567417215149506522L;
