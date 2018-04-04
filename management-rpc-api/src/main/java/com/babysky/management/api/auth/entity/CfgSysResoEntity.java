@@ -10,7 +10,8 @@ import java.util.List;
  * @author YangChao
  */
 public class CfgSysResoEntity extends BaseEntity {
-	
+	private static final long serialVersionUID = 1277159171914781743L;
+
 	//columns START
 	/** 
 	 * 系统基础系统资源id		db_column: cfg_sys_reso_id */

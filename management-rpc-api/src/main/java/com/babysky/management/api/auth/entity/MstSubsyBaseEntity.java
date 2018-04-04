@@ -498,49 +498,50 @@ public class MstSubsyBaseEntity extends BaseEntity {
 		this.subsyActivStartTimeDisplay = subsyActivStartTimeDisplay;
 	}
 
+	@Override
 	public String toString() {
-		return new StringBuilder("MstSubsyBaseEntity [")
-			.append("MstSubsyBaseId=").append(getMstSubsyBaseId()).append(", ")
-					.append("SubsyCode=").append(getSubsyCode()).append(", ")
-					.append("SubsyName=").append(getSubsyName()).append(", ")
-					.append("SubsyDispName=").append(getSubsyDispName()).append(", ")
-					.append("LoctProvCode=").append(getLoctProvCode()).append(", ")
-					.append("LoctCityCode=").append(getLoctCityCode()).append(", ")
-					.append("LoctAreaCode=").append(getLoctAreaCode()).append(", ")
-					.append("SubsyAddr=").append(getSubsyAddr()).append(", ")
-					.append("LoctLon=").append(getLoctLon()).append(", ")
-					.append("LoctLat=").append(getLoctLat()).append(", ")
-					.append("PhoneNum=").append(getPhoneNum()).append(", ")
-					.append("MobNum=").append(getMobNum()).append(", ")
-					.append("PostNo=").append(getPostNo()).append(", ")
-					.append("SubsyDesc=").append(getSubsyDesc()).append(", ")
-					.append("BusiTimeDesc=").append(getBusiTimeDesc()).append(", ")
-					.append("BrandCode=").append(getBrandCode()).append(", ")
-					.append("SubsyBrandType=").append(getSubsyBrandType()).append(", ")
-					.append("BanrUrl=").append(getBanrUrl()).append(", ")
-					.append("AuditStatusCode=").append(getAuditStatusCode()).append(", ")
-					.append("ProdAuditStatusCode=").append(getProdAuditStatusCode()).append(", ")
-					.append("CloseAuditStatusCode=").append(getCloseAuditStatusCode()).append(", ")
-					.append("CloseAuditApprover=").append(getCloseAuditApprover()).append(", ")
-					.append("IsAllowSubsyAdminLogin=").append(getIsAllowSubsyAdminLogin()).append(", ")
-					.append("Price=").append(getPrice()).append(", ")
-					.append("PopulVal=").append(getPopulVal()).append(", ")
-					.append("ServScore=").append(getServScore()).append(", ")
-					.append("CrtTime=").append(getCrtTime()).append(", ")
-					.append("CrtUserCode=").append(getCrtUserCode()).append(", ")
-					.append("UpdTime=").append(getUpdTime()).append(", ")
-					.append("UpdUserCode=").append(getUpdUserCode()).append(", ")
-					.append("DelFlg=").append(getDelFlg()).append(", ")
-					.append("VerNum=").append(getVerNum()).append(", ")
-					.append("HomeDispResvFlg=").append(getHomeDispResvFlg()).append(", ")
-					.append("PromotionDesc=").append(getPromotionDesc()).append(", ")
-					.append("BookDesc=").append(getBookDesc()).append(", ")
-					.append("SubsyType=").append(getSubsyType()).append(", ")
-					.append("SubsyActivFlg=").append(getSubsyActivFlg()).append(", ")
-					.append("SubsyActivStartTime=").append(getSubsyActivStartTime()).append(", ")
-					.append("SubsyActivEndTime=").append(getSubsyActivEndTime()).append(", ")
-					.append("SubsyOpenFlg=").append(getSubsyOpenFlg())
-		.append("]").toString();
+		return "MstSubsyBaseEntity [" +
+				"MstSubsyBaseId=" + getMstSubsyBaseId() + ", " +
+				"SubsyCode=" + getSubsyCode() + ", " +
+				"SubsyName=" + getSubsyName() + ", " +
+				"SubsyDispName=" + getSubsyDispName() + ", " +
+				"LoctProvCode=" + getLoctProvCode() + ", " +
+				"LoctCityCode=" + getLoctCityCode() + ", " +
+				"LoctAreaCode=" + getLoctAreaCode() + ", " +
+				"SubsyAddr=" + getSubsyAddr() + ", " +
+				"LoctLon=" + getLoctLon() + ", " +
+				"LoctLat=" + getLoctLat() + ", " +
+				"PhoneNum=" + getPhoneNum() + ", " +
+				"MobNum=" + getMobNum() + ", " +
+				"PostNo=" + getPostNo() + ", " +
+				"SubsyDesc=" + getSubsyDesc() + ", " +
+				"BusiTimeDesc=" + getBusiTimeDesc() + ", " +
+				"BrandCode=" + getBrandCode() + ", " +
+				"SubsyBrandType=" + getSubsyBrandType() + ", " +
+				"BanrUrl=" + getBanrUrl() + ", " +
+				"AuditStatusCode=" + getAuditStatusCode() + ", " +
+				"ProdAuditStatusCode=" + getProdAuditStatusCode() + ", " +
+				"CloseAuditStatusCode=" + getCloseAuditStatusCode() + ", " +
+				"CloseAuditApprover=" + getCloseAuditApprover() + ", " +
+				"IsAllowSubsyAdminLogin=" + getIsAllowSubsyAdminLogin() + ", " +
+				"Price=" + getPrice() + ", " +
+				"PopulVal=" + getPopulVal() + ", " +
+				"ServScore=" + getServScore() + ", " +
+				"CrtTime=" + getCrtTime() + ", " +
+				"CrtUserCode=" + getCrtUserCode() + ", " +
+				"UpdTime=" + getUpdTime() + ", " +
+				"UpdUserCode=" + getUpdUserCode() + ", " +
+				"DelFlg=" + getDelFlg() + ", " +
+				"VerNum=" + getVerNum() + ", " +
+				"HomeDispResvFlg=" + getHomeDispResvFlg() + ", " +
+				"PromotionDesc=" + getPromotionDesc() + ", " +
+				"BookDesc=" + getBookDesc() + ", " +
+				"SubsyType=" + getSubsyType() + ", " +
+				"SubsyActivFlg=" + getSubsyActivFlg() + ", " +
+				"SubsyActivStartTime=" + getSubsyActivStartTime() + ", " +
+				"SubsyActivEndTime=" + getSubsyActivEndTime() + ", " +
+				"SubsyOpenFlg=" + getSubsyOpenFlg() +
+				"]";
 	}
 
 

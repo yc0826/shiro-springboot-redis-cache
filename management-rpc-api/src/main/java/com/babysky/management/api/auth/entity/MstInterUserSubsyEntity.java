@@ -75,19 +75,20 @@ public class MstInterUserSubsyEntity extends BaseEntity {
 
 	//get set End
 
+	@Override
 	public String toString() {
-		return new StringBuilder("MstInterUserSubsyEntity [")
-			.append("MstInterUserSubsyId=").append(getMstInterUserSubsyId()).append(", ")
-					.append("InterUserCode=").append(getInterUserCode()).append(", ")
-					.append("SubsyCode=").append(getSubsyCode()).append(", ")
-					.append("DfltSubsyFlg=").append(getDfltSubsyFlg()).append(", ")
-					.append("CrtTime=").append(getCrtTime()).append(", ")
-					.append("CrtUserCode=").append(getCrtUserCode()).append(", ")
-					.append("UpdTime=").append(getUpdTime()).append(", ")
-					.append("UpdUserCode=").append(getUpdUserCode()).append(", ")
-					.append("DelFlg=").append(getDelFlg()).append(", ")
-					.append("VerNum=").append(getVerNum())
-		.append("]").toString();
+		return "MstInterUserSubsyEntity [" +
+				"MstInterUserSubsyId=" + getMstInterUserSubsyId() + ", " +
+				"InterUserCode=" + getInterUserCode() + ", " +
+				"SubsyCode=" + getSubsyCode() + ", " +
+				"DfltSubsyFlg=" + getDfltSubsyFlg() + ", " +
+				"CrtTime=" + getCrtTime() + ", " +
+				"CrtUserCode=" + getCrtUserCode() + ", " +
+				"UpdTime=" + getUpdTime() + ", " +
+				"UpdUserCode=" + getUpdUserCode() + ", " +
+				"DelFlg=" + getDelFlg() + ", " +
+				"VerNum=" + getVerNum() +
+				"]";
 	}
 	
 }

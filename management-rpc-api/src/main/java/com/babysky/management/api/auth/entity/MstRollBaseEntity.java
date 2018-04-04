@@ -118,6 +118,7 @@ public class MstRollBaseEntity extends BaseEntity {
     }
     //get set End
 
+    @Override
     public String toString() {
         return "MstRollBaseEntity [" +
                 "MstRollBaseId=" + getMstRollBaseId() + ", " +
@@ -155,13 +156,6 @@ public class MstRollBaseEntity extends BaseEntity {
         return resoCodeList;
     }
 
-    public void setResoCodeList(Set<String> resoCodeList) {
-        this.resoCodeList = resoCodeList;
-    }
-
-    public Set<CfgSysResoEntity> getCfgSysResoEntitySet() {
-        return cfgSysResoEntitySet;
-    }
 
     public void setCfgSysResoEntitySet(Set<CfgSysResoEntity> cfgSysResoEntitySet) {
         this.cfgSysResoEntitySet = cfgSysResoEntitySet;
