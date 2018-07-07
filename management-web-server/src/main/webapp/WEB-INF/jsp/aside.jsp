@@ -4,7 +4,6 @@
     <div class="layui-side-scroll">
         <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
         <div class="index-logo" onclick="window.location.href = '${ctx}'" style="cursor:pointer">
-            <img class="index-logo-img" src="${ctx}/static/img/ui-logo.jpg" alt="">
             <div class="index-logo-title">shiro管理平台</div>
         </div>
         <ul class="layui-nav layui-bg-cyan layui-nav-tree">

@@ -33,7 +33,7 @@
             </form>
         </div>
         <div id="sign_footer">
-            <span>客服邮箱 service@babysky.com.cn | 客服电话：63350901*8045</span><span style="margin-left: 65px">Copyright 上海方溯信息技有限公司版权所有 All Rights Reserved. </span><span style="margin-left: 40px">备案信息  沪ICP备17050452号-1</span></div>
+            <span>客服邮箱 service@qq.com.cn | 客服电话：1234567*8045</span><span style="margin-left: 65px">Copyright 上海xxxxxxxx有限公司版权所有 All Rights Reserved. </span><span style="margin-left: 40px">备案信息  沪ICP备xxxxxxx号-1</span></div>
     </div>
 </body>
 </html>

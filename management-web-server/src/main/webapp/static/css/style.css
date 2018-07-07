@@ -2412,11 +2412,11 @@ fieldset[disabled] .btn-search.active {
     margin-left: -155px;
     margin-top: -211px;
 }
-.sign_body{
-    background: url("../img/login-bg.jpg") no-repeat;
-    background-size: cover;
-    background-position: 50% center;
-}
+/*.sign_body{*/
+    /*background: url("../img/login-bg.jpg") no-repeat;*/
+    /*background-size: cover;*/
+    /*background-position: 50% center;*/
+/*}*/
 .main-left-node{
     margin-left: 0px;
 }

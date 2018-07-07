@@ -33,17 +33,6 @@
                     <div class="layui-form-item">
                         <div class="layui-inline">
                             <div class="layui-inline">
-                                <label class="layui-form-label">会所</label>
-                                <div class="layui-input-inline">
-                                    <select name="subsyCode" lay-search>
-                                        <option value="">请选择</option>
-                                        <c:forEach items="${subsyList}" var="subsy">
-                                            <option value="${subsy.subsyCode}">${subsy.subsyDispName}</option>
-                                        </c:forEach>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="layui-inline">
                                 <label class="layui-form-label">姓名</label>
                                 <div class="layui-input-inline">
                                     <input id="name" name="name" class="layui-input" type="text"/>
@@ -56,33 +45,11 @@
                                 </div>
                             </div>
                             <div class="layui-inline">
-                                <label class="layui-form-label">性别</label>
-                                <div class="layui-input-inline">
-                                    <select name="gderFlg">
-                                        <option value="">请选择</option>
-                                        <option value="1">男</option>
-                                        <option value="0">女</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="layui-inline">
                                 <button type="button" class="layui-btn layui-btn-normal" lay-submit lay-filter="search">查 询</button>
                                 <button type="reset" class="layui-btn layui-btn-normal" >清 空</button>
                                 <shiro:hasPermission name="user:create">
                                     <button id="add" type="button" class="layui-btn layui-btn-normal" lay-submit lay-filter="add">新 增</button>
                                 </shiro:hasPermission>
-                            </div>
-                        </div>
-                        <div class="layui-inline">
-                            <div class="layui-inline">
-                                <label class="layui-form-label">状态</label>
-                                <div class="layui-input-inline">
-                                    <select name="appAcesFlg">
-                                        <option value="">请选择</option>
-                                        <option value="1">有效</option>
-                                        <option value="0">无效</option>
-                                    </select>
-                                </div>
                             </div>
                         </div>
                     </div>
