@@ -4,14 +4,12 @@
 
 1.运行需要先执行init.sql
 
-
 2.在management-rpc-service/conf/application.properties对db地址 zk地址进行变更 需提供mysql和zk服务
-
 
 3.启动rpc服务 运行management-rpc-service\src\main\java\com\babysky\management\Application.java 里的main方法
 
-
 4.启动web服务 修改management-web-server下的配置文件 zk地址 web上下文 redis地址和密码等 management-web-server\src\main\java\com\babysky\management\Bootstrap.java 里的main方法
 
-
 5.登陆帐号admin 密码123456
+
+6.项目demo访问地址www.haochen.online，数据每10分钟初始化
