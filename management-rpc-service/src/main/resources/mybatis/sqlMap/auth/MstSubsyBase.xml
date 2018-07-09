@@ -1107,6 +1107,25 @@
 			</if>
 	</select>
 
+	<resultMap id="subsyComboMap" type="com.babysky.management.api.auth.dto.SubsyComboDto">
+		<result property="subsyCode" column="subsy_code"/>
+		<result property="subsyName" column="subsy_disp_name"/>
+		<result property="subsyType" column="subsy_type"/>
+		<result property="auditStatusCode" column="audit_status_code"/>
+		<result property="subsyActivFlg" column="subsy_activ_flg"/>
+		<result property="subsyOpenFlg" column="subsy_open_flg"/>
+	</resultMap>
+
+
+	<select id="getSubsyListByUserCode" resultMap="subsyComboMap">
+        select
+        b.subsy_code, b.subsy_disp_name,b.subsy_type,b.subsy_activ_flg,b.subsy_open_flg
+        from mst_inter_user_subsy u
+        inner join mst_subsy_base b on u.subsy_code = b.subsy_code
+        where u.del_flg = 0
+        and b.del_flg = 0
+        and u.inter_user_code = #{userCode}
+    </select>
     <!-- user-defined end -->
 
 </mapper>

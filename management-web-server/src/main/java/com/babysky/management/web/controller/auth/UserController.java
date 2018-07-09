@@ -1,8 +1,10 @@
 package com.babysky.management.web.controller.auth;
 
 import com.babysky.management.api.auth.dto.InterUserDto;
+import com.babysky.management.api.auth.dto.SubsyComboDto;
 import com.babysky.management.api.auth.entity.MstInterUserBaseEntity;
 import com.babysky.management.api.auth.service.api.MstInterUserBaseService;
+import com.babysky.management.api.auth.service.api.SubsyBaseService;
 import com.babysky.management.common.Constants;
 import com.babysky.management.common.exception.SystemException;
 import com.babysky.management.common.utils.*;
@@ -32,6 +34,10 @@ public class UserController extends BaseController {
 
     @Resource
     private MstInterUserBaseService userService;
+
+
+    @Resource
+    private SubsyBaseService subsyBaseService;
 
 
 
@@ -182,6 +188,12 @@ public class UserController extends BaseController {
         return "auth/user/changePassword";
     }
 
+    @RequestMapping(value = "/getSubsyListByUserCode", method = RequestMethod.GET)
+    @ResponseBody
+    public List<SubsyComboDto> getSubsyListByUserCode(String userCode) {
+        return subsyBaseService.getSubsyListByUserCode(userCode);
+    }
+
 
     @RequiresPermissions("user:update")
     @RequestMapping(value = "/{interUserCode}/changePassword", method = RequestMethod.POST)
@@ -238,7 +250,7 @@ public class UserController extends BaseController {
             String[] subsyCodes = getCurrentUserSubsyCodes().split(",");
             paramMap.put("subsyCodes", subsyCodes);
         }
-//        model.addAttribute("subsyList", subsyBaseService.findSubsyListBySubsyCodes(paramMap));
+        model.addAttribute("subsyList", subsyBaseService.findSubsyListBySubsyCodes(paramMap));
     }
 
 

@@ -25,6 +25,9 @@
     <dubbo:service interface="com.babysky.management.api.auth.service.api.MstInterUserSubsyService"
                    ref="mstInterUserSubsyService"/>
 
+    <dubbo:service interface="com.babysky.management.api.auth.service.api.SubsyBaseService"
+                   ref="subsyBaseService"/>
+
 
 
 

@@ -18,5 +18,6 @@
     <dubbo:reference interface="com.babysky.management.api.auth.service.api.MstInterUserBaseService" id="userService" />
 
     <dubbo:reference interface="com.babysky.management.api.auth.service.api.MstInterUserSubsyService" id="mstInterUserSubsyService" />
+    <dubbo:reference interface="com.babysky.management.api.auth.service.api.SubsyBaseService" id="subsyBaseService" />
 
 </beans>

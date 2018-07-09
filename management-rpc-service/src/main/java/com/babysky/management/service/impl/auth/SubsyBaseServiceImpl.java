@@ -1,5 +1,6 @@
 package com.babysky.management.service.impl.auth;
 
+import com.babysky.management.api.auth.dto.SubsyComboDto;
 import com.babysky.management.api.auth.entity.MstSubsyBaseEntity;
 import com.babysky.management.api.auth.service.api.SubsyBaseService;
 import com.babysky.management.common.Constants;
@@ -66,4 +67,13 @@ public class SubsyBaseServiceImpl implements SubsyBaseService {
         return null;
     }
 
+    @Override
+    public List<SubsyComboDto> getSubsyListByUserCode(String userCode) {
+        return mstSubsyBaseDao.getSubsyListByUserCode(userCode);
+    }
+
+    @Override
+    public List<MstSubsyBaseEntity> findSubsyListBySubsyCodes(Map<String, Object> paramMap) {
+        return null;
+    }
 }

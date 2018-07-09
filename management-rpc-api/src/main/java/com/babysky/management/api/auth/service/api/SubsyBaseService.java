@@ -1,5 +1,6 @@
 package com.babysky.management.api.auth.service.api;
 
+import com.babysky.management.api.auth.dto.SubsyComboDto;
 import com.babysky.management.api.auth.entity.MstSubsyBaseEntity;
 
 import java.util.List;
@@ -25,4 +26,7 @@ public interface SubsyBaseService {
 
     String getSubsyNamesByCodes(String subsyCodes);
 
+    List<SubsyComboDto> getSubsyListByUserCode(String userCode);
+
+    List<MstSubsyBaseEntity> findSubsyListBySubsyCodes(Map<String,Object> paramMap);
 }

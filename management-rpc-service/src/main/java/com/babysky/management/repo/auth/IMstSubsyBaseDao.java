@@ -1,6 +1,7 @@
 package com.babysky.management.repo.auth;
 
 
+import com.babysky.management.api.auth.dto.SubsyComboDto;
 import com.babysky.management.api.auth.entity.MstSubsyBaseEntity;
 import com.babysky.management.common.annotation.MyBatisRepository;
 
@@ -44,4 +45,5 @@ public interface IMstSubsyBaseDao {
 
     List<MstSubsyBaseEntity> getSubsyInfoListByUserCode(String userCode);
 
+    List<SubsyComboDto> getSubsyListByUserCode(String userCode);
 }
