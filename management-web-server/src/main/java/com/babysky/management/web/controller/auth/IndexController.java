@@ -28,13 +28,13 @@ public class IndexController extends BaseController {
 
 
     @RequestMapping("/")
-    public String index(Model model) {
+    public String index() {
         if (getCurrentUser() == null) {
             return "redirect:/login";
         }
         //判断商户号非空，直接返回主界面
         if (StringUtils.hasText(getCurrentUser().getSubsyCodes())) {
-            return "main";
+            return "redirect:/menus?parentResoCode=82";
         }
         Subject subject = SecurityUtils.getSubject();
         subject.logout();
@@ -42,14 +42,14 @@ public class IndexController extends BaseController {
     }
 
     @RequestMapping("/menus")
-    public String menus(String parentResoCode,Model model) {
+    public String menus(String parentResoCode) {
         Session session = SecurityUtils.getSubject().getSession();
         session.removeAttribute("resoCode");
         session.removeAttribute("childResoCode");
 
         Set<String> permissions = (Set<String>) session.getAttribute("permissions");
         List<CfgSysResoEntity> menus = resourceService.findMenus(permissions, parentResoCode);
-        if(!CollectionUtils.isEmpty(menus)) {
+        if (!CollectionUtils.isEmpty(menus)) {
             session.setAttribute("menus", menus);
         }
 
