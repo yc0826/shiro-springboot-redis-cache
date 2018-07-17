@@ -4,7 +4,6 @@ import com.babysky.management.api.auth.entity.MstInterUserSubsyEntity;
 import com.babysky.management.api.auth.service.api.MstInterUserSubsyService;
 import com.babysky.management.common.utils.StringUtil;
 import com.babysky.management.repo.auth.IMstInterUserSubsyDao;
-import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
 import javax.annotation.Resource;
@@ -16,7 +15,12 @@ import java.util.Map;
  * MstInterUserSubsyServiceImpl
  * Created by humin on 2017/9/14.
  */
-@Service("mstInterUserSubsyService")
+@com.alibaba.dubbo.config.annotation.Service(
+        version = "1.0.0",
+        application = "${dubbo.application.id}",
+        protocol = "${dubbo.protocol.id}",
+        registry = "${dubbo.registry.id}"
+)
 public class MstInterUserSubsyServiceImpl implements MstInterUserSubsyService {
 
     @Resource

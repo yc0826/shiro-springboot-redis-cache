@@ -8,7 +8,6 @@ import com.babysky.management.api.auth.service.api.MstInterUserRollService;
 import com.babysky.management.api.auth.service.api.MstRollBaseService;
 import com.babysky.management.repo.auth.IMstInterUserRollDao;
 import org.apache.shiro.util.StringUtils;
-import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
 import javax.annotation.Resource;
@@ -18,7 +17,12 @@ import java.util.*;
 /**
  * @author YangChao
  */
-@Service("mstInterUserRollService")
+@com.alibaba.dubbo.config.annotation.Service(
+        version = "1.0.0",
+        application = "${dubbo.application.id}",
+        protocol = "${dubbo.protocol.id}",
+        registry = "${dubbo.registry.id}"
+)
 public class MstInterUserRollServiceImpl implements MstInterUserRollService {
 
     @Resource

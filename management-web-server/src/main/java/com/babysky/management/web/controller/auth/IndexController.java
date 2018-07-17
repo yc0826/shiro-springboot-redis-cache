@@ -1,5 +1,6 @@
 package com.babysky.management.web.controller.auth;
 
+import com.alibaba.dubbo.config.annotation.Reference;
 import com.babysky.management.api.auth.entity.CfgSysResoEntity;
 import com.babysky.management.api.auth.service.api.CfgSysResoService;
 import com.babysky.management.web.controller.base.BaseController;
@@ -11,7 +12,6 @@ import org.springframework.util.CollectionUtils;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import javax.annotation.Resource;
 import java.util.List;
 import java.util.Set;
 
@@ -22,7 +22,9 @@ import java.util.Set;
 @SuppressWarnings("unchecked")
 public class IndexController extends BaseController {
 
-    @Resource
+    @Reference(version = "1.0.0",
+            application = "${dubbo.application.id}",
+            url = "dubbo://localhost:12345")
     private CfgSysResoService resourceService;
 
 

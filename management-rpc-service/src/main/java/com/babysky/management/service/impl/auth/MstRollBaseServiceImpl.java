@@ -6,7 +6,6 @@ import com.babysky.management.api.auth.service.api.MstRollBaseService;
 import com.babysky.management.common.Constants;
 import com.babysky.management.common.utils.BizCodeGeneratorUtil;
 import com.babysky.management.repo.auth.IMstRollBaseDao;
-import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 import org.springframework.util.StringUtils;
 
@@ -16,7 +15,12 @@ import java.util.*;
 /**
  * @author YangChao
  */
-@Service("mstRollBaseService")
+@com.alibaba.dubbo.config.annotation.Service(
+        version = "1.0.0",
+        application = "${dubbo.application.id}",
+        protocol = "${dubbo.protocol.id}",
+        registry = "${dubbo.registry.id}"
+)
 public class MstRollBaseServiceImpl implements MstRollBaseService {
 
     @Resource

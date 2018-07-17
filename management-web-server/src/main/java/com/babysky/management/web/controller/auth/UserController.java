@@ -1,5 +1,6 @@
 package com.babysky.management.web.controller.auth;
 
+import com.alibaba.dubbo.config.annotation.Reference;
 import com.babysky.management.api.auth.dto.InterUserDto;
 import com.babysky.management.api.auth.dto.SubsyComboDto;
 import com.babysky.management.api.auth.entity.MstInterUserBaseEntity;
@@ -19,7 +20,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.List;
@@ -32,11 +32,15 @@ import java.util.Map;
 @RequestMapping("/user")
 public class UserController extends BaseController {
 
-    @Resource
+    @Reference(version = "1.0.0",
+            application = "${dubbo.application.id}",
+            url = "dubbo://localhost:12345")
     private MstInterUserBaseService userService;
 
 
-    @Resource
+    @Reference(version = "1.0.0",
+            application = "${dubbo.application.id}",
+            url = "dubbo://localhost:12345")
     private SubsyBaseService subsyBaseService;
 
 

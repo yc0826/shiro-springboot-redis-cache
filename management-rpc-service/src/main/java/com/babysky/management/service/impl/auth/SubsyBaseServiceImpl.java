@@ -5,7 +5,6 @@ import com.babysky.management.api.auth.entity.MstSubsyBaseEntity;
 import com.babysky.management.api.auth.service.api.SubsyBaseService;
 import com.babysky.management.common.Constants;
 import com.babysky.management.repo.auth.IMstSubsyBaseDao;
-import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
 import javax.annotation.Resource;
@@ -15,7 +14,12 @@ import java.util.Map;
 /**
  * @author YangChao
  */
-@Service("subsyBaseService")
+@com.alibaba.dubbo.config.annotation.Service(
+        version = "1.0.0",
+        application = "${dubbo.application.id}",
+        protocol = "${dubbo.protocol.id}",
+        registry = "${dubbo.registry.id}"
+)
 public class SubsyBaseServiceImpl implements SubsyBaseService {
 
     @Resource

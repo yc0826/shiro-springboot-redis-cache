@@ -1,9 +1,9 @@
 package com.babysky.management.shiro.authc.credential;
 
+import com.alibaba.dubbo.config.annotation.Reference;
 import com.babysky.management.api.auth.entity.MstInterUserBaseEntity;
 import com.babysky.management.api.auth.service.api.MstInterUserBaseService;
 import com.babysky.management.common.utils.PasswordEncryption;
-import com.babysky.management.common.utils.SpringUtils;
 import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;
 import org.apache.shiro.authc.UsernamePasswordToken;
@@ -17,10 +17,15 @@ import java.security.spec.InvalidKeySpecException;
  */
 public class CustomCredentialsMatcher extends SimpleCredentialsMatcher {
 
+    @Reference(version = "1.0.0",
+            application = "${dubbo.application.id}",
+            url = "dubbo://localhost:12345")
+    private MstInterUserBaseService mstInterUserBaseService;
+
     @Override
     public boolean doCredentialsMatch(AuthenticationToken authcToken, AuthenticationInfo info) {
         UsernamePasswordToken token = (UsernamePasswordToken) authcToken;
-        MstInterUserBaseEntity user = SpringUtils.getBean(MstInterUserBaseService.class).findByUsername(token.getUsername());
+        MstInterUserBaseEntity user = mstInterUserBaseService.findByUsername(token.getUsername());
 
         String hash = null;
         try {

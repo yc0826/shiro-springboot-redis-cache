@@ -21,11 +21,6 @@ public interface IMstInterUserBaseDao {
 
     Integer count(Map<String, Object> paramMap);
 
-    /**
-     * 根据用户code获取当前用户所有的会所code集合
-     * @param interUserCode
-     * @return
-     */
     String findUserSubyCodesByUserCode(String interUserCode);
 
     List<MstInterUserBaseEntity> findBySubsyCodes(Map<String, Object> subsyCodeArray);

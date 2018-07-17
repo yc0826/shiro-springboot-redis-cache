@@ -1,10 +1,10 @@
 package com.babysky.management.shiro.realm;
 
+import com.alibaba.dubbo.config.annotation.Reference;
 import com.babysky.management.api.auth.entity.MstInterUserBaseEntity;
 import com.babysky.management.api.auth.service.api.MstInterUserBaseService;
 import com.babysky.management.api.auth.service.api.MstInterUserRollService;
 import com.babysky.management.common.Constants;
-import com.babysky.management.common.utils.SpringUtils;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
@@ -20,8 +20,16 @@ import java.util.Set;
 /**
  * @author YangChao
  */
-@SuppressWarnings("unchecked")
 public class UserRealm extends AuthorizingRealm {
+
+    @Reference(version = "1.0.0",
+            application = "${dubbo.application.id}",
+            url = "dubbo://localhost:12345")
+    private MstInterUserBaseService mstInterUserBaseService;
+    @Reference(version = "1.0.0",
+            application = "${dubbo.application.id}",
+            url = "dubbo://localhost:12345")
+    private MstInterUserRollService mstInterUserRollService;
 
 
     @Override
@@ -31,13 +39,13 @@ public class UserRealm extends AuthorizingRealm {
         SimpleAuthorizationInfo authorizationInfo = new SimpleAuthorizationInfo();
         Set<String> roles = (Set<String>) session.getAttribute("roles");
         if (CollectionUtils.isEmpty(roles)) {
-            roles = SpringUtils.getBean(MstInterUserRollService.class).findRoles(username);
+            roles = mstInterUserRollService.findRoles(username);
         }
         session.setAttribute("roles", roles);
         authorizationInfo.setRoles(roles);
         Set<String> permissions = (Set<String>) session.getAttribute("permissions");
         if (CollectionUtils.isEmpty(permissions)) {
-            permissions = SpringUtils.getBean(MstInterUserRollService.class).findPermissions(username);
+            permissions = mstInterUserRollService.findPermissions(username);
         }
         session.setAttribute("permissions", permissions);
         authorizationInfo.setStringPermissions(permissions);
@@ -47,7 +55,7 @@ public class UserRealm extends AuthorizingRealm {
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) {
         String username = (String) token.getPrincipal();
-        MstInterUserBaseEntity user = SpringUtils.getBean(MstInterUserBaseService.class).findByUsername(username);
+        MstInterUserBaseEntity user = mstInterUserBaseService.findByUsername(username);
         if (user == null) {
             //没找到账号
             throw new UnknownAccountException();

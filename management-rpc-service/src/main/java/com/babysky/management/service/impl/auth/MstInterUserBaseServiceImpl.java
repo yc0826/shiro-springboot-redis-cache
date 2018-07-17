@@ -1,12 +1,12 @@
 package com.babysky.management.service.impl.auth;
 
+import com.alibaba.dubbo.config.annotation.Service;
 import com.babysky.management.api.auth.dto.InterUserDto;
 import com.babysky.management.api.auth.entity.MstInterUserBaseEntity;
 import com.babysky.management.api.auth.entity.MstInterUserDtlEntity;
 import com.babysky.management.api.auth.service.api.MstInterUserBaseService;
 import com.babysky.management.api.auth.service.api.SubsyBaseService;
 import com.babysky.management.api.utils.PasswordHelper;
-import com.babysky.management.common.BizConstants;
 import com.babysky.management.common.Constants;
 import com.babysky.management.common.exception.SystemException;
 import com.babysky.management.common.utils.BizCodeGeneratorUtil;
@@ -16,18 +16,25 @@ import com.babysky.management.repo.auth.IMstInterUserBaseDao;
 import com.babysky.management.repo.auth.IMstInterUserDtlDao;
 import com.babysky.management.repo.auth.IMstInterUserRollDao;
 import org.apache.shiro.util.StringUtils;
-import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
 import javax.annotation.Resource;
-import java.util.*;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import static com.babysky.management.common.utils.BizCodeGeneratorUtil.TblNameIntiEnum.MST_INTER_USER_BASE;
 
 /**
  * @author YangChao
  */
-@Service("mstInterUserBaseService")
+@Service(
+        version = "1.0.0",
+        application = "${dubbo.application.id}",
+        protocol = "${dubbo.protocol.id}",
+        registry = "${dubbo.registry.id}"
+)
 public class MstInterUserBaseServiceImpl implements MstInterUserBaseService {
 
     @Resource
@@ -85,9 +92,6 @@ public class MstInterUserBaseServiceImpl implements MstInterUserBaseService {
         }
 
         mstInterUserBaseEntity.setSubsyCodes(mstInterUserBaseDao.findUserSubyCodesByUserCode(mstInterUserBaseEntity.getInterUserCode()));
-        Map<String, Object> picMap = new HashMap<>();
-        picMap.put("busiCode", mstInterUserBaseEntity.getInterUserCode());
-        picMap.put("tranCateCode", BizConstants.RESP_CATE_TYPE_AVTR_CODE);
         return mstInterUserBaseEntity;
     }
 
@@ -161,9 +165,6 @@ public class MstInterUserBaseServiceImpl implements MstInterUserBaseService {
 
         user.setUpdTime(new Date());
         mstInterUserBaseDao.updateUser(user);
-        Map<String, Object> picMap = new HashMap<>(2);
-        picMap.put("busiCode", user.getInterUserCode());
-        picMap.put("tranCateCode", BizConstants.RESP_CATE_TYPE_AVTR_CODE);
         inserUserSubsy(user);
         inserUserDtl(user);
     }
@@ -271,6 +272,10 @@ public class MstInterUserBaseServiceImpl implements MstInterUserBaseService {
         return mstInterUserBaseDao.findByMobile(map);
     }
 
+    @Override
+    public String hello() {
+        return "Hello";
+    }
 
-    //-- user-defined end --
+//-- user-defined end --
 }

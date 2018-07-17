@@ -9,6 +9,9 @@ import com.babysky.management.common.exception.SystemException;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * @author YangChao
+ */
 public interface MstInterUserBaseService {
 
 
@@ -40,5 +43,7 @@ public interface MstInterUserBaseService {
 
 
     MstInterUserBaseEntity findByMobile(String mobNum) throws SystemException;
+
+    String hello();
 
 }

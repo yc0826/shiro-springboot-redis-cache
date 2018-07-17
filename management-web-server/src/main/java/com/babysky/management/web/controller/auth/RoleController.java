@@ -1,5 +1,6 @@
 package com.babysky.management.web.controller.auth;
 
+import com.alibaba.dubbo.config.annotation.Reference;
 import com.babysky.management.api.auth.entity.MstRollBaseEntity;
 import com.babysky.management.api.auth.service.api.CfgSysResoService;
 import com.babysky.management.api.auth.service.api.MstRollBaseService;
@@ -8,7 +9,6 @@ import com.babysky.management.common.utils.DataTableResponse;
 import com.babysky.management.common.utils.PageInfo;
 import com.babysky.management.common.utils.PaginationResult;
 import com.babysky.management.web.controller.base.BaseController;
-
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import javax.annotation.Resource;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -29,10 +28,14 @@ import java.util.Map;
 @RequestMapping("/role")
 public class RoleController extends BaseController{
 
-    @Resource
+    @Reference(version = "1.0.0",
+            application = "${dubbo.application.id}",
+            url = "dubbo://localhost:12345")
     private MstRollBaseService roleService;
 
-    @Resource
+    @Reference(version = "1.0.0",
+            application = "${dubbo.application.id}",
+            url = "dubbo://localhost:12345")
     private CfgSysResoService resourceService;
 
     @RequiresPermissions("role:view")

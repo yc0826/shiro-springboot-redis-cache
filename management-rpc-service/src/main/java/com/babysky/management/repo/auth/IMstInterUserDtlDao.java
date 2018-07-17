@@ -6,6 +6,9 @@ import com.babysky.management.common.annotation.MyBatisRepository;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * @author YangChao
+ */
 @MyBatisRepository
 public interface IMstInterUserDtlDao {
 

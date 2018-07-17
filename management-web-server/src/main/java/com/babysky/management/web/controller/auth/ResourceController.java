@@ -1,5 +1,6 @@
 package com.babysky.management.web.controller.auth;
 
+import com.alibaba.dubbo.config.annotation.Reference;
 import com.babysky.management.api.auth.entity.CfgSysResoEntity;
 import com.babysky.management.api.auth.service.api.CfgSysResoService;
 import com.babysky.management.web.controller.base.BaseController;
@@ -11,8 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import javax.annotation.Resource;
-
 /**
  * @author YangChao
  */
@@ -20,7 +19,9 @@ import javax.annotation.Resource;
 @RequestMapping("/resource")
 public class ResourceController extends BaseController {
 
-    @Resource
+    @Reference(version = "1.0.0",
+            application = "${dubbo.application.id}",
+            url = "dubbo://localhost:12345")
     private CfgSysResoService resourceService;
 
 
