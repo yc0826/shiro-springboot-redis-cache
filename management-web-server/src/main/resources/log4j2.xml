@@ -21,6 +21,7 @@
         <Logger name="org.hibernate" level="INFO"/>
         <Logger name="org.springframework.web" level="ERROR"/>
         <Logger name="org.mongodb.driver.cluster" level="INFO"/>
+        <Logger name="com.alibaba.dubbo.remoting.exchange.support.header.HeartbeatHandler" level="INFO"/>
         <Root level="debug">
             <AppenderRef ref="Console"/>
         </Root>

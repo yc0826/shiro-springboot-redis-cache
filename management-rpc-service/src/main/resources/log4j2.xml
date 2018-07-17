@@ -21,6 +21,7 @@
         <Logger name="org.hibernate" level="INFO"/>
         <Logger name="org.mongodb.driver" level="ERROR"/>
         <Logger name="org.springframework.data.mongodb.core.MongoTemplate" level="DEBUG"/>
+        <Logger name="com.alibaba.dubbo.remoting.exchange.support.header" level="INFO"/>
         <Root level="DEBUG">
             <AppenderRef ref="Console"/>
         </Root>
