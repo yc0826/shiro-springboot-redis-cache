@@ -30,12 +30,12 @@ public class RoleController extends BaseController{
 
     @Reference(version = "1.0.0",
             application = "${dubbo.application.id}",
-            url = "dubbo://localhost:12345")
+            registry = "zookeeper://127.0.0.1:2181")
     private MstRollBaseService roleService;
 
     @Reference(version = "1.0.0",
             application = "${dubbo.application.id}",
-            url = "dubbo://localhost:12345")
+            registry = "zookeeper://127.0.0.1:2181")
     private CfgSysResoService resourceService;
 
     @RequiresPermissions("role:view")

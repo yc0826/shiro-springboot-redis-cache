@@ -12,9 +12,6 @@ class ShiroFilterUtils {
 
     /**
      * 是否是Ajax请求
-     *
-     * @param request
-     * @return
      */
     static boolean isAjax(ServletRequest request) {
         return "XMLHttpRequest".equalsIgnoreCase(((HttpServletRequest) request).getHeader("X-Requested-With"));

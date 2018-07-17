@@ -24,11 +24,11 @@ public class UserRealm extends AuthorizingRealm {
 
     @Reference(version = "1.0.0",
             application = "${dubbo.application.id}",
-            url = "dubbo://localhost:12345")
+            registry = "zookeeper://127.0.0.1:2181")
     private MstInterUserBaseService mstInterUserBaseService;
     @Reference(version = "1.0.0",
             application = "${dubbo.application.id}",
-            url = "dubbo://localhost:12345")
+            registry = "zookeeper://127.0.0.1:2181")
     private MstInterUserRollService mstInterUserRollService;
 
 
