@@ -2,12 +2,15 @@ package com.babysky.management.repo.auth;
 
 
 import com.babysky.management.api.auth.entity.MstInterUserSubsyEntity;
-import com.babysky.management.common.annotation.MyBatisRepository;
+import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
 import java.util.Map;
 
-@MyBatisRepository
+/**
+ * @author YangChao
+ */
+@Mapper
 public interface IMstInterUserSubsyDao {
 
 

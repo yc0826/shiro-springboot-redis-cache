@@ -1,7 +1,7 @@
 package com.babysky.management.repo.auth;
 
 import com.babysky.management.api.auth.entity.CfgSysResoEntity;
-import com.babysky.management.common.annotation.MyBatisRepository;
+import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
 import java.util.Map;
@@ -10,7 +10,7 @@ import java.util.Set;
 /**
  * @author YangChao
  */
-@MyBatisRepository
+@Mapper
 public interface ICfgSysResoDao {
 
 

@@ -2,7 +2,7 @@ package com.babysky.management.repo.auth;
 
 import com.babysky.management.api.auth.dto.InterUserDto;
 import com.babysky.management.api.auth.entity.MstInterUserBaseEntity;
-import com.babysky.management.common.annotation.MyBatisRepository;
+import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
 import java.util.Map;
@@ -10,7 +10,7 @@ import java.util.Map;
 /**
  * @author YangChao
  */
-@MyBatisRepository
+@Mapper
 public interface IMstInterUserBaseDao {
 
     MstInterUserBaseEntity findByCode(String userCode);

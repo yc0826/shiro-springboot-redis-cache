@@ -1,11 +1,11 @@
 package com.babysky.management.repo.auth;
 
 import com.babysky.management.api.auth.entity.MstRollResoOperEntity;
-import com.babysky.management.common.annotation.MyBatisRepository;
+import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
 
-@MyBatisRepository
+@Mapper
 public interface IMstRollResoOperDao {
 
 

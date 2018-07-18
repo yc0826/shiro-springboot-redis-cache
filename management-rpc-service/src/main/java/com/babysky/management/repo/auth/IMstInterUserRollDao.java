@@ -2,12 +2,12 @@ package com.babysky.management.repo.auth;
 
 import com.babysky.management.api.auth.dto.InterUserRollDto;
 import com.babysky.management.api.auth.entity.MstInterUserRollEntity;
-import com.babysky.management.common.annotation.MyBatisRepository;
+import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
 import java.util.Map;
 
-@MyBatisRepository
+@Mapper
 public interface IMstInterUserRollDao {
 
 
