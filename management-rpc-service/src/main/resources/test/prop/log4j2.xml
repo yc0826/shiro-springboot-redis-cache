@@ -52,7 +52,7 @@
         <Logger name="org.hibernate" level="INFO"/>
         <Logger name="org.mongodb.driver" level="ERROR"/>
         <Logger name="org.springframework.data.mongodb.core.MongoTemplate" level="DEBUG"/>
-        <Root level="DEBUG">
+        <Root level="ERROR">
             <AppenderRef ref="Console"/>
             <AppenderRef ref="RollingFileInfo"/>
             <AppenderRef ref="RollingFileWarn"/>

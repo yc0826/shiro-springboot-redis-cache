@@ -52,7 +52,7 @@
         <Logger name="org.apache" level="INFO"/>
         <Logger name="org.hibernate" level="INFO"/>
         <Logger name="org.springframework.web" level="ERROR"/>
-        <Root level="debug">
+        <Root level="ERROR">
             <AppenderRef ref="Console"/>
             <AppenderRef ref="RollingFileInfo"/>
             <AppenderRef ref="RollingFileWarn"/>
