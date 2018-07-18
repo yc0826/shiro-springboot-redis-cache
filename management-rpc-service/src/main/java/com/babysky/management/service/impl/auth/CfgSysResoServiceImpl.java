@@ -1,5 +1,6 @@
 package com.babysky.management.service.impl.auth;
 
+import com.alibaba.dubbo.config.annotation.Service;
 import com.babysky.management.api.auth.entity.CfgSysResoEntity;
 import com.babysky.management.api.auth.service.api.CfgSysResoService;
 import com.babysky.management.common.Constants;
@@ -14,7 +15,7 @@ import java.util.*;
 /**
  * @author YangChao
  */
-@com.alibaba.dubbo.config.annotation.Service
+@Service
 public class CfgSysResoServiceImpl implements CfgSysResoService {
 
     @Resource

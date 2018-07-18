@@ -1,5 +1,6 @@
 package com.babysky.management.service.impl.auth;
 
+import com.alibaba.dubbo.config.annotation.Service;
 import com.babysky.management.api.auth.dto.InterUserRollDto;
 import com.babysky.management.api.auth.entity.MstInterUserBaseEntity;
 import com.babysky.management.api.auth.entity.MstInterUserRollEntity;
@@ -17,7 +18,7 @@ import java.util.*;
 /**
  * @author YangChao
  */
-@com.alibaba.dubbo.config.annotation.Service
+@Service
 public class MstInterUserRollServiceImpl implements MstInterUserRollService {
 
     @Resource

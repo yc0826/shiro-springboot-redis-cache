@@ -1,5 +1,6 @@
 package com.babysky.management.service.impl.auth;
 
+import com.alibaba.dubbo.config.annotation.Service;
 import com.babysky.management.api.auth.entity.MstRollBaseEntity;
 import com.babysky.management.api.auth.service.api.CfgSysResoService;
 import com.babysky.management.api.auth.service.api.MstRollBaseService;
@@ -15,7 +16,7 @@ import java.util.*;
 /**
  * @author YangChao
  */
-@com.alibaba.dubbo.config.annotation.Service
+@Service
 public class MstRollBaseServiceImpl implements MstRollBaseService {
 
     @Resource

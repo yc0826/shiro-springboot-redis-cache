@@ -1,5 +1,6 @@
 package com.babysky.management.service.impl.auth;
 
+import com.alibaba.dubbo.config.annotation.Service;
 import com.babysky.management.api.auth.dto.InterUserDto;
 import com.babysky.management.api.auth.entity.MstInterUserBaseEntity;
 import com.babysky.management.api.auth.entity.MstInterUserDtlEntity;
@@ -28,7 +29,7 @@ import static com.babysky.management.common.utils.BizCodeGeneratorUtil.TblNameIn
 /**
  * @author YangChao
  */
-@com.alibaba.dubbo.config.annotation.Service
+@Service
 public class MstInterUserBaseServiceImpl implements MstInterUserBaseService {
 
     @Resource

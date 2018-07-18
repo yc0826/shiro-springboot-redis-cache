@@ -1,5 +1,6 @@
 package com.babysky.management.service.impl.auth;
 
+import com.alibaba.dubbo.config.annotation.Service;
 import com.babysky.management.api.auth.dto.SubsyComboDto;
 import com.babysky.management.api.auth.entity.MstSubsyBaseEntity;
 import com.babysky.management.api.auth.service.api.SubsyBaseService;
@@ -14,7 +15,7 @@ import java.util.Map;
 /**
  * @author YangChao
  */
-@com.alibaba.dubbo.config.annotation.Service
+@Service
 public class SubsyBaseServiceImpl implements SubsyBaseService {
 
     @Resource
