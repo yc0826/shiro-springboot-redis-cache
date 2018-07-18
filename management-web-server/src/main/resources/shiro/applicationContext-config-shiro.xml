@@ -163,10 +163,8 @@
             <value>
                 /favicon.ico = anon
                 /static/** = anon
-                <!--/nurs/**= anon-->
                 /common/** = anon
                 /login = authc
-
                 /logout = logout
                 /authenticated = authc
                 /** = kickout,accessControl,simple
