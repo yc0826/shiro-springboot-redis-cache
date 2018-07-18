@@ -10,9 +10,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 @RunWith(SpringRunner.class)
 public class DubboTest {
 
-    @Reference(version = "1.0.0",
-            application = "${dubbo.application.id}",
-            registry = "zookeeper://127.0.0.1:2181")
+    @Reference
     private MstInterUserBaseService mstInterUserBaseService;
 
 

@@ -15,12 +15,7 @@ import java.util.*;
 /**
  * @author YangChao
  */
-@com.alibaba.dubbo.config.annotation.Service(
-        version = "1.0.0",
-        application = "${dubbo.application.id}",
-        protocol = "${dubbo.protocol.id}",
-        registry = "${dubbo.registry.id}"
-)
+@com.alibaba.dubbo.config.annotation.Service
 public class MstRollBaseServiceImpl implements MstRollBaseService {
 
     @Resource

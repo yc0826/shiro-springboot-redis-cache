@@ -12,8 +12,6 @@ public class CustomSessionListener implements SessionListener {
 
     private ShiroSessionRepository shiroSessionRepository;
 
-
-
     /**
      * 一个回话的生命周期开始
      */

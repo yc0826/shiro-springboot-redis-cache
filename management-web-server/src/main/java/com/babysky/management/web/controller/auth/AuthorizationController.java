@@ -32,17 +32,11 @@ import java.util.Map;
 @RequestMapping("/authorization")
 public class AuthorizationController extends BaseController {
 
-    @Reference(version = "1.0.0",
-            application = "${dubbo.application.id}",
-            registry = "zookeeper://127.0.0.1:2181")
+    @Reference
     private MstInterUserRollService authorizationService;
-    @Reference(version = "1.0.0",
-            application = "${dubbo.application.id}",
-            registry = "zookeeper://127.0.0.1:2181")
+    @Reference
     private MstInterUserBaseService userService;
-    @Reference(version = "1.0.0",
-            application = "${dubbo.application.id}",
-            registry = "zookeeper://127.0.0.1:2181")
+    @Reference
     private MstRollBaseService roleService;
 
     @RequiresPermissions("authorization:view")

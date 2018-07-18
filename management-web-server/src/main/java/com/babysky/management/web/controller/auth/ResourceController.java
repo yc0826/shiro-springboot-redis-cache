@@ -19,9 +19,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 @RequestMapping("/resource")
 public class ResourceController extends BaseController {
 
-    @Reference(version = "1.0.0",
-            application = "${dubbo.application.id}",
-            registry = "zookeeper://127.0.0.1:2181")
+    @Reference
     private CfgSysResoService resourceService;
 
 

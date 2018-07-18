@@ -19,12 +19,9 @@ import java.util.Set;
  * @author YangChao
  */
 @Controller
-@SuppressWarnings("unchecked")
 public class IndexController extends BaseController {
 
-    @Reference(version = "1.0.0",
-            application = "${dubbo.application.id}",
-            registry = "zookeeper://127.0.0.1:2181")
+    @Reference
     private CfgSysResoService resourceService;
 
 

@@ -17,9 +17,7 @@ import java.security.spec.InvalidKeySpecException;
  */
 public class CustomCredentialsMatcher extends SimpleCredentialsMatcher {
 
-    @Reference(version = "1.0.0",
-            application = "${dubbo.application.id}",
-            registry = "zookeeper://127.0.0.1:2181")
+    @Reference
     private MstInterUserBaseService mstInterUserBaseService;
 
     @Override

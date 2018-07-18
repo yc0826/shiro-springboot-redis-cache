@@ -14,19 +14,11 @@ import java.util.Map;
 /**
  * @author YangChao
  */
-@com.alibaba.dubbo.config.annotation.Service(
-        version = "1.0.0",
-        application = "${dubbo.application.id}",
-        protocol = "${dubbo.protocol.id}",
-        registry = "${dubbo.registry.id}"
-)
+@com.alibaba.dubbo.config.annotation.Service
 public class SubsyBaseServiceImpl implements SubsyBaseService {
 
     @Resource
     private IMstSubsyBaseDao mstSubsyBaseDao;
-
-
-
 
 
     @Override
@@ -40,11 +32,6 @@ public class SubsyBaseServiceImpl implements SubsyBaseService {
     public List<MstSubsyBaseEntity> findAll() {
         return mstSubsyBaseDao.findAll();
     }
-
-
-
-
-
 
 
     @Override

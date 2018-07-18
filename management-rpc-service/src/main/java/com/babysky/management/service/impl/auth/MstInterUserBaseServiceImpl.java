@@ -1,6 +1,5 @@
 package com.babysky.management.service.impl.auth;
 
-import com.alibaba.dubbo.config.annotation.Service;
 import com.babysky.management.api.auth.dto.InterUserDto;
 import com.babysky.management.api.auth.entity.MstInterUserBaseEntity;
 import com.babysky.management.api.auth.entity.MstInterUserDtlEntity;
@@ -29,12 +28,7 @@ import static com.babysky.management.common.utils.BizCodeGeneratorUtil.TblNameIn
 /**
  * @author YangChao
  */
-@Service(
-        version = "1.0.0",
-        application = "${dubbo.application.id}",
-        protocol = "${dubbo.protocol.id}",
-        registry = "${dubbo.registry.id}"
-)
+@com.alibaba.dubbo.config.annotation.Service
 public class MstInterUserBaseServiceImpl implements MstInterUserBaseService {
 
     @Resource
@@ -102,6 +96,11 @@ public class MstInterUserBaseServiceImpl implements MstInterUserBaseService {
                 user -> {
                     String subsyCodes = mstInterUserBaseDao.findUserSubyCodesByUserCode(user.getInterUserCode());
                     user.setSubsyNames(subsyBaseService.getSubsyNamesByCodes(subsyCodes));
+                    if(user.getUpdTime() == null) {
+                        user.setTimeStr(DateUtil.formatDate(user.getCrtTime(), DateUtil.DATE_TIME_PATTERN));
+                    } else {
+                        user.setTimeStr(DateUtil.formatDate(user.getUpdTime(), DateUtil.DATE_TIME_PATTERN));
+                    }
                 }
         );
         return list;

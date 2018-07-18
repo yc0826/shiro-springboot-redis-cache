@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class BaseController {
 
-    public static final Integer PAGE_SIZE = 10;
+    protected static final Integer PAGE_SIZE = 10;
 
     public Session getSession() {
         return SecurityUtils.getSubject().getSession();

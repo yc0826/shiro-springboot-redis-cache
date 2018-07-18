@@ -28,14 +28,10 @@ import java.util.Map;
 @RequestMapping("/role")
 public class RoleController extends BaseController{
 
-    @Reference(version = "1.0.0",
-            application = "${dubbo.application.id}",
-            registry = "zookeeper://127.0.0.1:2181")
+    @Reference
     private MstRollBaseService roleService;
 
-    @Reference(version = "1.0.0",
-            application = "${dubbo.application.id}",
-            registry = "zookeeper://127.0.0.1:2181")
+    @Reference
     private CfgSysResoService resourceService;
 
     @RequiresPermissions("role:view")

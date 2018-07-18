@@ -27,6 +27,8 @@ public class InterUserDto implements Serializable{
 
     private Date crtTime;
 
+    private String timeStr;
+
     private Integer gderFlg;
 
     private String subsyCode;
@@ -117,5 +119,13 @@ public class InterUserDto implements Serializable{
 
     public void setSubsyCode(String subsyCode) {
         this.subsyCode = subsyCode;
+    }
+
+    public String getTimeStr() {
+        return timeStr;
+    }
+
+    public void setTimeStr(String timeStr) {
+        this.timeStr = timeStr;
     }
 }

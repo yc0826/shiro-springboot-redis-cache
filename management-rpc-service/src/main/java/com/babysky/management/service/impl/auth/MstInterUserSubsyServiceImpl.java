@@ -13,14 +13,11 @@ import java.util.Map;
 
 /**
  * MstInterUserSubsyServiceImpl
- * Created by humin on 2017/9/14.
+ *
+ * @author humin
+ * @date 2017/9/14
  */
-@com.alibaba.dubbo.config.annotation.Service(
-        version = "1.0.0",
-        application = "${dubbo.application.id}",
-        protocol = "${dubbo.protocol.id}",
-        registry = "${dubbo.registry.id}"
-)
+@com.alibaba.dubbo.config.annotation.Service
 public class MstInterUserSubsyServiceImpl implements MstInterUserSubsyService {
 
     @Resource

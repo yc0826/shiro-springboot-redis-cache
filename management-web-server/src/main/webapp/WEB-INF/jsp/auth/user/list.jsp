@@ -165,16 +165,9 @@
                         return row.appAcesFlg ? '有效' : '无效';
                     }
                 }, {
-                    "mData": "updTime",
+                    "mData": "timeStr",
                     "sWidth": "200px",
-                    "sClass": "text-center",
-                    "mRender": function (data, type, row) {
-                        if (row.updTime) {
-                            return longToDateTime(row.updTime);
-                        } else {
-                            return longToDateTime(row.crtTime);
-                        }
-                    }
+                    "sClass": "text-center"
 
                 }, {
                     "sWidth": "200px",

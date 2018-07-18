@@ -23,18 +23,11 @@ import java.util.Set;
  */
 public class SimpleFilter extends PathMatchingFilter {
 
-    @Reference(version = "1.0.0",
-            application = "${dubbo.application.id}",
-            registry = "zookeeper://127.0.0.1:2181")
+    @Reference
     private MstInterUserBaseService mstInterUserBaseService;
-    @Reference(version = "1.0.0",
-            application = "${dubbo.application.id}",
-            registry = "zookeeper://127.0.0.1:2181")
+    @Reference
     private MstInterUserRollService mstInterUserRollService;
-
-    @Reference(version = "1.0.0",
-            application = "${dubbo.application.id}",
-            registry = "zookeeper://127.0.0.1:2181")
+    @Reference
     private CfgSysResoService cfgSysResoService;
 
     @Override
