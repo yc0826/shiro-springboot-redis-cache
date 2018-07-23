@@ -107,7 +107,7 @@
         ver_num = ver_num + 1,
     </sql>
 
-    <resultMap id="mstInterUserRollResultMap" type="com.babysky.management.api.auth.entity.MstInterUserRollEntity">
+    <resultMap id="mstInterUserRollResultMap" type="com.shiro.auth.api.auth.entity.MstInterUserRollEntity">
         <result property="mstInterUserRollId" column="mst_inter_user_roll_id"/>
         <result property="interUserCode" column="inter_user_code"/>
         <result property="subsyCode" column="subsy_code"/>
@@ -400,7 +400,7 @@
         )
     </insert>
 
-    <resultMap id="userRollResultMap" type="com.babysky.management.api.auth.dto.InterUserRollDto">
+    <resultMap id="userRollResultMap" type="com.shiro.auth.api.auth.dto.InterUserRollDto">
         <result column="inter_user_code" property="userCode"/>
         <result column="mob_num" property="mobile"/>
         <result column="roll_codes" property="rollCodes"/>

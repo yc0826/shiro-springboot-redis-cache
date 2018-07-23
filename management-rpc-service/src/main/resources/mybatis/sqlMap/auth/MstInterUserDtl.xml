@@ -179,7 +179,7 @@
         ver_num = ver_num + 1,
     </sql>
 
-    <resultMap id="mstInterUserDtlResultMap" type="com.babysky.management.api.auth.entity.MstInterUserDtlEntity">
+    <resultMap id="mstInterUserDtlResultMap" type="com.shiro.auth.api.auth.entity.MstInterUserDtlEntity">
         <result property="mstInterUserDtlId" column="mst_inter_user_dtl_id"/>
         <result property="interUserCode" column="inter_user_code"/>
         <result property="userLastName" column="user_last_name"/>

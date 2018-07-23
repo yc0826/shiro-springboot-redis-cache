@@ -24,7 +24,7 @@
          -->
     </bean>
     <!-- custom shiro session listener -->
-    <bean id="customSessionListener" class="com.babysky.management.shiro.listenter.CustomSessionListener">
+    <bean id="customSessionListener" class="com.shiro.auth.shiro.listenter.CustomSessionListener">
         <property name="shiroSessionRepository" ref="jedisShiroSessionRepository"/>
     </bean>
     <!-- 用户信息记住我功能的相关配置 -->
@@ -47,7 +47,7 @@
 
 
     <!-- custom shiro session listener -->
-    <bean id="customShiroSessionDAO" class="com.babysky.management.shiro.dao.CustomShiroSessionDAO">
+    <bean id="customShiroSessionDAO" class="com.shiro.auth.shiro.dao.CustomShiroSessionDAO">
         <property name="shiroSessionRepository" ref="jedisShiroSessionRepository"/>
         <property name="sessionIdGenerator" ref="sessionIdGenerator"/>
     </bean>
@@ -66,16 +66,16 @@
         <property name="cacheManager" ref="customShiroCacheManager"/>
     </bean>
     <!-- 用户缓存 -->
-    <bean id="customShiroCacheManager" class="com.babysky.management.shiro.cache.impl.CustomShiroCacheManager">
+    <bean id="customShiroCacheManager" class="com.shiro.auth.shiro.cache.impl.CustomShiroCacheManager">
         <property name="shiroCacheManager" ref="jedisShiroCacheManager"/>
     </bean>
 
     <!-- shiro 缓存实现，对ShiroCacheManager，我是采用redis的实现 -->
-    <bean id="jedisShiroCacheManager" class="com.babysky.management.shiro.cache.impl.JedisShiroCacheManager">
+    <bean id="jedisShiroCacheManager" class="com.shiro.auth.shiro.cache.impl.JedisShiroCacheManager">
         <property name="jedisManager" ref="jedisManager"/>
     </bean>
     <!-- redis 的缓存 -->
-    <bean id="jedisManager" class="com.babysky.management.shiro.cache.JedisManager">
+    <bean id="jedisManager" class="com.shiro.auth.shiro.cache.JedisManager">
         <property name="jedisPool" ref="jedisPool"/>
     </bean>
 
@@ -86,10 +86,10 @@
         <!--<property name="storedCredentialsHexEncoded" value="true"/>-->
     <!--</bean>-->
 
-    <bean id="credentialsMatcher" class="com.babysky.management.shiro.authc.credential.CustomCredentialsMatcher"/>
+    <bean id="credentialsMatcher" class="com.shiro.auth.shiro.authc.credential.CustomCredentialsMatcher"/>
 
     <!-- Realm实现 -->
-    <bean id="userRealm" class="com.babysky.management.shiro.realm.UserRealm">
+    <bean id="userRealm" class="com.shiro.auth.shiro.realm.UserRealm">
         <property name="credentialsMatcher" ref="credentialsMatcher"/>
         <property name="cachingEnabled" value="false"/>
     </bean>
@@ -121,7 +121,7 @@
 
 
     <!-- session 创建、删除、查询 -->
-    <bean id="jedisShiroSessionRepository" class="com.babysky.management.shiro.cache.JedisShiroSessionRepository" >
+    <bean id="jedisShiroSessionRepository" class="com.shiro.auth.shiro.cache.JedisShiroSessionRepository" >
         <property name="jedisManager" ref="jedisManager"/>
     </bean>
 
@@ -132,15 +132,15 @@
     -->
 
     <!-- 基于Form表单的身份验证过滤器 -->
-    <bean id="formAuthenticationFilter" class="com.babysky.management.shiro.filter.ServerFormAuthenticationFilter">
+    <bean id="formAuthenticationFilter" class="com.shiro.auth.shiro.filter.ServerFormAuthenticationFilter">
         <property name="usernameParam" value="username"/>
         <property name="passwordParam" value="password"/>
         <property name="rememberMeParam" value="rememberMe"/>
     </bean>
     <!-- 认证数据库存储-->
-    <bean id="simpleFilter" class="com.babysky.management.shiro.filter.SimpleFilter"/>
-    <bean id="accessControlFilter" class="com.babysky.management.shiro.filter.AccessControlFilter"/>
-    <bean id="kickoutSessionControlFilter" class="com.babysky.management.shiro.filter.KickoutSessionControlFilter">
+    <bean id="simpleFilter" class="com.shiro.auth.shiro.filter.SimpleFilter"/>
+    <bean id="accessControlFilter" class="com.shiro.auth.shiro.filter.AccessControlFilter"/>
+    <bean id="kickoutSessionControlFilter" class="com.shiro.auth.shiro.filter.KickoutSessionControlFilter">
         <property name="cacheManager" ref="customShiroCacheManager"/>
         <property name="sessionManager" ref="sessionManager"/>
         <property name="kickoutAfter" value="false"/>

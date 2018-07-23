@@ -5,7 +5,7 @@
 <mapper namespace="com.babysky.management.repo.auth.IMstInterUserBaseDao">
 
 
-    <resultMap id="mstInterUserBaseResultMap" type="com.babysky.management.api.auth.entity.MstInterUserBaseEntity">
+    <resultMap id="mstInterUserBaseResultMap" type="com.shiro.auth.api.auth.entity.MstInterUserBaseEntity">
         <result property="mstInterUserBaseId" column="mst_inter_user_base_id"/>
         <result property="interUserCode" column="inter_user_code"/>
         <result property="userName" column="user_name"/>
@@ -27,7 +27,7 @@
     </resultMap>
 
     <!-- useGeneratedKeys="true" keyProperty="xxx" for sqlserver and mysql -->
-    <insert id="insert" useGeneratedKeys="true" parameterType="com.babysky.management.api.auth.entity.MstInterUserBaseEntity" >
+    <insert id="insert" useGeneratedKeys="true" parameterType="com.shiro.auth.api.auth.entity.MstInterUserBaseEntity" >
         <![CDATA[
         INSERT INTO mst_inter_user_base (
         	 inter_user_code
@@ -164,7 +164,7 @@
         group by t.inter_user_code
     </select>
 
-    <insert id="inserUserSubsy" useGeneratedKeys="true" parameterType="com.babysky.management.api.auth.entity.MstInterUserBaseEntity">
+    <insert id="inserUserSubsy" useGeneratedKeys="true" parameterType="com.shiro.auth.api.auth.entity.MstInterUserBaseEntity">
         INSERT INTO `mst_inter_user_subsy` (
         `inter_user_code`
         , `subsy_code`
@@ -248,7 +248,7 @@
         ver_num = ver_num + 1,
     </sql>
 
-    <update id="updateUser" parameterType="com.babysky.management.api.auth.entity.MstInterUserBaseEntity">
+    <update id="updateUser" parameterType="com.shiro.auth.api.auth.entity.MstInterUserBaseEntity">
         update mst_inter_user_base
         <set>
             <include refid="mstInterUserBaseSetColumns" />
@@ -259,7 +259,7 @@
     </update>
 
 
-    <resultMap id="interUserResultMap" type="com.babysky.management.api.auth.dto.InterUserDto">
+    <resultMap id="interUserResultMap" type="com.shiro.auth.api.auth.dto.InterUserDto">
         <result property="interUserCode" column="inter_user_code"/>
         <result property="userName" column="user_name"/>
         <result property="mobile" column="mob_num"/>

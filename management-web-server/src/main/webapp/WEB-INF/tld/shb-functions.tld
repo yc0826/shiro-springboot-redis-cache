@@ -10,7 +10,7 @@
     <function>
         <description>obj in collection</description>
         <name>in</name>
-        <function-class>com.babysky.management.web.taglib.Functions</function-class>
+        <function-class>com.shiro.auth.web.taglib.Functions</function-class>
         <function-signature>boolean in(java.lang.Iterable,java.lang.Object)</function-signature>
     </function>
 
@@ -18,75 +18,34 @@
     <function>
         <description>根据id显示用户名称</description>
         <name>username</name>
-        <function-class>com.babysky.management.web.taglib.Functions</function-class>
+        <function-class>com.shiro.auth.web.taglib.Functions</function-class>
         <function-signature>java.lang.String username(java.lang.String))</function-signature>
     </function>
 
     <function>
         <description>根据id显示角色名称</description>
         <name>roleName</name>
-        <function-class>com.babysky.management.web.taglib.Functions</function-class>
+        <function-class>com.shiro.auth.web.taglib.Functions</function-class>
         <function-signature>java.lang.String roleName(java.lang.String)</function-signature>
     </function>
     <function>
         <description>根据id列表显示多个角色名称</description>
         <name>roleNames</name>
-        <function-class>com.babysky.management.web.taglib.Functions</function-class>
+        <function-class>com.shiro.auth.web.taglib.Functions</function-class>
         <function-signature>java.lang.String roleNames(java.util.Collection)</function-signature>
     </function>
 
     <function>
         <description>根据id显示资源名称</description>
         <name>resourceName</name>
-        <function-class>com.babysky.management.web.taglib.Functions</function-class>
+        <function-class>com.shiro.auth.web.taglib.Functions</function-class>
         <function-signature>java.lang.String resourceName(java.lang.String)</function-signature>
     </function>
     <function>
         <description>根据id列表显示多个资源名称</description>
         <name>resourceNames</name>
-        <function-class>com.babysky.management.web.taglib.Functions</function-class>
+        <function-class>com.shiro.auth.web.taglib.Functions</function-class>
         <function-signature>java.lang.String resourceNames(java.util.Collection)</function-signature>
     </function>
 
-    <function>
-        <description>根据字典获取字典值</description>
-        <name>getGenSubNameByGenCode</name>
-        <function-class>com.babysky.management.web.taglib.Functions</function-class>
-        <function-signature>java.lang.String getGenSubNameByGenCode(java.lang.String)</function-signature>
-    </function>
-
-    <function>
-        <description>根据字典type获取字典列表</description>
-        <name>getListByType</name>
-        <function-class>com.babysky.management.web.taglib.Functions</function-class>
-        <function-signature>java.util.List getListByType(java.lang.String)</function-signature>
-    </function>
-
-    <function>
-        <description>根据字典type获取字典列表</description>
-        <name>getNormalSubsyBrandList</name>
-        <function-class>com.babysky.management.web.taglib.Functions</function-class>
-        <function-signature>java.util.List getNormalSubsyBrandList()</function-signature>
-    </function>
-
-    <function>
-        <description>根据regionCode获取regionName</description>
-        <name>getRegionNameByRegionCode</name>
-        <function-class>com.babysky.management.web.taglib.Functions</function-class>
-        <function-signature>java.lang.String getRegionNameByRegionCode(java.lang.String)</function-signature>
-    </function>
-
-    <function>
-        <description>获取二级区域列表</description>
-        <name>getCityList</name>
-        <function-class>com.babysky.management.web.taglib.Functions</function-class>
-        <function-signature>java.util.List getCityList()</function-signature>
-    </function>
-
-    <function>
-        <description>获取护理师服务区域列表</description>
-        <name>getMmatronServCityList</name>
-        <function-class>com.babysky.management.web.taglib.Functions</function-class>
-        <function-signature>java.util.List getMmatronServCityList()</function-signature>
-    </function>
 </taglib>

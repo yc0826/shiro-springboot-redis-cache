@@ -377,7 +377,7 @@
 			</if>
 	</sql>
 
-    <resultMap id="mstSubsyBaseResultMap" type="com.babysky.management.api.auth.entity.MstSubsyBaseEntity">
+    <resultMap id="mstSubsyBaseResultMap" type="com.shiro.auth.api.auth.entity.MstSubsyBaseEntity">
         <result property="mstSubsyBaseId" column="mst_subsy_base_id"/>
         <result property="subsyCode" column="subsy_code"/>
         <result property="subsyName" column="subsy_name"/>
@@ -1107,7 +1107,7 @@
 			</if>
 	</select>
 
-	<resultMap id="subsyComboMap" type="com.babysky.management.api.auth.dto.SubsyComboDto">
+	<resultMap id="subsyComboMap" type="com.shiro.auth.api.auth.dto.SubsyComboDto">
 		<result property="subsyCode" column="subsy_code"/>
 		<result property="subsyName" column="subsy_disp_name"/>
 		<result property="subsyType" column="subsy_type"/>

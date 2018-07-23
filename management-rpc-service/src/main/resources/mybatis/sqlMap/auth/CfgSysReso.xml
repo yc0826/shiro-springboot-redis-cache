@@ -152,7 +152,7 @@
         ver_num = ver_num + 1,
     </sql>
 
-    <resultMap id="cfgSysResoResultMap" type="com.babysky.management.api.auth.entity.CfgSysResoEntity">
+    <resultMap id="cfgSysResoResultMap" type="com.shiro.auth.api.auth.entity.CfgSysResoEntity">
         <result property="cfgSysResoId" column="cfg_sys_reso_id"/>
         <result property="resoCode" column="reso_code"/>
         <result property="parentResoCode" column="parent_reso_code"/>
@@ -172,7 +172,7 @@
     </resultMap>
 
     <!-- useGeneratedKeys="true" keyProperty="xxx" for sqlserver and mysql -->
-    <insert id="insert" useGeneratedKeys="true" keyProperty="resoCode" parameterType="com.babysky.management.api.auth.entity.CfgSysResoEntity">
+    <insert id="insert" useGeneratedKeys="true" keyProperty="resoCode" parameterType="com.shiro.auth.api.auth.entity.CfgSysResoEntity">
         <![CDATA[
         INSERT INTO cfg_sys_reso (
         	reso_code

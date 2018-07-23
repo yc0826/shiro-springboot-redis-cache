@@ -108,7 +108,7 @@
 			VER_NUM = VER_NUM + 1,
 	</sql>
 
-	<resultMap id="mstInterUserSubsyResultMap" type="com.babysky.management.api.auth.entity.MstInterUserSubsyEntity">
+	<resultMap id="mstInterUserSubsyResultMap" type="com.shiro.auth.api.auth.entity.MstInterUserSubsyEntity">
         <result property="mstInterUserSubsyId" column="MST_INTER_USER_SUBSY_ID"/>
         <result property="interUserCode" column="INTER_USER_CODE"/>
         <result property="subsyCode" column="SUBSY_CODE"/>
@@ -282,7 +282,7 @@
 	
 	<!-- user-defined start -->
 	
-	<resultMap id="mstInterUserSubsyBeanResultMap" type="com.babysky.management.api.auth.entity.MstInterUserSubsyEntity">
+	<resultMap id="mstInterUserSubsyBeanResultMap" type="com.shiro.auth.api.auth.entity.MstInterUserSubsyEntity">
         <result property="mstInterUserSubsyId" column="mst_inter_user_subsy_id"/>
         <result property="interUserCode" column="inter_user_code"/>
         <result property="subsyCode" column="subsy_code"/>

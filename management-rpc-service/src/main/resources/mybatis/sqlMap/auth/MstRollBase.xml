@@ -115,7 +115,7 @@
 			ver_num = ver_num + 1,
 	</sql>
 
-	<resultMap id="mstRollBaseResultMap" type="com.babysky.management.api.auth.entity.MstRollBaseEntity">
+	<resultMap id="mstRollBaseResultMap" type="com.shiro.auth.api.auth.entity.MstRollBaseEntity">
         <result property="mstRollBaseId" column="mst_roll_base_id"/>
         <result property="rollCode" column="roll_code"/>
         <result property="rollName" column="roll_name"/>
