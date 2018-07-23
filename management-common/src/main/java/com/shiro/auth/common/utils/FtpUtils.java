@@ -25,7 +25,7 @@ public class FtpUtils {
      * @param input    输入流
      * @return 成功返回true，否则返回false
      */
-    public static boolean ftpUpload(String url, String loginName, String password, String path, String filename, InputStream input) throws Exception {
+    public static boolean ftpUpload(String url, String loginName, String password, String path, String filename, InputStream input) {
         boolean success = false;
         FTPClient ftp = new FTPClient();
         try {
@@ -78,7 +78,7 @@ public class FtpUtils {
      * @param fileName   文件名
      * @param response   HttpServletResponse
      */
-    public static void ftpDownLoad(String url, String loginName, String password, String remotePath, String fileName, HttpServletResponse response) throws Exception {
+    public static void ftpDownLoad(String url, String loginName, String password, String remotePath, String fileName, HttpServletResponse response) {
         FTPClient ftp = new FTPClient();
         try {
             int reply;
@@ -128,9 +128,8 @@ public class FtpUtils {
      * @param width           图片宽度
      * @param height          图片高度
      * @param keepAspectRatio 保持宽高比
-     * @throws Exception
      */
-    public static byte[] getImageFromFtpAndDownload(String url, String loginName, String password, String remotePath, String fileName, int width, int height, boolean keepAspectRatio) throws Exception {
+    public static byte[] getImageFromFtpAndDownload(String url, String loginName, String password, String remotePath, String fileName, int width, int height, boolean keepAspectRatio) {
 //
 //        Thumbnails.of(new File("original.jpg"))
 //                .size(160, 160)
@@ -185,9 +184,8 @@ public class FtpUtils {
      * @param remotePath
      * @param fileName
      * @return
-     * @throws Exception
      */
-    public static byte[] getFileFromFtpAndDownload(String url, String loginName, String password, String remotePath, String fileName) throws Exception {
+    public static byte[] getFileFromFtpAndDownload(String url, String loginName, String password, String remotePath, String fileName) {
 
         FTPClient ftp = new FTPClient();
         try {
