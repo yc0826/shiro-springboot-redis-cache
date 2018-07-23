@@ -29,6 +29,7 @@ public class SystemStatus implements Response {
 
     private Boolean success;
 
+    @Override
     public Boolean isSuccess() {
         return success;
     }
@@ -45,6 +46,7 @@ public class SystemStatus implements Response {
         this.msg = msg;
     }
 
+    @Override
     public String getCode() {
         return code;
     }
