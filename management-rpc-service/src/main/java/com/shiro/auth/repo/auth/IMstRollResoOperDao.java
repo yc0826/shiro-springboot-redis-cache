@@ -5,6 +5,9 @@ import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
 
+/**
+ * @author YangChao
+ */
 @Mapper
 public interface IMstRollResoOperDao {
 
