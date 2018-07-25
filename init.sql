@@ -170,7 +170,7 @@ DROP TABLE IF EXISTS `mst_inter_user_roll`;
 CREATE TABLE IF NOT EXISTS `mst_inter_user_roll` (
   `mst_inter_user_roll_id` int(10) NOT NULL AUTO_INCREMENT COMMENT '业务基础内部用户角色id',
   `inter_user_code` varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '内部用户code',
-  `subsy_code` varchar(16) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '会所code',
+  `subsy_code` varchar(16) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '公司code',
   `roll_code` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '角色code',
   `disp_seq` int(3) DEFAULT NULL COMMENT '显示顺序',
   `crt_time` datetime NOT NULL COMMENT '创建时间',
@@ -454,10 +454,10 @@ INSERT INTO `mst_inter_user_roll` (`mst_inter_user_roll_id`, `inter_user_code`, 
 -- 导出  表 yc.mst_inter_user_subsy 结构
 DROP TABLE IF EXISTS `mst_inter_user_subsy`;
 CREATE TABLE IF NOT EXISTS `mst_inter_user_subsy` (
-  `mst_inter_user_subsy_id` int(10) NOT NULL AUTO_INCREMENT COMMENT '业务基础内部用户会所id',
+  `mst_inter_user_subsy_id` int(10) NOT NULL AUTO_INCREMENT COMMENT '业务基础内部用户公司id',
   `inter_user_code` varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '内部用户code',
-  `subsy_code` varchar(16) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '会所code',
-  `dflt_subsy_flg` tinyint(1) NOT NULL COMMENT '默认会所flag:{0：非默认会所；1：默认会所}',
+  `subsy_code` varchar(16) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '公司code',
+  `dflt_subsy_flg` tinyint(1) NOT NULL COMMENT '默认公司flag:{0：非默认公司；1：默认公司}',
   `crt_time` datetime NOT NULL COMMENT '创建时间',
   `crt_user_code` varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '创建用户code',
   `upd_time` datetime DEFAULT NULL COMMENT '更新时间',
@@ -467,7 +467,7 @@ CREATE TABLE IF NOT EXISTS `mst_inter_user_subsy` (
   PRIMARY KEY (`mst_inter_user_subsy_id`),
   UNIQUE KEY `inter_user_code` (`inter_user_code`,`subsy_code`,`del_flg`),
   KEY `subsy_code` (`subsy_code`)
-) ENGINE=InnoDB AUTO_INCREMENT=987 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='业务基础－内部用户会所表';
+) ENGINE=InnoDB AUTO_INCREMENT=987 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='业务基础－内部用户公司表';
 
 -- 正在导出表  yc.mst_inter_user_subsy 的数据：~591 rows (大约)
 DELETE FROM `mst_inter_user_subsy`;
@@ -1087,20 +1087,20 @@ CREATE TABLE IF NOT EXISTS `mst_roll_base` (
 DELETE FROM `mst_roll_base`;
 /*!40000 ALTER TABLE `mst_roll_base` DISABLE KEYS */;
 INSERT INTO `mst_roll_base` (`mst_roll_base_id`, `roll_code`, `roll_name`, `roll_desc`, `roll_permis`, `crt_time`, `crt_user_code`, `upd_time`, `upd_user_code`, `del_flg`, `ver_num`) VALUES
-	(3, 'ROLL003', '财务主管', '1、APP销售订单审批  2、后台财务报表查看（仅限本会所）', '011', '2017-09-19 17:19:51', 'admin', '2018-07-25 15:44:01', 'admin', 0, 3),
-	(4, 'ROLL004', '财务人员', '1、后台财务报表查看（仅限本会所）', '001', '2017-09-19 17:19:51', 'MIUB628218996418473A55', '2018-02-27 16:18:29', 'MIUB628218996418473A55', 1, 1),
-	(5, 'ROLL005', '客服主管', '1、APP客服模块  2、后台客服报表（仅限本会所）3、服务4、投诉', '011', '2017-09-19 17:19:51', 'admin', '2018-02-27 17:02:07', 'admin', 1, 2),
-	(6, 'ROLL006', '客服专员', '1、APP客服模块（仅限本会所）', '001', '2017-09-19 17:19:51', 'MIUB628218996418473A55', '2018-02-27 16:19:30', 'MIUB628218996418473A55', 1, 1),
-	(7, 'ROLL007', '销售主管', '1、APP销售模块  2、后台销售报表（仅限本会所）3、后台销售参数设置', '011', '2017-09-19 17:19:51', 'admin', '2018-07-25 15:44:30', 'admin', 0, 4),
-	(8, 'ROLL008', '销售顾问', '1、APP销售模块（仅限本会所）', '001', '2017-09-19 17:19:51', 'MIUB628218996418473A55', '2018-02-27 16:20:01', 'MIUB628218996418473A55', 1, 1),
-	(9, 'ROLL009', '房务主管', '1、APP房务模块  2、后台房务报表（仅限本会所）', '011', '2017-09-19 17:19:51', 'admin', '2018-02-27 17:02:38', 'admin', 1, 2),
-	(10, 'ROLL010', '客房服务员', '1、APP房务模块（仅限本会所）', '001', '2017-09-19 17:19:51', 'MIUB628218996418473A55', '2018-02-27 16:20:47', 'MIUB628218996418473A55', 1, 1),
-	(17, 'admin', '超级管理员', '超级管理员（所有权限、所有会所）', '111', '2017-09-19 17:19:51', 'admin', '2018-03-06 19:36:48', 'admin', 0, 10),
-	(18, 'MRB17121116442776C48064D4D74A9A94462BF9B8456DAC', '会所管理员', '1、增加会所用户（除护理师）2、相关用户授权（仅限本会所）3、会所产品填写 4、会所护理师填写', NULL, '2017-12-11 16:44:27', 'MIUB628218996418473A55', '2018-02-27 16:25:52', 'MIUB628218996418473A55', 0, 4),
-	(19, 'MRB17121117150678C2EF4568974563A74912C437A42BE9', '后台专员', '1、打印条形码（仅限本会所）', NULL, '2017-12-11 17:15:06', 'MIUB628218996418473A55', '2018-02-27 16:26:17', 'MIUB628218996418473A55', 1, 4),
-	(20, 'MRB18011613141033636244F09E43B5A0DC30B5D9C3D807', '活动发布专员', '1、后台活动发布（仅限本会所）', NULL, '2018-01-16 13:14:10', 'MIUB628218996418473A55', '2018-02-27 16:26:34', 'MIUB628218996418473A55', 1, 2),
+	(3, 'ROLL003', '财务主管', '1、APP销售订单审批  2、后台财务报表查看（仅限本公司）', '011', '2017-09-19 17:19:51', 'admin', '2018-07-25 15:44:01', 'admin', 0, 3),
+	(4, 'ROLL004', '财务人员', '1、后台财务报表查看（仅限本公司）', '001', '2017-09-19 17:19:51', 'MIUB628218996418473A55', '2018-02-27 16:18:29', 'MIUB628218996418473A55', 1, 1),
+	(5, 'ROLL005', '客服主管', '1、APP客服模块  2、后台客服报表（仅限本公司）3、服务4、投诉', '011', '2017-09-19 17:19:51', 'admin', '2018-02-27 17:02:07', 'admin', 1, 2),
+	(6, 'ROLL006', '客服专员', '1、APP客服模块（仅限本公司）', '001', '2017-09-19 17:19:51', 'MIUB628218996418473A55', '2018-02-27 16:19:30', 'MIUB628218996418473A55', 1, 1),
+	(7, 'ROLL007', '销售主管', '1、APP销售模块  2、后台销售报表（仅限本公司）3、后台销售参数设置', '011', '2017-09-19 17:19:51', 'admin', '2018-07-25 15:44:30', 'admin', 0, 4),
+	(8, 'ROLL008', '销售顾问', '1、APP销售模块（仅限本公司）', '001', '2017-09-19 17:19:51', 'MIUB628218996418473A55', '2018-02-27 16:20:01', 'MIUB628218996418473A55', 1, 1),
+	(9, 'ROLL009', '房务主管', '1、APP房务模块  2、后台房务报表（仅限本公司）', '011', '2017-09-19 17:19:51', 'admin', '2018-02-27 17:02:38', 'admin', 1, 2),
+	(10, 'ROLL010', '客房服务员', '1、APP房务模块（仅限本公司）', '001', '2017-09-19 17:19:51', 'MIUB628218996418473A55', '2018-02-27 16:20:47', 'MIUB628218996418473A55', 1, 1),
+	(17, 'admin', '超级管理员', '超级管理员（所有权限、所有公司）', '111', '2017-09-19 17:19:51', 'admin', '2018-03-06 19:36:48', 'admin', 0, 10),
+	(18, 'MRB17121116442776C48064D4D74A9A94462BF9B8456DAC', '公司管理员', '1、增加公司用户（除师）2、相关用户授权（仅限本公司）3、公司产品填写 4、公司师填写', NULL, '2017-12-11 16:44:27', 'MIUB628218996418473A55', '2018-02-27 16:25:52', 'MIUB628218996418473A55', 0, 4),
+	(19, 'MRB17121117150678C2EF4568974563A74912C437A42BE9', '后台专员', '1、打印条形码（仅限本公司）', NULL, '2017-12-11 17:15:06', 'MIUB628218996418473A55', '2018-02-27 16:26:17', 'MIUB628218996418473A55', 1, 4),
+	(20, 'MRB18011613141033636244F09E43B5A0DC30B5D9C3D807', '活动发布专员', '1、后台活动发布（仅限本公司）', NULL, '2018-01-16 13:14:10', 'MIUB628218996418473A55', '2018-02-27 16:26:34', 'MIUB628218996418473A55', 1, 2),
 	(21, 'ROLL999', '集团管理员', '集团总部管理，拥有APP和后台（除了菜单配置、角色管理、缓存管理）', '111', '2018-01-19 10:27:17', 'MIUB628218996418473A55', '2018-03-02 17:32:48', 'MIUB628218996418473A55', 1, 4),
-	(32, 'MRB_BABYSKYGROUP_FINANCEDIRECTOR', '集团财务', '审核会所关闭流程', NULL, '2018-02-27 16:47:40', 'admin', '2018-03-12 18:05:14', 'admin', 1, 3);
+	(32, 'MRB_BABYSKYGROUP_FINANCEDIRECTOR', '集团财务', '审核公司关闭流程', NULL, '2018-02-27 16:47:40', 'admin', '2018-03-12 18:05:14', 'admin', 1, 3);
 /*!40000 ALTER TABLE `mst_roll_base` ENABLE KEYS */;
 
 -- 导出  表 yc.mst_roll_reso_oper 结构
@@ -2279,29 +2279,29 @@ INSERT INTO `mst_roll_reso_oper` (`mst_roll_reso_id`, `roll_code`, `reso_code`, 
 -- 导出  表 yc.mst_subsy_base 结构
 DROP TABLE IF EXISTS `mst_subsy_base`;
 CREATE TABLE IF NOT EXISTS `mst_subsy_base` (
-  `mst_subsy_base_id` int(10) NOT NULL AUTO_INCREMENT COMMENT '业务基础会所基本id',
-  `subsy_code` varchar(16) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '会所code',
-  `subsy_name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '会所名称',
-  `subsy_disp_name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '会所显示名称',
+  `mst_subsy_base_id` int(10) NOT NULL AUTO_INCREMENT COMMENT '业务基础公司基本id',
+  `subsy_code` varchar(16) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '公司code',
+  `subsy_name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '公司名称',
+  `subsy_disp_name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '公司显示名称',
   `loct_prov_code` varchar(6) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '所在省code',
   `loct_city_code` varchar(6) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '所在市code',
   `loct_area_code` varchar(6) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '所在市code',
-  `subsy_addr` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '会所地址',
+  `subsy_addr` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '公司地址',
   `loct_lon` double(10,6) NOT NULL COMMENT '所在经度',
   `loct_lat` double(10,6) NOT NULL COMMENT '所在纬度',
   `phone_num` varchar(16) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '电话号码',
   `mob_num` varchar(16) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '手机号码',
   `post_no` varchar(8) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '邮政编号',
-  `subsy_desc` varchar(256) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '会所描述',
+  `subsy_desc` varchar(256) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '公司描述',
   `busi_time_desc` varchar(256) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '营业时间描述',
   `brand_code` varchar(8) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '品牌code:{cfg_gen：类型0003}',
   `subsy_brand_type` varchar(8) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '品牌类型code 0089',
   `banr_url` varchar(128) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'bannerurl',
-  `audit_status_code` varchar(8) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '会所审核状态code:{cfg_gen: 类型0066}',
+  `audit_status_code` varchar(8) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '公司审核状态code:{cfg_gen: 类型0066}',
   `prod_audit_status_code` varchar(8) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '产品审核状态code:{cfg_gen: 类型0084}',
-  `close_audit_status_code` varchar(8) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '会所关闭审核状态code:{cfg_gen:类型0088}',
-  `close_audit_approver` varchar(500) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '会所关闭审核审批人',
-  `is_allow_subsy_admin_login` int(10) NOT NULL COMMENT '是否允许会所管理员登录后台',
+  `close_audit_status_code` varchar(8) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '公司关闭审核状态code:{cfg_gen:类型0088}',
+  `close_audit_approver` varchar(500) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '公司关闭审核审批人',
+  `is_allow_subsy_admin_login` int(10) NOT NULL COMMENT '是否允许公司管理员登录后台',
   `price` int(10) DEFAULT NULL COMMENT '均价',
   `popul_val` double(11,4) DEFAULT NULL COMMENT '人气值',
   `serv_score` double(11,4) DEFAULT NULL COMMENT '服务评分',
@@ -2314,28 +2314,28 @@ CREATE TABLE IF NOT EXISTS `mst_subsy_base` (
   `home_disp_resv_flg` tinyint(1) DEFAULT '0' COMMENT '首页显示预约flag:{0：不预约首页展示；1：预约首页展示}',
   `promotion_desc` varchar(256) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '促销描述',
   `book_desc` varchar(256) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '预定描述',
-  `subsy_type` varchar(8) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '会所类型code:{cfg_gen：类型0079}',
-  `subsy_activ_flg` int(10) NOT NULL COMMENT '会所可用flag:{0：不可用  1：可用}',
-  `subsy_activ_start_time` datetime DEFAULT NULL COMMENT '会所有效期开始时间',
-  `subsy_activ_end_time` datetime DEFAULT NULL COMMENT '会所有效期结束时间',
-  `subsy_open_flg` int(10) NOT NULL DEFAULT '0' COMMENT '会所是否对外公开',
+  `subsy_type` varchar(8) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '公司类型code:{cfg_gen：类型0079}',
+  `subsy_activ_flg` int(10) NOT NULL COMMENT '公司可用flag:{0：不可用  1：可用}',
+  `subsy_activ_start_time` datetime DEFAULT NULL COMMENT '公司有效期开始时间',
+  `subsy_activ_end_time` datetime DEFAULT NULL COMMENT '公司有效期结束时间',
+  `subsy_open_flg` int(10) NOT NULL DEFAULT '0' COMMENT '公司是否对外公开',
   PRIMARY KEY (`mst_subsy_base_id`),
   UNIQUE KEY `unique_mst_subsy_base_code` (`subsy_code`),
   UNIQUE KEY `unique_mst_subsy_base_mob` (`mob_num`)
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='业务基础－会所基本表';
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='业务基础－公司基本表';
 
 -- 正在导出表  yc.mst_subsy_base 的数据：~9 rows (大约)
 DELETE FROM `mst_subsy_base`;
 /*!40000 ALTER TABLE `mst_subsy_base` DISABLE KEYS */;
 INSERT INTO `mst_subsy_base` (`mst_subsy_base_id`, `subsy_code`, `subsy_name`, `subsy_disp_name`, `loct_prov_code`, `loct_city_code`, `loct_area_code`, `subsy_addr`, `loct_lon`, `loct_lat`, `phone_num`, `mob_num`, `post_no`, `subsy_desc`, `busi_time_desc`, `brand_code`, `subsy_brand_type`, `banr_url`, `audit_status_code`, `prod_audit_status_code`, `close_audit_status_code`, `close_audit_approver`, `is_allow_subsy_admin_login`, `price`, `popul_val`, `serv_score`, `crt_time`, `crt_user_code`, `upd_time`, `upd_user_code`, `del_flg`, `ver_num`, `home_disp_resv_flg`, `promotion_desc`, `book_desc`, `subsy_type`, `subsy_activ_flg`, `subsy_activ_start_time`, `subsy_activ_end_time`, `subsy_open_flg`) VALUES
-	(1, '3130113001', '山泉123', '山泉', '310000', '310100', '310106', '上海市静安区西康路572号', 121.452109, 31.230180, '021-31608679', '13334334333', NULL, '创立于2005年，坐落于静安区西康路昌平路口，地处上海市中心黄金地段，地理位置得天独厚，交通极其便利。采用国际月子会所独栋楼宇的设计理念，闹中取静，是产妇修养身心的绝佳选择。会所环境奢华大气，细节之处独具一格，套房尊贵舒适，安全私密。', '周一至周日 全天', '00030001', NULL, NULL, '00660002', NULL, NULL, NULL, 0, 68000, 3.0000, 5.0000, '2017-09-21 15:20:32', 'U001', '2017-09-21 15:20:40', 'U001', 0, 0, NULL, NULL, NULL, '00790001', 1, '2017-12-01 00:00:00', '2099-12-01 00:00:00', 1),
-	(2, '3130117001', '水泉123', '水泉', '310000', '310100', '310115', '上海浦东新区梅花路1108号18楼(上海卓美亚喜玛拉雅酒店)', 121.561816, 31.210225, '31661153', '13818001092', '201204', '琅悦花木会所坐落于浦东超五星级大酒店上海卓美亚喜玛拉雅酒店内，18楼整层行政楼层，每间房间都是行政套房，设有独立空调、中央新风和空气净化系统，杜绝PM2.5对妈妈和宝宝的危害。', '周一至周日 全天', '00030001', NULL, NULL, '00660002', NULL, NULL, NULL, 0, 68000, 3.0000, 5.0000, '2017-12-22 11:08:17', 'admin', '2017-12-22 11:46:07', 'admin', 0, 3, NULL, '', '', '00790001', 1, '2017-12-01 00:00:00', '2099-12-01 00:00:00', 1),
-	(3, '3130318001', '火泉123', '火泉', '310000', '310100', '310115', '浦东新区乳山路231号', 121.526210, 31.237289, '', '15026921909', '200120', '悦悦满陆家嘴VIP会所创立于2010年，坐落于浦东新区乳山路靠近福山路、地处梅园公园对面，空气清新，地理位置优越，交通便利，独栋楼宇，静享私密。聘请专业设计团队按照星级精品酒店标准进行设计和建造，三重顶级安防体系确保每位妈妈和宝宝的安全私密，会所走廊顶层全透明玻璃装饰，让宝宝足不出户也能晒太阳。大厅环境典雅，简约大气，尊享大空间的卧房，舒适自在，内部设施齐全，房间内人体工学宽体大床，环保家具，进口电器，独立空调，独立新风系统，美国怡口净水系统和中央饮水系统一应俱全，是产妇理想月子生活的不二之选。', '周一至周日 全天', '00030003', NULL, NULL, '00660002', NULL, NULL, NULL, 0, 48000, 3.0000, 5.0000, '2018-01-10 10:10:44', 'admin', '2018-01-12 11:08:55', NULL, 0, 2, NULL, '', '', '00790001', 1, '2017-12-01 00:00:00', '2099-12-01 00:00:00', 1),
-	(4, '3410118001', '风泉123', '风泉', '110000', '110100', '110108', '北京市海淀区紫竹院路29号香格里拉饭店景阁17层', 116.460315, 39.914164, '', '13426183208', '', '琅悅月子會所入駐於北京香格里拉酒店17層，位於北京市海淀區紫竹院路29號，會所保留香格里拉五星級的奢華品質，設計師針對安全、衛生以及私密的需求進行定制化改造，在保留原香格里拉酒店五星級的奢華品質之余更用心在細節處打磨，全心為產婦和嬰兒提供舒心的服務體驗。', '周一至周日（9:00-18:00）', '00030001', NULL, NULL, '00660002', NULL, NULL, NULL, 0, 75800, 3.0000, 5.0000, '2018-01-23 14:15:07', 'admin', '2018-01-25 12:31:17', NULL, 0, 2, NULL, '', '', '00790001', 1, '2017-12-01 00:00:00', '2099-12-01 00:00:00', 1),
-	(5, '3420218001', '雷泉123', '雷泉', '120000', '120100', '120104', '南京路海光寺338号金泽大酒店25楼贝瑞佳接待处', 117.176720, 39.123401, '', '18522312886', '', '贝瑞佳国际月子会所创办于2010年，是全国最大的专业连锁产后母婴护理机构，而天津会所是以高星级及专业母婴护理标准设施进行配备的，位于市中心高端地带，邻近天津市中心妇幼医院，修养环境静谧悠然，地理位置优越，交通便利。客房玻璃门禁体系确保每位妈妈和宝宝的安全私密，尊享大空间的卧房，舒适自在，内部设施齐全，房间独立弹簧大床，环保家具，进口电器，独立空调，独立新风系统，美国怡口净水系统和中央饮水系统一应俱全，是产妇理想月子生活的不二之选。', '周一至周日（8:00-19:00）', '00030002', NULL, NULL, '00660001', NULL, NULL, NULL, 0, 39800, 3.0000, 5.0000, '2018-01-29 10:26:04', 'admin', '2018-01-29 10:26:04', NULL, 0, 1, NULL, '', '', '00790001', 1, '2018-01-29 10:26:15', '2099-12-01 00:00:00', 1),
-	(6, '3140218001', '金泉123', '金泉', '330000', '330100', '330102', '杭州市上城区望江东路鲲鹏路363号捷特漫大酒店四楼', 120.196790, 30.228099, '0571-86586633', '0571-86586633', '', '贝瑞佳月子会所坐落于杭州市上城区望江东路捷特漫大酒店4层，东临钱塘江，北倚南宋御街、河坊街，坐享城市中心优势资源，闹中取静。距离杭州城站火车站仅16分钟车程，近地铁，交通十分便利。会所环境优美，静谧舒适，整体采用欧式装饰风格，中西合璧，时尚现代，处处尽显尊华。江景房即可将钱塘江的美丽风景尽收眼底，是杭州市唯一花园式月子会所，受到杭州上万妈妈的推崇和信赖。', '周一至周日（8:00-19:00）', '00030002', NULL, NULL, '00660002', NULL, NULL, NULL, 0, 58800, 3.0000, 5.0000, '2018-02-13 10:12:22', 'admin', '2018-02-13 10:12:33', NULL, 0, 2, NULL, '', '', '00790001', 1, '2018-02-13 15:07:24', '2099-12-01 00:00:00', 1),
+	(1, '3130113001', '山泉123', '山泉', '310000', '310100', '310106', '上海市静安区西康路572号', 121.452109, 31.230180, '021-31608679', '13334334333', NULL, '创立于2005年，坐落于静安区西康路昌平路口，地处上海市中心黄金地段，地理位置得天独厚，交通极其便利。采用独栋楼宇的设计理念，闹中取静，是修养身心的绝佳选择。公司环境奢华大气，细节之处独具一格，套房尊贵舒适，安全私密。', '周一至周日 全天', '00030001', NULL, NULL, '00660002', NULL, NULL, NULL, 0, 68000, 3.0000, 5.0000, '2017-09-21 15:20:32', 'U001', '2017-09-21 15:20:40', 'U001', 0, 0, NULL, NULL, NULL, '00790001', 1, '2017-12-01 00:00:00', '2099-12-01 00:00:00', 1),
+	(2, '3130117001', '水泉123', '水泉', '310000', '310100', '310115', '上海浦东新区梅花路1108号18楼(上海卓美亚喜玛拉雅酒店)', 121.561816, 31.210225, '31661153', '13818001092', '201204', '花木公司坐落于浦东超五星级大酒店上海卓美亚喜玛拉雅酒店内，18楼整层行政楼层，每间房间都是行政套房，设有独立空调、中央新风和空气净化系统，杜绝PM2.5对和的危害。', '周一至周日 全天', '00030001', NULL, NULL, '00660002', NULL, NULL, NULL, 0, 68000, 3.0000, 5.0000, '2017-12-22 11:08:17', 'admin', '2017-12-22 11:46:07', 'admin', 0, 3, NULL, '', '', '00790001', 1, '2017-12-01 00:00:00', '2099-12-01 00:00:00', 1),
+	(3, '3130318001', '火泉123', '火泉', '310000', '310100', '310115', '浦东新区乳山路231号', 121.526210, 31.237289, '', '15026921909', '200120', '火泉123创立于2010年，坐落于浦东新区乳山路靠近福山路、地处梅园公园对面，空气清新，地理位置优越，交通便利，独栋楼宇，静享私密。聘请专业设计团队按照星级精品酒店标准进行设计和建造，三重顶级安防体系确保每位和的安全私密，公司走廊顶层全透明玻璃装饰，足不出户也能晒太阳。大厅环境典雅，简约大气，尊享大空间的卧房，舒适自在，内部设施齐全，房间内人体工学宽体大床，环保家具，进口电器，独立空调，独立新风系统，美国怡口净水系统和中央饮水系统一应俱全，是理想生活的不二之选。', '周一至周日 全天', '00030003', NULL, NULL, '00660002', NULL, NULL, NULL, 0, 48000, 3.0000, 5.0000, '2018-01-10 10:10:44', 'admin', '2018-01-12 11:08:55', NULL, 0, 2, NULL, '', '', '00790001', 1, '2017-12-01 00:00:00', '2099-12-01 00:00:00', 1),
+	(4, '3410118001', '风泉123', '风泉', '110000', '110100', '110108', '北京市海淀区紫竹院路29号香格里拉饭店景阁17层', 116.460315, 39.914164, '', '13426183208', '', '风泉123入驻於北京香格里拉酒店17層，位於北京市海淀區紫竹院路29號，會所保留香格里拉五星級的奢華品質，設計師針對安全、衛生以及私密的需求進行定制化改造，在保留原香格里拉酒店五星級的奢華品質之余更用心在細節處打磨。', '周一至周日（9:00-18:00）', '00030001', NULL, NULL, '00660002', NULL, NULL, NULL, 0, 75800, 3.0000, 5.0000, '2018-01-23 14:15:07', 'admin', '2018-01-25 12:31:17', NULL, 0, 2, NULL, '', '', '00790001', 1, '2017-12-01 00:00:00', '2099-12-01 00:00:00', 1),
+	(5, '3420218001', '雷泉123', '雷泉', '120000', '120100', '120104', '南京路海光寺338号金泽大酒店25楼接待处', 117.176720, 39.123401, '', '18522312886', '', '雷泉123所创办于2010年，是全国最大的专业连锁机构，而天津公司是以高星级及专业标准设施进行配备的，位于市中心高端地带，邻近天津市中心妇幼医院，修养环境静谧悠然，地理位置优越，交通便利。客房玻璃门禁体系确保每位和的安全私密，尊享大空间的卧房，舒适自在，内部设施齐全，房间独立弹簧大床，环保家具，进口电器，独立空调，独立新风系统，美国怡口净水系统和中央饮水系统一应俱全，是理想生活的不二之选。', '周一至周日（8:00-19:00）', '00030002', NULL, NULL, '00660001', NULL, NULL, NULL, 0, 39800, 3.0000, 5.0000, '2018-01-29 10:26:04', 'admin', '2018-01-29 10:26:04', NULL, 0, 1, NULL, '', '', '00790001', 1, '2018-01-29 10:26:15', '2099-12-01 00:00:00', 1),
+	(6, '3140218001', '金泉123', '金泉', '330000', '330100', '330102', '杭州市上城区望江东路鲲鹏路363号捷特漫大酒店四楼', 120.196790, 30.228099, '0571-86586633', '0571-86586633', '', '公司坐落于杭州市上城区望江东路捷特漫大酒店4层，东临钱塘江，北倚南宋御街、河坊街，坐享城市中心优势资源，闹中取静。距离杭州城站火车站仅16分钟车程，近地铁，交通十分便利。公司环境优美，静谧舒适，整体采用欧式装饰风格，中西合璧，时尚现代，处处尽显尊华。江景房即可将钱塘江的美丽风景尽收眼底，是杭州市唯一花园式公司，受到杭州上万的推崇和信赖。', '周一至周日（8:00-19:00）', '00030002', NULL, NULL, '00660002', NULL, NULL, NULL, 0, 58800, 3.0000, 5.0000, '2018-02-13 10:12:22', 'admin', '2018-02-13 10:12:33', NULL, 0, 2, NULL, '', '', '00790001', 1, '2018-02-13 15:07:24', '2099-12-01 00:00:00', 1),
 	(7, '3410118007', '微笑呀', '呵呵呵', '110000', '110100', '110106', '三环四环五环内啊啊啊啊', 116.323992, 39.968649, '011-48849442', '13588660005', '', '你不难过，是因为我替你难过了。真残忍，不是么？', '全年营业\n       早八点到晚八点', '00030001', NULL, '/reso/downLoadPicFile?tranResoFileMngId=TRFM1803011439555B1D3D58ABA2431E8BE75C9B00C611EC', '00660001', '00840003', '00880003', '', 1, 33333, NULL, 5.0000, '2018-03-01 14:51:03', 'MIUB67169682475047784BB4', '2018-03-15 11:30:14', 'MIUB7690274315493997AF7F', 0, 19, 0, '整个天空映在他的瞳孔里，这么看去，好像所有的雨点都是从天心的一点洒落，都会落入他的眼中。', '他总是看着头顶唯一的方窗，渴望鸟儿一样飞翔，渴望什么东西从天而降改变他的人生。', '00790001', 1, '2018-03-01 14:51:04', '2018-03-01 14:51:04', 1),
-	(8, '3130118007', '麦冬会所名', '麦冬显示名', '310000', '310100', '310101', '麦冬琅悦地址麦冬琅悦地址麦冬琅悦地址麦冬琅悦地址麦冬琅悦地址麦冬琅悦地址', 121.490317, 31.222771, '', '13564532323', '', '麦冬琅悦地址麦冬琅悦地址麦冬琅悦地址麦冬琅悦地址麦冬琅悦地址麦冬琅悦地址麦冬琅悦地址麦冬琅悦地址麦冬琅悦地址麦冬琅悦地址麦冬琅悦地址麦冬琅悦地址麦冬琅悦地址麦冬琅悦地址麦冬琅悦地址麦冬琅悦地址麦冬琅悦地址麦冬琅悦地址麦冬琅悦地址麦冬琅悦地址麦冬琅悦地址麦冬琅悦地址麦冬琅悦地址麦冬琅悦地址\n麦冬琅悦地址麦冬琅悦地址麦冬琅悦地址麦冬琅悦地址麦冬琅悦地址麦冬琅悦地址麦冬琅悦地址麦冬琅悦地址麦冬琅悦地址', '周一至周六，9：00-18：00；\n周日，全天；', '00030001', NULL, '/reso/downLoadPicFile?tranResoFileMngId=TRFM180301151428656F0D8D7CF54D5B87343DBB2C64A73C', '00660001', '00840002', NULL, NULL, 1, 70000, NULL, 5.0000, '2018-03-01 15:17:52', 'MIUB6720793870139372ECC5', '2018-03-12 20:57:26', 'MIUB6722400082668127E2D4', 0, 11, 0, '买一送一', '', '00790001', 1, '2018-03-01 15:17:53', '2018-03-01 15:17:53', 1),
+	(8, '3130118007', '麦冬公司名', '麦冬显示名', '310000', '310100', '310101', '麦冬地址麦冬地址麦冬地址麦冬地址麦冬地址麦冬地址', 121.490317, 31.222771, '', '13564532323', '', '麦冬地址麦冬地址麦冬地址麦冬地址麦冬地址麦冬地址麦冬地址麦冬地址麦冬地址麦冬地址麦冬地址麦冬地址麦冬地址麦冬地址麦冬地址麦冬地址麦冬地址麦冬地址麦冬地址麦冬地址麦冬地址麦冬地址麦冬地址麦冬地址\n麦冬地址麦冬地址麦冬地址麦冬地址麦冬地址麦冬地址麦冬地址麦冬地址麦冬地址', '周一至周六，9：00-18：00；\n周日，全天；', '00030001', NULL, '/reso/downLoadPicFile?tranResoFileMngId=TRFM180301151428656F0D8D7CF54D5B87343DBB2C64A73C', '00660001', '00840002', NULL, NULL, 1, 70000, NULL, 5.0000, '2018-03-01 15:17:52', 'MIUB6720793870139372ECC5', '2018-03-12 20:57:26', 'MIUB6722400082668127E2D4', 0, 11, 0, '买一送一', '', '00790001', 1, '2018-03-01 15:17:53', '2018-03-01 15:17:53', 1),
 	(9, '3410118009', '起风了', '风好大', '110000', '110100', '110101', '北京十二环，沿海黄金地带', 116.327589, 39.610997, '123', '13588660063', '', '', '', '00030001', NULL, '/reso/downLoadPicFile?tranResoFileMngId=TRFM1803061528587613EAF8C3EC4149935FE0A3B47EC1B0', '00660001', '00840002', '00880003', '', 1, 9874, NULL, 5.0000, '2018-03-09 09:36:09', 'MIUB67169682475047784BB4', '2018-03-14 11:25:58', 'MIUB7393096794414848871C', 0, 13, 0, '', '', '00790001', 1, '2018-03-09 09:36:05', '2018-03-09 09:36:05', 1);
 /*!40000 ALTER TABLE `mst_subsy_base` ENABLE KEYS */;
 
