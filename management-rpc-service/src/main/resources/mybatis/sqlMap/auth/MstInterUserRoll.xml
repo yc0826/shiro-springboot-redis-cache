@@ -373,8 +373,8 @@
 
     <delete id="deleteUserRollByUserCode">
         delete from mst_inter_user_roll
-        where inter_user_code = #{0}
-        and subsy_code = #{1}
+        where inter_user_code = #{arg0}
+        and subsy_code = #{arg1}
     </delete>
 
 
