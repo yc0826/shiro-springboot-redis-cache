@@ -91,7 +91,7 @@ public class UserController extends BaseController {
     public String showCreateForm(Model model) {
         setCommonData(model);
         model.addAttribute("user", new MstInterUserBaseEntity());
-        model.addAttribute("op", "新 增");
+        model.addAttribute("op", "新增");
         return "auth/user/add";
     }
 

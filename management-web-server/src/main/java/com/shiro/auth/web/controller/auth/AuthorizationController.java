@@ -6,6 +6,7 @@ import com.shiro.auth.api.auth.entity.MstInterUserRollEntity;
 import com.shiro.auth.api.auth.service.api.MstInterUserBaseService;
 import com.shiro.auth.api.auth.service.api.MstInterUserRollService;
 import com.shiro.auth.api.auth.service.api.MstRollBaseService;
+import com.shiro.auth.api.auth.service.api.SubsyBaseService;
 import com.shiro.auth.common.Constants;
 import com.shiro.auth.common.utils.DataTableRequest;
 import com.shiro.auth.common.utils.DataTableResponse;
@@ -38,6 +39,8 @@ public class AuthorizationController extends BaseController {
     private MstInterUserBaseService userService;
     @Reference
     private MstRollBaseService roleService;
+    @Reference
+    private SubsyBaseService subsyBaseService;
 
     @RequiresPermissions("authorization:view")
     @RequestMapping()
@@ -83,7 +86,7 @@ public class AuthorizationController extends BaseController {
         setCommonData(model);
         MstInterUserRollEntity authorization = new MstInterUserRollEntity();
         model.addAttribute("authorization", authorization);
-        model.addAttribute("op", "新 增");
+        model.addAttribute("op", "新增");
         return "auth/authorization/edit";
     }
 
@@ -152,7 +155,7 @@ public class AuthorizationController extends BaseController {
             String[] subsyCodes = getCurrentUserSubsyCodes().split(",");
             paramMap.put("subsyCodes", subsyCodes);
         }
-//        model.addAttribute("subsyList", subsyBaseService.findSubsyListBySubsyCodes(paramMap));
+        model.addAttribute("subsyList", subsyBaseService.findSubsyListBySubsyCodes(paramMap));
     }
 
 
