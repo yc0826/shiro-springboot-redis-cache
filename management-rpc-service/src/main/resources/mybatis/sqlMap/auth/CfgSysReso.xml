@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-
-<mapper namespace="com.babysky.management.repo.auth.ICfgSysResoDao">
+<mapper namespace="com.shiro.auth.repo.auth.ICfgSysResoDao">
 
     <!-- auto-generate start -->
     <sql id="mysqlPaginationStart">
