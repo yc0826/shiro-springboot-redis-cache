@@ -215,7 +215,7 @@
                 timeout: 10000,
                 success: function (data) {
                     if (data.status === 200) {
-                        layer.alert("${op}用户成功",{closeBtn: 0},  function () {
+                        layer.alert("${op}用户成功，请去授权管理授权",{closeBtn: 0},  function () {
                             window.location.href = "${ctx}/user";
                         })
                     } else {
