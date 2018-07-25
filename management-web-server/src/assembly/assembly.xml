@@ -30,7 +30,7 @@
         <dependencySet>
             <outputDirectory>WEB-INF/lib</outputDirectory>
             <excludes>
-                <exclude>com.babysky:management-web-server</exclude>
+                <exclude>com.shiro:management-web-server</exclude>
             </excludes>
         </dependencySet>
     </dependencySets>
