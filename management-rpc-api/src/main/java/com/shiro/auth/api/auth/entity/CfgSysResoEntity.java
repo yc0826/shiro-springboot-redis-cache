@@ -141,6 +141,7 @@ public class CfgSysResoEntity extends BaseEntity {
 	}
 	//get set End
 
+	@Override
 	public String toString() {
 		return "CfgSysResoEntity [" +
 				"CfgSysResoId=" + getCfgSysResoId() + ", " +
