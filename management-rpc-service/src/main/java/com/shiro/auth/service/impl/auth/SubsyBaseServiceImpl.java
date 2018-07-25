@@ -66,6 +66,6 @@ public class SubsyBaseServiceImpl implements SubsyBaseService {
 
     @Override
     public List<MstSubsyBaseEntity> findSubsyListBySubsyCodes(Map<String, Object> paramMap) {
-        return null;
+        return mstSubsyBaseDao.findSubsyListBySubsyCodes(paramMap);
     }
 }
