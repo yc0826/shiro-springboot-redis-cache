@@ -2,12 +2,12 @@
 <%@taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
 <html>
 <head>
-<%@ include file="../jsp/common/resource.jsp"%>
-<%@ include file="../jsp/common/tags.jsp"%>
+    <%@ include file="../jsp/common/resource.jsp"%>
+    <%@ include file="../jsp/common/tags.jsp"%>
     <link href="${ctx}/static/css/bootstrap.css" rel="stylesheet">
     <link href="${ctx}/static/css/style.css?v=${webVersion}" rel="stylesheet">
     <link href="${ctx}/static/css/style-responsive.css" rel="stylesheet">
-<title>系统管理-登录</title>
+    <title>shiro系统管理-登录</title>
     <script>
         <c:if test="${not empty param.kickout}">
         alert('您被踢出登录了。');
