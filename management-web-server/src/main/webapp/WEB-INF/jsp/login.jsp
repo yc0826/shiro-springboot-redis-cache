@@ -18,7 +18,7 @@
 <div>
     <div class="sign_wrap">
         <form action="${ctx}/login" method="post" id="form" class="form-login">
-            <%--<h2 class="form-login-heading">请登录</h2>--%>
+            <h2 class="form-login-heading">项目地址https://gitee.com/896022/shiroAuth</h2>
             <img class="index-img" src="${ctx}/static/img/login-logo.png" alt="">
             <div class="login-wrap">
                 <div class="sign_input_wrap"><input type="text" name="username" class="form-control" id="username"
@@ -37,7 +37,7 @@
         </form>
     </div>
     <div id="sign_footer">
-        <span>客服邮箱 service@qq.com.cn | 客服电话：1234567*8045</span><span style="margin-left: 65px">Copyright 上海xxxxxxxx有限公司版权所有 All Rights Reserved. </span><span
+        <span>https://gitee.com/896022/shiroAuth</span><span style="margin-left: 65px">Copyright 上海xxxxxxxx有限公司版权所有 All Rights Reserved. </span><span
             style="margin-left: 40px">备案信息  沪ICP备xxxxxxx号-1</span>
     </div>
 </div>
