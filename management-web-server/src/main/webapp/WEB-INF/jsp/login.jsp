@@ -18,8 +18,7 @@
 <div>
     <div class="sign_wrap">
         <form action="${ctx}/login" method="post" id="form" class="form-login">
-            <h2 class="form-login-heading">项目地址https://gitee.com/896022/shiroAuth</h2>
-            <img class="index-img" src="${ctx}/static/img/login-logo.png" alt="">
+            <h2 class="form-login-heading">https://gitee.com/896022/shiroAuth</h2>
             <div class="login-wrap">
                 <div class="sign_input_wrap"><input type="text" name="username" class="form-control" id="username"
                                                     placeholder="用户名/手机号"/></div>
