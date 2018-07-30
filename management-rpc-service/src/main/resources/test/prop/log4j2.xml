@@ -45,7 +45,7 @@
     <!--然后定义logger，只有定义了logger并引入的appender，appender才会生效-->
     <Loggers>
         <!--过滤掉spring和mybatis的一些无用的DEBUG信息-->
-        <Logger name="com.babysky" level="DEBUG"/>
+        <Logger name="com.shiro" level="DEBUG"/>
         <Logger name="org.springframework" level="INFO"/>
         <Logger name="org.mybatis.spring" level="ERROR"/>
         <Logger name="org.apache" level="INFO"/>

@@ -1,4 +1,4 @@
-<%@ page import="com.babysky.management.common.utils.AcpService" %>
+<%@ page import="com.shiro.management.common.utils.AcpService" %>
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>

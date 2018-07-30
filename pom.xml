@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.babysky</groupId>
-    <artifactId>babysky-management</artifactId>
+    <groupId>com.shiro.auth</groupId>
+    <artifactId>shiro-auth-management</artifactId>
     <packaging>pom</packaging>
     <version>1.0.0</version>
     <name>shiroAuth-management</name>
@@ -39,22 +39,22 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>com.babysky</groupId>
+                <groupId>com.shiro.auth</groupId>
                 <artifactId>management-common</artifactId>
                 <version>${project.parent.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.babysky</groupId>
+                <groupId>com.shiro.auth</groupId>
                 <artifactId>management-rpc-api</artifactId>
                 <version>${project.parent.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.babysky</groupId>
+                <groupId>com.shiro.auth</groupId>
                 <artifactId>management-rpc-service</artifactId>
                 <version>${project.parent.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.babysky</groupId>
+                <groupId>com.shiro.auth</groupId>
                 <artifactId>management-web-server</artifactId>
                 <version>${project.parent.version}</version>
             </dependency>
