@@ -12,6 +12,7 @@ import java.util.List;
  * @since [产品/模块版本] （可选）
  */
 public class DataTableResponse<T> implements Serializable {
+    private static final long serialVersionUID = -7332044346270861185L;
     /**
      * 返回数据
      */
